@@ -1,0 +1,33 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BridgeDetectSystem", "BridgeDetectSystem\BridgeDetectSystem.csproj", "{8C9C4CCB-B7C5-4FA5-B385-B6A9B0D58D7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSW2AdamTeach", "PSW2AdamTeach\PSW2AdamTeach.csproj", "{47BDEEF3-1A96-4C13-AB4F-74BC9086D70B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSW2NPOI", "PSW2NPOI\PSW2NPOI.csproj", "{D9AC6924-2B75-4A7F-B05C-6B330161130D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C9C4CCB-B7C5-4FA5-B385-B6A9B0D58D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C9C4CCB-B7C5-4FA5-B385-B6A9B0D58D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C9C4CCB-B7C5-4FA5-B385-B6A9B0D58D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C9C4CCB-B7C5-4FA5-B385-B6A9B0D58D7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47BDEEF3-1A96-4C13-AB4F-74BC9086D70B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47BDEEF3-1A96-4C13-AB4F-74BC9086D70B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47BDEEF3-1A96-4C13-AB4F-74BC9086D70B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47BDEEF3-1A96-4C13-AB4F-74BC9086D70B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9AC6924-2B75-4A7F-B05C-6B330161130D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9AC6924-2B75-4A7F-B05C-6B330161130D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9AC6924-2B75-4A7F-B05C-6B330161130D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9AC6924-2B75-4A7F-B05C-6B330161130D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

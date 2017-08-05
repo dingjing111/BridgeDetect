@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C9C4CCB-B7C5-4FA5-B385-B6A9B0D58D7B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BridgeDetectSystem</RootNamespace>
+    <AssemblyName>BridgeDetectSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ico\logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>BridgeDetectSystem.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>refdll\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>refdll\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>refdll\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>refdll\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PSW2AdamTeach">
+      <HintPath>refdll\PSW2AdamTeach.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PSW2NPOI">
+      <HintPath>refdll\PSW2NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="windows\other\AddNewUserWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\other\AddNewUserWin.Designer.cs">
+      <DependentUpon>AddNewUserWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="entity\User.cs" />
+    <Compile Include="entity\UserRightConstraint.cs" />
+    <Compile Include="windows\record\AlarmRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\record\AlarmRecord.Designer.cs">
+      <DependentUpon>AlarmRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="util\ConvertHelper.cs" />
+    <Compile Include="dao\DBHelper.cs" />
+    <Compile Include="util\Encrypt.cs" />
+    <Compile Include="service\UserRightManager.cs" />
+    <Compile Include="windows\record\AnchorForceRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\record\AnchorForceRecord.Designer.cs">
+      <DependentUpon>AnchorForceRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="util\Drawer.cs" />
+    <Compile Include="windows\record\FrontPivotRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\record\FrontPivotRecord.Designer.cs">
+      <DependentUpon>FrontPivotRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="windows\other\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\other\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWin.Designer.cs">
+      <DependentUpon>MainWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="windows\record\SteeveDisplaceRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\record\SteeveDisplaceRecord.Designer.cs">
+      <DependentUpon>SteeveDisplaceRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="windows\record\SteeveForceRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\record\SteeveForceRecord.Designer.cs">
+      <DependentUpon>SteeveForceRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="windows\work\PouringState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\work\PouringState.Designer.cs">
+      <DependentUpon>PouringState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="windows\setParameter\SetParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\setParameter\SetParameter.Designer.cs">
+      <DependentUpon>SetParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="windows\other\UserRightWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\other\UserRightWin.Designer.cs">
+      <DependentUpon>UserRightWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="windows\other\WarningDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\other\WarningDialog.Designer.cs">
+      <DependentUpon>WarningDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="windows\other\AddNewUserWin.resx">
+      <DependentUpon>AddNewUserWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="windows\record\AlarmRecord.resx">
+      <DependentUpon>AlarmRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="windows\record\AnchorForceRecord.resx">
+      <DependentUpon>AnchorForceRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="windows\record\FrontPivotRecord.resx">
+      <DependentUpon>FrontPivotRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="windows\other\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWin.resx">
+      <DependentUpon>MainWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="windows\record\SteeveDisplaceRecord.resx">
+      <DependentUpon>SteeveDisplaceRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="windows\record\SteeveForceRecord.resx">
+      <DependentUpon>SteeveForceRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="windows\work\PouringState.resx">
+      <DependentUpon>PouringState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="windows\setParameter\SetParameter.resx">
+      <DependentUpon>SetParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="windows\other\UserRightWin.resx">
+      <DependentUpon>UserRightWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="windows\other\WarningDialog.resx">
+      <DependentUpon>WarningDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="image\banner.jpg" />
+    <Content Include="ico\logo.ico" />
+    <Content Include="MetroFramework.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
