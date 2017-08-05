@@ -40,7 +40,12 @@ namespace BridgeDetectSystem
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddNewUserWin win = new AddNewUserWin();
-            win.Show();
+            win.ShowDialog();
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

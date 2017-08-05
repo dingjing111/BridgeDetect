@@ -136,6 +136,7 @@
             this.btnModify.TabIndex = 1;
             this.btnModify.Text = "修改";
             this.btnModify.UseVisualStyleBackColor = false;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // btnDelete
             // 

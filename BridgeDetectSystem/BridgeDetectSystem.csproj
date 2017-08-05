@@ -78,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="windows\other\ModifyUserWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\other\ModifyUserWin.Designer.cs">
+      <DependentUpon>ModifyUserWin.cs</DependentUpon>
+    </Compile>
     <Compile Include="windows\other\AddNewUserWin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     </Compile>
     <EmbeddedResource Include="windows\other\AddNewUserWin.resx">
       <DependentUpon>AddNewUserWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="windows\other\ModifyUserWin.resx">
+      <DependentUpon>ModifyUserWin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="windows\record\AlarmRecord.resx">
       <DependentUpon>AlarmRecord.cs</DependentUpon>

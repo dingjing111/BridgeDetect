@@ -19,6 +19,8 @@ namespace BridgeDetectSystem
         private void AnchorForceWindow_Load(object sender, EventArgs e)
         {
             this.initial();
+
+
         }
         #region 初始化窗体
         private void initial()
