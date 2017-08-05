@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using BridgeDetectSystem.service;
@@ -76,14 +77,22 @@ namespace BridgeDetectSystem
             UserRightManager.Initial(userName, password);
             UserRightManager manager = UserRightManager.GetInstance();
 
-            if (manager.Check())
+            try
             {
-                this.DialogResult = DialogResult.OK;
+                if (manager.Check())
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("账号或密码错误，请重新输入");
+                }
             }
-            else
+            catch (SqlException ex)
             {
-                MessageBox.Show("账号或密码错误，请重新输入");
+                MessageBox.Show(ex.Message);
             }
+
 
         }
 
