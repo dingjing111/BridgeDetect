@@ -54,7 +54,7 @@
             this.grpAdd.Size = new System.Drawing.Size(1108, 826);
             this.grpAdd.TabIndex = 0;
             this.grpAdd.TabStop = false;
-            this.grpAdd.Text = "添加新用户";
+            this.grpAdd.Text = "添加用户";
             // 
             // tableLayoutPanel1
             // 
