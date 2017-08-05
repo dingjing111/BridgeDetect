@@ -35,17 +35,20 @@ namespace BridgeDetectSystem
         private void button5_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddNewUserWin win = new AddNewUserWin();
             win.ShowDialog();
+            
         }
 
         private void btnModify_Click(object sender, EventArgs e)
         {
-            
+            UserModifyWin win = new UserModifyWin();
+            win.ShowDialog();
         }
     }
 }

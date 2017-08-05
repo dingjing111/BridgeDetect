@@ -7,16 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace BridgeDetectSystem.windows
+namespace BridgeDetectSystem
 {
-    public partial class ModifyUserWin : MetroFramework.Forms.MetroForm
+    public partial class UserModifyWin : MetroFramework.Forms.MetroForm
     {
-        public ModifyUserWin()
+        public UserModifyWin()
         {
             InitializeComponent();
         }
 
-        private void ModifyUserWin_Load(object sender, EventArgs e)
+        private void UserModifyWin_Load(object sender, EventArgs e)
         {
 
         }
