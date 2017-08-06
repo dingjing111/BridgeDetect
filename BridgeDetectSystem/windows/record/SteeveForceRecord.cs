@@ -23,8 +23,8 @@ namespace BridgeDetectSystem
         #region 初始化窗体
         private void initial()
         {
-            this.Width = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width;//窗体与屏幕一样大
-            this.Height = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Height;
+            //this.Width = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width;//窗体与屏幕一样大
+            //this.Height = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Height;
             this.panel2.Height = this.panel1.Height * 8 / 10;
             this.panel4.Height = this.panel1.Height / 15;
         }
