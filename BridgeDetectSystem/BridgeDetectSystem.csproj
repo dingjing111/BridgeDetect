@@ -78,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="windows\other\UserModifyWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\other\UserModifyWin.Designer.cs">
+      <DependentUpon>UserModifyWin.cs</DependentUpon>
+    </Compile>
     <Compile Include="windows\other\AddNewUserWin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     <Compile Include="windows\other\WarningDialog.Designer.cs">
       <DependentUpon>WarningDialog.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="windows\other\UserModifyWin.resx">
+      <DependentUpon>UserModifyWin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="windows\other\AddNewUserWin.resx">
       <DependentUpon>AddNewUserWin.cs</DependentUpon>
     </EmbeddedResource>
