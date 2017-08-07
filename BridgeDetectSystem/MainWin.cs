@@ -11,16 +11,19 @@ namespace BridgeDetectSystem
 {
     public partial class MainWin : MetroFramework.Forms.MetroForm
     {
+
+        public static volatile MainWin instance;
+
+        public static MainWin GetInstance()
+        {
+            return instance;
+        }
+
         public MainWin()
         {
             InitializeComponent();
+            instance = this;
         }
-
-        private void MainWin_Load(object sender, EventArgs e)
-        {
-
-        }
-
 
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -31,10 +34,6 @@ namespace BridgeDetectSystem
             if (result == DialogResult.Yes)
             {
                 System.Environment.Exit(0);
-            }
-            else
-            {
-
             }
         }
 
@@ -79,10 +78,8 @@ namespace BridgeDetectSystem
         {
             SetParameter win = new SetParameter();
             win.Show();
-            
-        }
 
-       
+        }
 
         private void btnPouring_Click(object sender, EventArgs e)
         {
@@ -93,6 +90,15 @@ namespace BridgeDetectSystem
         private void btnWalking_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MainWin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("确定退出程序吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

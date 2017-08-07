@@ -22,16 +22,18 @@ namespace PSW2AdamTeach
      *  读取数据过程如下：   
      *  Initalize-->Connect-->GetChannelRange-->GetChannelEnabled-->GetAllChannelValue
      *  
-     *  封装初始化等过程(Initalize-->Connect-->GetChannelRange-->GetChannelEnabled)-->OnReady();
+     *  封装初始化等过程(Initalize-->Connect-->GetChannelRange-->GetChannelEnabled)-->Init();
      *  封装读取全部通道数据过程：（GetAllChannelValue）-->Read()
      *  封装读取特定通道的数据：（GetChannelSingleValue）-->Read(int channelIndex)
      *  
+     *  使用：(1) new AdamHelper (2)Init() (3)Read()/Read(int channelIndex) (4)Disconnect()
      *******************************************************************************/
+
     public class AdamHelper
     {
         #region  字段
         //标志：modbus通信是否已经开始
-        public bool modbusStart { get; set; }
+        private bool modbusStart;
         //接收的数据数量
         public int recCount { get; set; }
         //AdamSocker类型变量
@@ -52,6 +54,8 @@ namespace PSW2AdamTeach
         private Advantech.Adam.AdamType adamSeries;
         #endregion
 
+        #region 构造函数
+        
         /// <summary>
         /// 根据参数，构造modbus,生成adamSocket实例
         /// </summary>
@@ -70,6 +74,10 @@ namespace PSW2AdamTeach
             adamSeries = (Advantech.Adam.AdamType)series;
             adamType = (Advantech.Adam.Adam6000Type)type;
         }
+
+        #endregion
+
+        #region 方法
 
         /// <summary>
         /// 初始化modbus配置
@@ -121,6 +129,10 @@ namespace PSW2AdamTeach
                     }
                 }
             }
+            else
+            {
+                throw new AdamException("读取输入通道数据失败。");
+            }
             return values;
         }
 
@@ -144,6 +156,10 @@ namespace PSW2AdamTeach
                     value = fValue.ToString(valueFormat) + " " + AnalogInput.GetUnitName(adamType, channelRange[index]);
                 }
             }
+            else
+            {
+                throw new AdamException("读取输入通道数据失败。");
+            }
             return value;
         }
 
@@ -161,6 +177,10 @@ namespace PSW2AdamTeach
                 if (adamModbus.AnalogInput().GetInputRange(i, out range))
                 {
                     channelRange[i] = range;
+                }
+                else
+                {
+                    throw new AdamException("读取通道数据范围失败。");
                 }
 
             }
@@ -193,6 +213,10 @@ namespace PSW2AdamTeach
                 {
                     modbusStart = adamModbus.Connected;
                 }
+                else
+                {
+                    throw new AdamException("连接失败。");
+                }
             }
 
             return modbusStart;
@@ -201,14 +225,17 @@ namespace PSW2AdamTeach
         /// <summary>
         /// 关闭modbus连接
         /// </summary>
-        public bool Disconnect()
+        public void Disconnect()
         {
             if (modbusStart)
             {
                 adamModbus.Disconnect();
                 modbusStart = false;
             }
-            return modbusStart;
+            else
+            {
+                throw new AdamException("研华板卡未连接，无法关闭。");
+            }
         }
 
         /// <summary>
@@ -236,15 +263,24 @@ namespace PSW2AdamTeach
         /// <returns>返回是否连接成功</returns>
         public bool OnReady()
         {
+            return modbusStart;
+        }
+
+        public void Init()
+        {
             Initalize();
             if (Connect())
             {
                 GetChannelRange();
                 GetChannelEnabled();
             }
-
-            return modbusStart;
+            else
+            {
+                throw new AdamException("研华板卡初始化失败");
+            }
         }
+
+        #endregion
 
     }
 
@@ -320,5 +356,15 @@ namespace PSW2AdamTeach
 
     #endregion
 
+
+    #region 研华板卡操作异常类
+
+    public class AdamException : Exception
+    {
+        public AdamException(string message) : base(message) { }
+        public AdamException(string message, Exception innerException) : base(message, innerException) { }
+    }
+
+    #endregion
 
 }

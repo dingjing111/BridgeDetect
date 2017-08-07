@@ -93,7 +93,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnConfirm, 5, 9);
             this.tableLayoutPanel1.Controls.Add(this.btnCancel, 7, 9);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 30);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9F));
@@ -107,7 +107,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(974, 639);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(974, 645);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblUserName
@@ -115,10 +115,10 @@
             this.lblUserName.AutoSize = true;
             this.lblUserName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblUserName.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblUserName.Location = new System.Drawing.Point(99, 60);
+            this.lblUserName.Location = new System.Drawing.Point(99, 61);
             this.lblUserName.Margin = new System.Windows.Forms.Padding(3);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(139, 38);
+            this.lblUserName.Size = new System.Drawing.Size(139, 39);
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "账户";
             this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -127,18 +127,18 @@
             // 
             this.txtUserName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtUserName.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtUserName.Location = new System.Drawing.Point(340, 60);
+            this.txtUserName.Location = new System.Drawing.Point(340, 61);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(236, 38);
+            this.txtUserName.Size = new System.Drawing.Size(236, 39);
             this.txtUserName.TabIndex = 1;
             // 
             // txtPassword
             // 
             this.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtPassword.Location = new System.Drawing.Point(340, 161);
+            this.txtPassword.Location = new System.Drawing.Point(340, 164);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(236, 38);
+            this.txtPassword.Size = new System.Drawing.Size(236, 39);
             this.txtPassword.TabIndex = 2;
             // 
             // lblPassword
@@ -146,10 +146,10 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPassword.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblPassword.Location = new System.Drawing.Point(99, 161);
+            this.lblPassword.Location = new System.Drawing.Point(99, 164);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(3);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(139, 38);
+            this.lblPassword.Size = new System.Drawing.Size(139, 39);
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "密码";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -159,10 +159,10 @@
             this.lblAginPassword.AutoSize = true;
             this.lblAginPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAginPassword.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAginPassword.Location = new System.Drawing.Point(99, 262);
+            this.lblAginPassword.Location = new System.Drawing.Point(99, 267);
             this.lblAginPassword.Margin = new System.Windows.Forms.Padding(3);
             this.lblAginPassword.Name = "lblAginPassword";
-            this.lblAginPassword.Size = new System.Drawing.Size(139, 38);
+            this.lblAginPassword.Size = new System.Drawing.Size(139, 39);
             this.lblAginPassword.TabIndex = 4;
             this.lblAginPassword.Text = "重复密码";
             this.lblAginPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -171,9 +171,9 @@
             // 
             this.txtAginPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAginPassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAginPassword.Location = new System.Drawing.Point(340, 262);
+            this.txtAginPassword.Location = new System.Drawing.Point(340, 267);
             this.txtAginPassword.Name = "txtAginPassword";
-            this.txtAginPassword.Size = new System.Drawing.Size(236, 38);
+            this.txtAginPassword.Size = new System.Drawing.Size(236, 39);
             this.txtAginPassword.TabIndex = 5;
             // 
             // lblUserLevel
@@ -181,7 +181,7 @@
             this.lblUserLevel.AutoSize = true;
             this.lblUserLevel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblUserLevel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblUserLevel.Location = new System.Drawing.Point(99, 363);
+            this.lblUserLevel.Location = new System.Drawing.Point(99, 370);
             this.lblUserLevel.Margin = new System.Windows.Forms.Padding(3);
             this.lblUserLevel.Name = "lblUserLevel";
             this.lblUserLevel.Size = new System.Drawing.Size(139, 32);
@@ -197,9 +197,9 @@
             "操作员",
             "主管",
             "系统管理员"});
-            this.cmbUserLevel.Location = new System.Drawing.Point(340, 363);
+            this.cmbUserLevel.Location = new System.Drawing.Point(340, 370);
             this.cmbUserLevel.Name = "cmbUserLevel";
-            this.cmbUserLevel.Size = new System.Drawing.Size(236, 31);
+            this.cmbUserLevel.Size = new System.Drawing.Size(236, 26);
             this.cmbUserLevel.TabIndex = 7;
             // 
             // btnConfirm
@@ -207,9 +207,9 @@
             this.btnConfirm.BackColor = System.Drawing.Color.SteelBlue;
             this.btnConfirm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Location = new System.Drawing.Point(659, 464);
+            this.btnConfirm.Location = new System.Drawing.Point(659, 472);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(81, 38);
+            this.btnConfirm.Size = new System.Drawing.Size(81, 39);
             this.btnConfirm.TabIndex = 8;
             this.btnConfirm.Text = "确定";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -219,16 +219,16 @@
             this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(805, 464);
+            this.btnCancel.Location = new System.Drawing.Point(805, 472);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 38);
+            this.btnCancel.Size = new System.Drawing.Size(75, 39);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // AddNewUserWin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.panel1);
