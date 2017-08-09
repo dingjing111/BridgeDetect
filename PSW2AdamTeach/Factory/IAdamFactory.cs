@@ -6,6 +6,6 @@ namespace PSW2AdamTeach
 {
     public interface IAdamFactory
     {
-        AdamOperation CreateOperation();
+        AdamOperation CreateOperation(string ip);
     }
 }

@@ -6,9 +6,9 @@ namespace PSW2AdamTeach
 {
     public class Adam6217Factory : IAdamFactory
     {
-        public AdamOperation CreateOperation()
+        public AdamOperation CreateOperation(string ip)
         {
-            return new Adam6217Operation();
+            return new Adam6217Operation(ip);
         }
     }
 }
