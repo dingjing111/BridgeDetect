@@ -93,6 +93,7 @@ namespace BridgeDetectSystem
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(127, 28);
             this.txtUserName.TabIndex = 100;
+            this.txtUserName.Text = "admin";
             // 
             // panel1
             // 
@@ -127,8 +128,10 @@ namespace BridgeDetectSystem
             this.txtPassword.Location = new System.Drawing.Point(524, 38);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(127, 28);
             this.txtPassword.TabIndex = 101;
+            this.txtPassword.Text = "123";
             // 
             // btnConfirm
             // 

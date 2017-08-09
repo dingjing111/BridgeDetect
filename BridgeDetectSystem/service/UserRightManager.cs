@@ -72,8 +72,12 @@ namespace BridgeDetectSystem.service
 
     public class UserPrivilegeException : Exception
     {
-        public UserPrivilegeException(string message) : base(message) { }
-
+        public UserPrivilegeException(string message) : base(message) {
+            System.Windows.Forms.MessageBox.Show(message);
+        }
+        public UserPrivilegeException() : base() {
+            System.Windows.Forms.MessageBox.Show("用户没有足够权限");
+        }
         public UserPrivilegeException(string message, Exception innerException) : base(message, innerException) { }
     }
 
