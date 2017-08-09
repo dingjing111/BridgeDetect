@@ -46,16 +46,18 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.grpSetSteevePara = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblUpDisLimit = new MetroFramework.Controls.MetroLabel();
+            this.lblUpDis = new MetroFramework.Controls.MetroLabel();
             this.txtSteeveGoDisLimit = new MetroFramework.Controls.MetroTextBox();
-            this.lblDownDisLimit = new MetroFramework.Controls.MetroLabel();
-            this.lblTotalDisDiffLimit = new MetroFramework.Controls.MetroLabel();
-            this.lblSteeveForceLimit = new MetroFramework.Controls.MetroLabel();
+            this.lblDownDis = new MetroFramework.Controls.MetroLabel();
+            this.lblTotalDisError = new MetroFramework.Controls.MetroLabel();
+            this.lblSteeveDisDiffLimit = new MetroFramework.Controls.MetroLabel();
             this.txtDownDisLimit = new MetroFramework.Controls.MetroTextBox();
             this.txtTotalDisDiffLimit = new MetroFramework.Controls.MetroTextBox();
             this.txtSteeveForceLimit = new MetroFramework.Controls.MetroTextBox();
-            this.lblSteeveForceDiffLimit = new MetroFramework.Controls.MetroLabel();
+            this.lblSteeveForceLimit = new MetroFramework.Controls.MetroLabel();
             this.txtSteeveForceDiffLimit = new MetroFramework.Controls.MetroTextBox();
+            this.lblSteeveForceDiffLimit = new MetroFramework.Controls.MetroLabel();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -282,7 +284,7 @@
             this.grpSetSteevePara.Size = new System.Drawing.Size(550, 778);
             this.grpSetSteevePara.TabIndex = 0;
             this.grpSetSteevePara.TabStop = false;
-            this.grpSetSteevePara.Text = "吊杆报警参数设置";
+            this.grpSetSteevePara.Text = "吊杆参数设置";
             // 
             // tableLayoutPanel1
             // 
@@ -291,144 +293,170 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Controls.Add(this.lblUpDisLimit, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblUpDis, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtSteeveGoDisLimit, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblDownDisLimit, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblTotalDisDiffLimit, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lblSteeveForceLimit, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.lblDownDis, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblTotalDisError, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lblSteeveDisDiffLimit, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.txtDownDisLimit, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtTotalDisDiffLimit, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.txtSteeveForceLimit, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.lblSteeveForceDiffLimit, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.lblSteeveForceLimit, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.txtSteeveForceDiffLimit, 2, 9);
+            this.tableLayoutPanel1.Controls.Add(this.lblSteeveForceDiffLimit, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.metroTextBox1, 2, 11);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 26);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 12;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel1.RowCount = 13;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692545F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692544F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.689467F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(544, 749);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // lblUpDisLimit
+            // lblUpDis
             // 
-            this.lblUpDisLimit.AutoSize = true;
-            this.lblUpDisLimit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblUpDisLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblUpDisLimit.Location = new System.Drawing.Point(3, 65);
-            this.lblUpDisLimit.Margin = new System.Windows.Forms.Padding(3);
-            this.lblUpDisLimit.Name = "lblUpDisLimit";
-            this.lblUpDisLimit.Size = new System.Drawing.Size(211, 56);
-            this.lblUpDisLimit.TabIndex = 0;
-            this.lblUpDisLimit.Text = "吊杆上升位移上限(cm)";
-            this.lblUpDisLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUpDis.AutoSize = true;
+            this.lblUpDis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblUpDis.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblUpDis.Location = new System.Drawing.Point(3, 60);
+            this.lblUpDis.Margin = new System.Windows.Forms.Padding(3);
+            this.lblUpDis.Name = "lblUpDis";
+            this.lblUpDis.Size = new System.Drawing.Size(211, 51);
+            this.lblUpDis.TabIndex = 0;
+            this.lblUpDis.Text = "挂篮上升位移(cm)";
+            this.lblUpDis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveGoDisLimit
             // 
             this.txtSteeveGoDisLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveGoDisLimit.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveGoDisLimit.Location = new System.Drawing.Point(274, 65);
+            this.txtSteeveGoDisLimit.Location = new System.Drawing.Point(274, 60);
             this.txtSteeveGoDisLimit.Name = "txtSteeveGoDisLimit";
-            this.txtSteeveGoDisLimit.Size = new System.Drawing.Size(211, 56);
+            this.txtSteeveGoDisLimit.Size = new System.Drawing.Size(211, 51);
             this.txtSteeveGoDisLimit.TabIndex = 1;
             // 
-            // lblDownDisLimit
+            // lblDownDis
             // 
-            this.lblDownDisLimit.AutoSize = true;
-            this.lblDownDisLimit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDownDisLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblDownDisLimit.Location = new System.Drawing.Point(3, 189);
-            this.lblDownDisLimit.Margin = new System.Windows.Forms.Padding(3);
-            this.lblDownDisLimit.Name = "lblDownDisLimit";
-            this.lblDownDisLimit.Size = new System.Drawing.Size(211, 56);
-            this.lblDownDisLimit.TabIndex = 2;
-            this.lblDownDisLimit.Text = "吊杆下降位移上限(cm)";
-            this.lblDownDisLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDownDis.AutoSize = true;
+            this.lblDownDis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDownDis.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblDownDis.Location = new System.Drawing.Point(3, 174);
+            this.lblDownDis.Margin = new System.Windows.Forms.Padding(3);
+            this.lblDownDis.Name = "lblDownDis";
+            this.lblDownDis.Size = new System.Drawing.Size(211, 51);
+            this.lblDownDis.TabIndex = 2;
+            this.lblDownDis.Text = "挂篮下降位移(cm)";
+            this.lblDownDis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblTotalDisDiffLimit
+            // lblTotalDisError
             // 
-            this.lblTotalDisDiffLimit.AutoSize = true;
-            this.lblTotalDisDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTotalDisDiffLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblTotalDisDiffLimit.Location = new System.Drawing.Point(3, 313);
-            this.lblTotalDisDiffLimit.Margin = new System.Windows.Forms.Padding(3);
-            this.lblTotalDisDiffLimit.Name = "lblTotalDisDiffLimit";
-            this.lblTotalDisDiffLimit.Size = new System.Drawing.Size(211, 56);
-            this.lblTotalDisDiffLimit.TabIndex = 3;
-            this.lblTotalDisDiffLimit.Text = "吊杆总位移差上限(cm)";
-            this.lblTotalDisDiffLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTotalDisError.AutoSize = true;
+            this.lblTotalDisError.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalDisError.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblTotalDisError.Location = new System.Drawing.Point(3, 288);
+            this.lblTotalDisError.Margin = new System.Windows.Forms.Padding(3);
+            this.lblTotalDisError.Name = "lblTotalDisError";
+            this.lblTotalDisError.Size = new System.Drawing.Size(211, 51);
+            this.lblTotalDisError.TabIndex = 3;
+            this.lblTotalDisError.Text = "挂篮位移允许误差(cm)";
+            this.lblTotalDisError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblSteeveForceLimit
+            // lblSteeveDisDiffLimit
             // 
-            this.lblSteeveForceLimit.AutoSize = true;
-            this.lblSteeveForceLimit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSteeveForceLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveForceLimit.Location = new System.Drawing.Point(3, 437);
-            this.lblSteeveForceLimit.Margin = new System.Windows.Forms.Padding(3);
-            this.lblSteeveForceLimit.Name = "lblSteeveForceLimit";
-            this.lblSteeveForceLimit.Size = new System.Drawing.Size(211, 56);
-            this.lblSteeveForceLimit.TabIndex = 4;
-            this.lblSteeveForceLimit.Text = "吊杆受力上限(kN)";
-            this.lblSteeveForceLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSteeveDisDiffLimit.AutoSize = true;
+            this.lblSteeveDisDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSteeveDisDiffLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblSteeveDisDiffLimit.Location = new System.Drawing.Point(3, 402);
+            this.lblSteeveDisDiffLimit.Margin = new System.Windows.Forms.Padding(3);
+            this.lblSteeveDisDiffLimit.Name = "lblSteeveDisDiffLimit";
+            this.lblSteeveDisDiffLimit.Size = new System.Drawing.Size(211, 51);
+            this.lblSteeveDisDiffLimit.TabIndex = 4;
+            this.lblSteeveDisDiffLimit.Text = "吊杆位移差上限(cm)";
+            this.lblSteeveDisDiffLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtDownDisLimit
             // 
             this.txtDownDisLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDownDisLimit.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtDownDisLimit.Location = new System.Drawing.Point(274, 189);
+            this.txtDownDisLimit.Location = new System.Drawing.Point(274, 174);
             this.txtDownDisLimit.Name = "txtDownDisLimit";
-            this.txtDownDisLimit.Size = new System.Drawing.Size(211, 56);
+            this.txtDownDisLimit.Size = new System.Drawing.Size(211, 51);
             this.txtDownDisLimit.TabIndex = 5;
             // 
             // txtTotalDisDiffLimit
             // 
             this.txtTotalDisDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTotalDisDiffLimit.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtTotalDisDiffLimit.Location = new System.Drawing.Point(274, 313);
+            this.txtTotalDisDiffLimit.Location = new System.Drawing.Point(274, 288);
             this.txtTotalDisDiffLimit.Name = "txtTotalDisDiffLimit";
-            this.txtTotalDisDiffLimit.Size = new System.Drawing.Size(211, 56);
+            this.txtTotalDisDiffLimit.Size = new System.Drawing.Size(211, 51);
             this.txtTotalDisDiffLimit.TabIndex = 6;
             // 
             // txtSteeveForceLimit
             // 
             this.txtSteeveForceLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveForceLimit.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveForceLimit.Location = new System.Drawing.Point(274, 437);
+            this.txtSteeveForceLimit.Location = new System.Drawing.Point(274, 402);
             this.txtSteeveForceLimit.Name = "txtSteeveForceLimit";
-            this.txtSteeveForceLimit.Size = new System.Drawing.Size(211, 56);
+            this.txtSteeveForceLimit.Size = new System.Drawing.Size(211, 51);
             this.txtSteeveForceLimit.TabIndex = 7;
+            // 
+            // lblSteeveForceLimit
+            // 
+            this.lblSteeveForceLimit.AutoSize = true;
+            this.lblSteeveForceLimit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSteeveForceLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblSteeveForceLimit.Location = new System.Drawing.Point(3, 516);
+            this.lblSteeveForceLimit.Margin = new System.Windows.Forms.Padding(3);
+            this.lblSteeveForceLimit.Name = "lblSteeveForceLimit";
+            this.lblSteeveForceLimit.Size = new System.Drawing.Size(211, 51);
+            this.lblSteeveForceLimit.TabIndex = 8;
+            this.lblSteeveForceLimit.Text = "吊杆受力上限(kN)";
+            this.lblSteeveForceLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtSteeveForceDiffLimit
+            // 
+            this.txtSteeveForceDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSteeveForceDiffLimit.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtSteeveForceDiffLimit.Location = new System.Drawing.Point(274, 516);
+            this.txtSteeveForceDiffLimit.Name = "txtSteeveForceDiffLimit";
+            this.txtSteeveForceDiffLimit.Size = new System.Drawing.Size(211, 51);
+            this.txtSteeveForceDiffLimit.TabIndex = 9;
             // 
             // lblSteeveForceDiffLimit
             // 
             this.lblSteeveForceDiffLimit.AutoSize = true;
             this.lblSteeveForceDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSteeveForceDiffLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveForceDiffLimit.Location = new System.Drawing.Point(3, 561);
+            this.lblSteeveForceDiffLimit.Location = new System.Drawing.Point(3, 630);
             this.lblSteeveForceDiffLimit.Margin = new System.Windows.Forms.Padding(3);
             this.lblSteeveForceDiffLimit.Name = "lblSteeveForceDiffLimit";
-            this.lblSteeveForceDiffLimit.Size = new System.Drawing.Size(211, 56);
-            this.lblSteeveForceDiffLimit.TabIndex = 8;
+            this.lblSteeveForceDiffLimit.Size = new System.Drawing.Size(211, 51);
+            this.lblSteeveForceDiffLimit.TabIndex = 10;
             this.lblSteeveForceDiffLimit.Text = "吊杆力差值上限(kN)";
             this.lblSteeveForceDiffLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtSteeveForceDiffLimit
+            // metroTextBox1
             // 
-            this.txtSteeveForceDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSteeveForceDiffLimit.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveForceDiffLimit.Location = new System.Drawing.Point(274, 561);
-            this.txtSteeveForceDiffLimit.Name = "txtSteeveForceDiffLimit";
-            this.txtSteeveForceDiffLimit.Size = new System.Drawing.Size(211, 56);
-            this.txtSteeveForceDiffLimit.TabIndex = 9;
+            this.metroTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.metroTextBox1.Location = new System.Drawing.Point(274, 630);
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.Size = new System.Drawing.Size(211, 51);
+            this.metroTextBox1.TabIndex = 11;
             // 
             // SetParameter
             // 
@@ -473,15 +501,15 @@
         private System.Windows.Forms.GroupBox grpSetAnchorPara;
         private System.Windows.Forms.GroupBox grpSetSteevePara;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private MetroFramework.Controls.MetroLabel lblUpDisLimit;
+        private MetroFramework.Controls.MetroLabel lblUpDis;
         private MetroFramework.Controls.MetroTextBox txtSteeveGoDisLimit;
-        private MetroFramework.Controls.MetroLabel lblDownDisLimit;
-        private MetroFramework.Controls.MetroLabel lblTotalDisDiffLimit;
-        private MetroFramework.Controls.MetroLabel lblSteeveForceLimit;
+        private MetroFramework.Controls.MetroLabel lblDownDis;
+        private MetroFramework.Controls.MetroLabel lblTotalDisError;
+        private MetroFramework.Controls.MetroLabel lblSteeveDisDiffLimit;
         private MetroFramework.Controls.MetroTextBox txtDownDisLimit;
         private MetroFramework.Controls.MetroTextBox txtTotalDisDiffLimit;
         private MetroFramework.Controls.MetroTextBox txtSteeveForceLimit;
-        private MetroFramework.Controls.MetroLabel lblSteeveForceDiffLimit;
+        private MetroFramework.Controls.MetroLabel lblSteeveForceLimit;
         private MetroFramework.Controls.MetroTextBox txtSteeveForceDiffLimit;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private MetroFramework.Controls.MetroLabel lblAnchorForceLimit;
@@ -492,5 +520,7 @@
         private MetroFramework.Controls.MetroTextBox txtFrontPivotDisLimit;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnBack;
+        private MetroFramework.Controls.MetroLabel lblSteeveForceDiffLimit;
+        private MetroFramework.Controls.MetroTextBox metroTextBox1;
     }
 }
