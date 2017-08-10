@@ -78,17 +78,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dao\MyEventArgs.cs" />
+    <Compile Include="windows\work\VideoMonitorWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\work\VideoMonitorWin.Designer.cs">
+      <DependentUpon>VideoMonitorWin.cs</DependentUpon>
+    </Compile>
     <Compile Include="windows\other\UserModifyWin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="windows\other\UserModifyWin.Designer.cs">
       <DependentUpon>UserModifyWin.cs</DependentUpon>
     </Compile>
-    <Compile Include="windows\other\AddNewUserWin.cs">
+    <Compile Include="windows\other\AddAndUpdateUserWin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="windows\other\AddNewUserWin.Designer.cs">
-      <DependentUpon>AddNewUserWin.cs</DependentUpon>
+    <Compile Include="windows\other\AddAndUpdateUserWin.Designer.cs">
+      <DependentUpon>AddAndUpdateUserWin.cs</DependentUpon>
     </Compile>
     <Compile Include="entity\User.cs" />
     <Compile Include="entity\UserRightConstraint.cs" />
@@ -165,11 +172,14 @@
     <Compile Include="windows\other\WarningDialog.Designer.cs">
       <DependentUpon>WarningDialog.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="windows\work\VideoMonitorWin.resx">
+      <DependentUpon>VideoMonitorWin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="windows\other\UserModifyWin.resx">
       <DependentUpon>UserModifyWin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="windows\other\AddNewUserWin.resx">
-      <DependentUpon>AddNewUserWin.cs</DependentUpon>
+    <EmbeddedResource Include="windows\other\AddAndUpdateUserWin.resx">
+      <DependentUpon>AddAndUpdateUserWin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="windows\record\AlarmRecord.resx">
       <DependentUpon>AlarmRecord.cs</DependentUpon>

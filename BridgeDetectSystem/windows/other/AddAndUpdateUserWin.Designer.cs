@@ -1,6 +1,6 @@
 ﻿namespace BridgeDetectSystem
 {
-    partial class AddNewUserWin
+    partial class AddAndUpdateUser
     {
         /// <summary>
         /// Required designer variable.
@@ -35,12 +35,11 @@
             this.txtUserName = new MetroFramework.Controls.MetroTextBox();
             this.txtPassword = new MetroFramework.Controls.MetroTextBox();
             this.lblPassword = new MetroFramework.Controls.MetroLabel();
-            this.lblAginPassword = new MetroFramework.Controls.MetroLabel();
-            this.txtAginPassword = new MetroFramework.Controls.MetroTextBox();
             this.lblUserLevel = new MetroFramework.Controls.MetroLabel();
             this.cmbUserLevel = new System.Windows.Forms.ComboBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lblId = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.grpAddNewUser.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -68,7 +67,7 @@
             this.grpAddNewUser.Size = new System.Drawing.Size(980, 672);
             this.grpAddNewUser.TabIndex = 0;
             this.grpAddNewUser.TabStop = false;
-            this.grpAddNewUser.Text = "添加新用户";
+            this.grpAddNewUser.Text = "用户权限设置";
             // 
             // tableLayoutPanel1
             // 
@@ -86,12 +85,11 @@
             this.tableLayoutPanel1.Controls.Add(this.txtUserName, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtPassword, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblPassword, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblAginPassword, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txtAginPassword, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.lblUserLevel, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.cmbUserLevel, 3, 7);
             this.tableLayoutPanel1.Controls.Add(this.btnConfirm, 5, 9);
             this.tableLayoutPanel1.Controls.Add(this.btnCancel, 7, 9);
+            this.tableLayoutPanel1.Controls.Add(this.lblId, 5, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 30);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -154,28 +152,6 @@
             this.lblPassword.Text = "密码";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblAginPassword
-            // 
-            this.lblAginPassword.AutoSize = true;
-            this.lblAginPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblAginPassword.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAginPassword.Location = new System.Drawing.Point(99, 262);
-            this.lblAginPassword.Margin = new System.Windows.Forms.Padding(3);
-            this.lblAginPassword.Name = "lblAginPassword";
-            this.lblAginPassword.Size = new System.Drawing.Size(139, 38);
-            this.lblAginPassword.TabIndex = 4;
-            this.lblAginPassword.Text = "重复密码";
-            this.lblAginPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtAginPassword
-            // 
-            this.txtAginPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAginPassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAginPassword.Location = new System.Drawing.Point(340, 262);
-            this.txtAginPassword.Name = "txtAginPassword";
-            this.txtAginPassword.Size = new System.Drawing.Size(236, 38);
-            this.txtAginPassword.TabIndex = 5;
-            // 
             // lblUserLevel
             // 
             this.lblUserLevel.AutoSize = true;
@@ -213,6 +189,7 @@
             this.btnConfirm.TabIndex = 8;
             this.btnConfirm.Text = "确定";
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnCancel
             // 
@@ -226,7 +203,17 @@
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
-            // AddNewUserWin
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(659, 259);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(70, 24);
+            this.lblId.TabIndex = 10;
+            this.lblId.Text = "lblId";
+            this.lblId.Visible = false;
+            // 
+            // AddAndUpdateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -236,13 +223,13 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Movable = false;
-            this.Name = "AddNewUserWin";
+            this.Name = "AddAndUpdateUser";
             this.Padding = new System.Windows.Forms.Padding(22, 72, 22, 24);
             this.Resizable = false;
             this.Text = "用户管理";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.AddNewUserWin_Load);
+            this.Load += new System.EventHandler(this.AddAndUpdateUser_Load);
             this.panel1.ResumeLayout(false);
             this.grpAddNewUser.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -260,11 +247,10 @@
         private MetroFramework.Controls.MetroTextBox txtUserName;
         private MetroFramework.Controls.MetroTextBox txtPassword;
         private MetroFramework.Controls.MetroLabel lblPassword;
-        private MetroFramework.Controls.MetroLabel lblAginPassword;
-        private MetroFramework.Controls.MetroTextBox txtAginPassword;
         private MetroFramework.Controls.MetroLabel lblUserLevel;
         private System.Windows.Forms.ComboBox cmbUserLevel;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblId;
     }
 }

@@ -51,7 +51,7 @@ namespace BridgeDetectSystem.service
             if (reader.HasRows)
             {
                 reader.Read();
-                user.rightLevel = (int)reader["rightLevel"];
+                user.rightLevel = (int)reader["rightLevel"];//添加代码。。。
                 return true;
             }
             return false;

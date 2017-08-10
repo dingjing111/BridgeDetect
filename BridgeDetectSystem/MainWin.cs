@@ -92,7 +92,8 @@ namespace BridgeDetectSystem
 
         private void btnWalking_Click(object sender, EventArgs e)
         {
-
+            VideoMonitorWin win = new VideoMonitorWin();
+            win.Show();
         }
     }
 }
