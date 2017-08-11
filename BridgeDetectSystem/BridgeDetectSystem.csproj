@@ -79,6 +79,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dao\MyEventArgs.cs" />
+    <Compile Include="video\CHCNetSDK.cs" />
+    <Compile Include="video\PlayCtrl.cs" />
+    <Compile Include="video\VideoPlayer.cs" />
     <Compile Include="windows\work\VideoMonitorWin.cs">
       <SubType>Form</SubType>
     </Compile>

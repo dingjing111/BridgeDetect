@@ -127,7 +127,8 @@ namespace BridgeDetectSystem
         /// <param name="e"></param>
         private void btnWalking_Click(object sender, EventArgs e)
         {
-            VideoMonitorWin win = new VideoMonitorWin();
+            VideoMonitorWin win = VideoMonitorWin.GetInstance();
+            win.TopMost = true;
             win.Show();
         }
 
