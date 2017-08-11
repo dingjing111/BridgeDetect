@@ -60,7 +60,7 @@ namespace BridgeDetectSystem.service
 
         internal bool CanDoThis(int OperationLeastLevel)
         {
-            if (user.rightLevel > OperationLeastLevel)
+            if (user.rightLevel >= OperationLeastLevel)
             {
                 return true;
             }
