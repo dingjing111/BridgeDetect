@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BridgeDetectSystem.service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,39 +7,28 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using BridgeDetectSystem.entity;
 
 namespace BridgeDetectSystem
 {
     public partial class MainWin : MetroFramework.Forms.MetroForm
     {
+        private UserRightManager rightManager = UserRightManager.GetInstance();
+
+        public static volatile MainWin instance;
+
+        public static MainWin GetInstance()
+        {
+            return instance;
+        }
+
         public MainWin()
         {
             InitializeComponent();
+            instance = this;
         }
 
-        private void MainWin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("你确定退出吗？ ",
-                                    " 提示",
-                                   MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
-            {
-                System.Environment.Exit(0);
-            }
-            else
-            {
-
-            }
-        }
-
-
+        #region 查看记录按钮
         private void btnSteeveForce_Click(object sender, EventArgs e)
         {
             SteeveForceRecord win = new SteeveForceRecord();
@@ -62,38 +52,107 @@ namespace BridgeDetectSystem
             FrontPivotRecord win = new FrontPivotRecord();
             win.Show();
         }
+        #endregion
 
+        /// <summary>
+        /// 系统设置
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUserSet_Click(object sender, EventArgs e)
         {
-            UserRightWin win = new UserRightWin();
-            win.Show();
+            if (!rightManager.CanDoThis(UserRightConstraint.SystemSetLeastLevel))
+            {
+                new UserPrivilegeException();
+            }
+            else
+            {
+                UserRightWin win = new UserRightWin();
+                win.Show();
+            }
         }
 
+        /// <summary>
+        /// 查看报警记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAlarmRecord_Click(object sender, EventArgs e)
         {
-            AlarmRecord win = new AlarmRecord();
-            win.Show();
+            if (!rightManager.CanDoThis(UserRightConstraint.RecordCheckAndExportLeastLevel))
+            {
+                new UserPrivilegeException();
+            }
+            else
+            {
+                AlarmRecord win = new AlarmRecord();
+                win.Show();
+            }
+
         }
 
+        /// <summary>
+        /// 设置报警参数
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSetParameter_Click(object sender, EventArgs e)
         {
-            SetParameter win = new SetParameter();
-            win.Show();
-            
+            if (!rightManager.CanDoThis(UserRightConstraint.RingParameterSetLeastLevel))
+            {
+                new UserPrivilegeException();
+            }
+            else
+            {
+                SetParameter win = new SetParameter();
+                win.Show();
+            }
         }
 
-       
-
+        /// <summary>
+        /// 查看浇筑状态
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPouring_Click(object sender, EventArgs e)
         {
             PouringState win = new PouringState();
             win.Show();
         }
 
+        /// <summary>
+        /// 查看行走状态
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnWalking_Click(object sender, EventArgs e)
         {
             VideoMonitorWin win = new VideoMonitorWin();
             win.Show();
+        }
+
+        /// <summary>
+        /// 处理关闭按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainWin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("确定退出程序吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("你确定退出吗？ ",
+                                    " 提示",
+                                   MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                System.Environment.Exit(0);
+            }
         }
     }
 }

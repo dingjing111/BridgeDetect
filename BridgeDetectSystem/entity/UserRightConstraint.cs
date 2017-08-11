@@ -16,14 +16,6 @@ namespace BridgeDetectSystem.entity
 
         // 系统设置
         public const int SystemSetLeastLevel = 3;
-
-        public static readonly String[] UserLevelKindString = { "0", "操作员", "组长", "系统管理员" };
-
-        public static readonly Dictionary<String, int> UserLevelStringToInt = new Dictionary<string, int>
-        {
-            {UserLevelKindString[1],1},
-            {UserLevelKindString[2],2},
-            {UserLevelKindString[3],3},
-        };
+              
     }
 }

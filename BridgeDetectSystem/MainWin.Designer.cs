@@ -90,7 +90,7 @@
             this.btnFirstPage.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnFirstPage.ForeColor = System.Drawing.Color.White;
             this.btnFirstPage.Name = "btnFirstPage";
-            this.btnFirstPage.Size = new System.Drawing.Size(61, 44);
+            this.btnFirstPage.Size = new System.Drawing.Size(52, 44);
             this.btnFirstPage.Text = "首页";
             // 
             // btnUserSet
@@ -98,7 +98,7 @@
             this.btnUserSet.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnUserSet.ForeColor = System.Drawing.Color.White;
             this.btnUserSet.Name = "btnUserSet";
-            this.btnUserSet.Size = new System.Drawing.Size(101, 44);
+            this.btnUserSet.Size = new System.Drawing.Size(84, 44);
             this.btnUserSet.Text = "系统设置";
             this.btnUserSet.Click += new System.EventHandler(this.btnUserSet_Click);
             // 
@@ -107,7 +107,7 @@
             this.btnSetParameter.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnSetParameter.ForeColor = System.Drawing.Color.White;
             this.btnSetParameter.Name = "btnSetParameter";
-            this.btnSetParameter.Size = new System.Drawing.Size(101, 44);
+            this.btnSetParameter.Size = new System.Drawing.Size(84, 44);
             this.btnSetParameter.Text = "参数设置";
             this.btnSetParameter.Click += new System.EventHandler(this.btnSetParameter_Click);
             // 
@@ -116,7 +116,7 @@
             this.btnAlarmRecord.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnAlarmRecord.ForeColor = System.Drawing.Color.White;
             this.btnAlarmRecord.Name = "btnAlarmRecord";
-            this.btnAlarmRecord.Size = new System.Drawing.Size(101, 44);
+            this.btnAlarmRecord.Size = new System.Drawing.Size(84, 44);
             this.btnAlarmRecord.Text = "历史报警";
             this.btnAlarmRecord.Click += new System.EventHandler(this.btnAlarmRecord_Click);
             // 
@@ -130,7 +130,7 @@
             this.HistoryDataToolStripMenuItem.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.HistoryDataToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.HistoryDataToolStripMenuItem.Name = "HistoryDataToolStripMenuItem";
-            this.HistoryDataToolStripMenuItem.Size = new System.Drawing.Size(101, 44);
+            this.HistoryDataToolStripMenuItem.Size = new System.Drawing.Size(84, 44);
             this.HistoryDataToolStripMenuItem.Text = "历史数据";
             // 
             // btnSteeveForce
@@ -138,7 +138,7 @@
             this.btnSteeveForce.BackColor = System.Drawing.Color.SteelBlue;
             this.btnSteeveForce.ForeColor = System.Drawing.Color.White;
             this.btnSteeveForce.Name = "btnSteeveForce";
-            this.btnSteeveForce.Size = new System.Drawing.Size(264, 26);
+            this.btnSteeveForce.Size = new System.Drawing.Size(220, 22);
             this.btnSteeveForce.Text = "吊杆力检测记录";
             this.btnSteeveForce.Click += new System.EventHandler(this.btnSteeveForce_Click);
             // 
@@ -147,7 +147,7 @@
             this.btnSteeveDis.BackColor = System.Drawing.Color.SteelBlue;
             this.btnSteeveDis.ForeColor = System.Drawing.Color.White;
             this.btnSteeveDis.Name = "btnSteeveDis";
-            this.btnSteeveDis.Size = new System.Drawing.Size(264, 26);
+            this.btnSteeveDis.Size = new System.Drawing.Size(220, 22);
             this.btnSteeveDis.Text = "吊杆位移检测记录";
             this.btnSteeveDis.Click += new System.EventHandler(this.btnSteeveDis_Click);
             // 
@@ -156,7 +156,7 @@
             this.btnAnchorForce.BackColor = System.Drawing.Color.SteelBlue;
             this.btnAnchorForce.ForeColor = System.Drawing.Color.White;
             this.btnAnchorForce.Name = "btnAnchorForce";
-            this.btnAnchorForce.Size = new System.Drawing.Size(264, 26);
+            this.btnAnchorForce.Size = new System.Drawing.Size(220, 22);
             this.btnAnchorForce.Text = "锚杆力检测记录";
             this.btnAnchorForce.Click += new System.EventHandler(this.btnAnchorForce_Click);
             // 
@@ -165,7 +165,7 @@
             this.btnFrontPivot.BackColor = System.Drawing.Color.SteelBlue;
             this.btnFrontPivot.ForeColor = System.Drawing.Color.White;
             this.btnFrontPivot.Name = "btnFrontPivot";
-            this.btnFrontPivot.Size = new System.Drawing.Size(264, 26);
+            this.btnFrontPivot.Size = new System.Drawing.Size(220, 22);
             this.btnFrontPivot.Text = "前支点位移检测记录";
             this.btnFrontPivot.Click += new System.EventHandler(this.btnFrontPivot_Click);
             // 
@@ -174,7 +174,7 @@
             this.btnExit.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(61, 44);
+            this.btnExit.Size = new System.Drawing.Size(52, 44);
             this.btnExit.Text = "退出";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -273,7 +273,7 @@
             // 
             // MainWin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 922);
             this.Controls.Add(this.panel1);
@@ -290,7 +290,7 @@
             this.Text = "欢迎使用桥梁挂篮自动检测安全系统";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.MainWin_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWin_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
