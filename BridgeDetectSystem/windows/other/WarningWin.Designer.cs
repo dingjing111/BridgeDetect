@@ -30,16 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,10 +58,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.metroLabel1, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 3, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -81,18 +75,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.395349F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 688);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::BridgeDetectSystem.Properties.Resources.warn;
-            this.pictureBox1.Location = new System.Drawing.Point(71, 92);
-            this.pictureBox1.Name = "pictureBox1";
-            this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 2);
-            this.pictureBox1.Size = new System.Drawing.Size(190, 172);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // metroLabel1
             // 
@@ -121,18 +103,6 @@
             this.label1.Size = new System.Drawing.Size(387, 80);
             this.label1.TabIndex = 2;
             this.label1.Text = "报警文字";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = global::BridgeDetectSystem.Properties.Resources.warning;
-            this.pictureBox2.Location = new System.Drawing.Point(718, 92);
-            this.pictureBox2.Name = "pictureBox2";
-            this.tableLayoutPanel1.SetRowSpan(this.pictureBox2, 2);
-            this.pictureBox2.Size = new System.Drawing.Size(190, 172);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
             // 
             // tableLayoutPanel2
             // 
@@ -183,8 +153,6 @@
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -194,10 +162,8 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button button1;
     }

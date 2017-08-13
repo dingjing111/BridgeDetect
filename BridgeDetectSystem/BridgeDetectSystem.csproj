@@ -78,10 +78,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="windows\WarningWin.cs">
+    <Compile Include="windows\other\WarningWin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="windows\WarningWin.Designer.cs">
+    <Compile Include="windows\other\WarningWin.Designer.cs">
       <DependentUpon>WarningWin.cs</DependentUpon>
     </Compile>
     <Compile Include="windows\work\AmplifiedVideo.cs">
@@ -182,7 +182,7 @@
     <Compile Include="windows\other\WarningDialog.Designer.cs">
       <DependentUpon>WarningDialog.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="windows\WarningWin.resx">
+    <EmbeddedResource Include="windows\other\WarningWin.resx">
       <DependentUpon>WarningWin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="windows\work\AmplifiedVideo.resx">
@@ -211,14 +211,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="windows\record\SteeveDisplaceRecord.resx">
       <DependentUpon>SteeveDisplaceRecord.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,8 +248,6 @@
     <Content Include="ico\logo.ico" />
     <Content Include="image\warning.png" />
     <Content Include="MetroFramework.txt" />
-    <None Include="Resources\warning.png" />
-    <None Include="Resources\warn.jpg" />
     <Content Include="warningwave\WarningVoice.wav" />
   </ItemGroup>
   <ItemGroup />

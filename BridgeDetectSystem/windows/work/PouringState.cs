@@ -19,8 +19,9 @@ namespace BridgeDetectSystem
         {
             this.panel1.BackColor = Color.FromArgb(255, 50, 161, 206);
             this.panel2.Width = this.panel1.Width / 2;
-            this.panel4.Height = this.panel2.Height / 2;
-            this.panel6.Height = this.panel3.Height / 2;
+            this.panel4.Height = (this.panel1.Height - menuStrip1.Height) / 2;
+            this.panel6.Height = (this.panel1.Height - menuStrip1.Height) / 2;
+            this.panel8.Width = this.panel7.Width/2;
         }
         private void SteeveForceAndDisplacement16_Load(object sender, EventArgs e)
         {
