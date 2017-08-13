@@ -21,7 +21,7 @@ namespace BridgeDetectSystem
         private void WarningDialog_Load(object sender, EventArgs e)
         {
             
-            sp.SoundLocation = @"C:\Users\dingjing\Desktop\warningsound\2.wav";
+            sp.SoundLocation =GetPath();
             sp.PlayLooping();
         }
 
@@ -30,6 +30,14 @@ namespace BridgeDetectSystem
             sp.Stop();
             sp.Dispose();
             this.Close();
+        }
+        private static string GetPath()
+        {
+            string Path = Application.StartupPath;//值是：C:\App\project\gar\bin\Debug            
+            Path = Path.Substring(0, Path.LastIndexOf("\\"));
+           Path =Path.Substring(0, Path.LastIndexOf("\\"));//值是：C:
+            Path += "@\\WarningVoice.wav";//值是：C:\App\project\gar\01.jpg
+            return Path;
         }
     }
 }

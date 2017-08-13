@@ -78,18 +78,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="windows\work\AmplifiedVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\work\AmplifiedVideo.Designer.cs">
+      <DependentUpon>AmplifiedVideo.cs</DependentUpon>
+    </Compile>
     <Compile Include="dao\MyEventArgs.cs" />
     <Compile Include="windows\work\VideoMonitorWin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="windows\work\VideoMonitorWin.Designer.cs">
       <DependentUpon>VideoMonitorWin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="windows\other\UserModifyWin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="windows\other\UserModifyWin.Designer.cs">
-      <DependentUpon>UserModifyWin.cs</DependentUpon>
     </Compile>
     <Compile Include="windows\other\AddAndUpdateUserWin.cs">
       <SubType>Form</SubType>
@@ -172,11 +172,11 @@
     <Compile Include="windows\other\WarningDialog.Designer.cs">
       <DependentUpon>WarningDialog.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="windows\work\AmplifiedVideo.resx">
+      <DependentUpon>AmplifiedVideo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="windows\work\VideoMonitorWin.resx">
       <DependentUpon>VideoMonitorWin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="windows\other\UserModifyWin.resx">
-      <DependentUpon>UserModifyWin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="windows\other\AddAndUpdateUserWin.resx">
       <DependentUpon>AddAndUpdateUserWin.cs</DependentUpon>
@@ -240,6 +240,7 @@
     <Content Include="image\banner.jpg" />
     <Content Include="ico\logo.ico" />
     <Content Include="MetroFramework.txt" />
+    <Content Include="warningwave\WarningVoice.wav" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

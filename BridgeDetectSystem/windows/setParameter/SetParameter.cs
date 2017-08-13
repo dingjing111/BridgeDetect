@@ -25,22 +25,9 @@ namespace BridgeDetectSystem
             this.initial();
         }
 
-        private void btnFirstPage_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+       
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("你确定退出吗？ ",
-                                    " 提示",
-                                   MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
-            {
-                System.Environment.Exit(0);
-            }
-        }
-
+     
      
         private void btnSave_Click(object sender, EventArgs e)
         {

@@ -2163,6 +2163,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Movable = false;
             this.Name = "PouringState";
             this.Padding = new System.Windows.Forms.Padding(22, 72, 22, 24);
             this.Resizable = false;

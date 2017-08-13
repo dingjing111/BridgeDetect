@@ -23,6 +23,7 @@ namespace BridgeDetectSystem
 
         }
         private int TP { get; set; } //标识1，新增窗口。。2，修改窗口
+        string IDTemp;
         public void SetText(object sender,EventArgs e)
         {
             MyEventArgs mea = e as MyEventArgs;           //得到传过来的值和对象
@@ -44,7 +45,7 @@ namespace BridgeDetectSystem
                 User user = mea.obj as User;           //给新增窗口文本框赋值
                 txtUserName.Text = user.userName;
                 txtPassword.Text = user.password;
-                lblId.Text = user.phid;
+                IDTemp = user.phid;
                 if (user.rightLevel == 3)
                 {
                     cmbUserLevel.Text = "系统管理员";   //组合框显示值
@@ -121,7 +122,7 @@ namespace BridgeDetectSystem
                     b = "无";
                     c = "无";
                 }
-                string sql = string.Format("update UserManager set userName='{0}',password='{1}',rightLevel={2},viewLog='{3}',parameterSet='{4}',systemSet='{5}' where phid={6}", txtUserName.Text, txtPassword.Text, level, a, b, c,lblId.Text);
+                string sql = string.Format("update UserManager set userName='{0}',password='{1}',rightLevel={2},viewLog='{3}',parameterSet='{4}',systemSet='{5}' where phid={6}", txtUserName.Text, txtPassword.Text, level, a, b, c,IDTemp);
                 DBHelper dbhelper = DBHelper.GetInstance();
               r=  dbhelper.ExecuteNonQuery(sql);
             }
