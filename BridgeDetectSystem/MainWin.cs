@@ -8,24 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BridgeDetectSystem.entity;
+using MetroForm = MetroFramework.Forms.MetroForm;
 
 namespace BridgeDetectSystem
 {
-    public partial class MainWin : MetroFramework.Forms.MetroForm
+    public partial class MainWin : MetroForm
     {
         private UserRightManager rightManager = UserRightManager.GetInstance();
-
-        public static volatile MainWin instance;
-
-        public static MainWin GetInstance()
-        {
-            return instance;
-        }
 
         public MainWin()
         {
             InitializeComponent();
-            instance = this;
         }
 
         #region 查看记录按钮
@@ -128,7 +121,6 @@ namespace BridgeDetectSystem
         private void btnWalking_Click(object sender, EventArgs e)
         {
             VideoMonitorWin win = VideoMonitorWin.GetInstance();
-            win.TopMost = true;
             win.Show();
         }
 
@@ -139,7 +131,8 @@ namespace BridgeDetectSystem
         /// <param name="e"></param>
         private void MainWin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show("确定退出程序吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("确定退出程序吗？", "提示",
+                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.No)
             {
                 e.Cancel = true;
@@ -155,5 +148,6 @@ namespace BridgeDetectSystem
                 System.Environment.Exit(0);
             }
         }
+
     }
 }

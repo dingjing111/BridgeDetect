@@ -12,11 +12,30 @@ namespace BridgeDetectSystem
 {
     public partial class WarningDialog : Form
     {
-        public WarningDialog(string s)
+        public WarningDialog()
         {
             InitializeComponent();
-            label2.Text = s;
         }
+
+        private static object obj = new object();
+        private static WarningDialog instance;
+
+        public static WarningDialog GetInstance()
+        {
+            if (instance == null)
+            {
+                lock (obj)
+                {
+                    if (instance == null)
+                    {
+                        instance = new WarningDialog();
+                    }
+                }
+            }
+
+            return instance;
+        }
+
         SoundPlayer sp = new SoundPlayer();
         private void WarningDialog_Load(object sender, EventArgs e)
         {
@@ -30,6 +49,17 @@ namespace BridgeDetectSystem
             sp.Stop();
             sp.Dispose();
             this.Close();
+        }
+
+        internal static void DoWork(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void WarningDialog_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
         }
     }
 }
