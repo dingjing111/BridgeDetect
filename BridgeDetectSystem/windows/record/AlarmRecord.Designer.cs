@@ -37,14 +37,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -134,8 +132,6 @@
             this.Column1,
             this.Column3,
             this.Column4,
-            this.Column5,
-            this.Column6,
             this.Column7});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -143,36 +139,6 @@
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(1108, 497);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "序号";
-            this.Column1.Name = "Column1";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "时间";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "类型";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "处理方法";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "处理结果";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "操作人";
-            this.Column7.Name = "Column7";
             // 
             // panel4
             // 
@@ -194,6 +160,26 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "序号";
+            this.Column1.Name = "Column1";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "时间";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "类型";
+            this.Column4.Name = "Column4";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "操作人";
+            this.Column7.Name = "Column7";
+            // 
             // AlarmRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -204,6 +190,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Movable = false;
             this.Name = "AlarmRecord";
             this.Padding = new System.Windows.Forms.Padding(22, 72, 22, 24);
             this.Resizable = false;
@@ -236,8 +224,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }

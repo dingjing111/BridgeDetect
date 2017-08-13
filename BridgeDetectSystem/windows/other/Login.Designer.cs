@@ -179,7 +179,7 @@ namespace BridgeDetectSystem
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 922);
             this.Controls.Add(this.panel3);
@@ -189,6 +189,7 @@ namespace BridgeDetectSystem
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Movable = false;
             this.Name = "Login";
             this.Padding = new System.Windows.Forms.Padding(22, 72, 22, 24);

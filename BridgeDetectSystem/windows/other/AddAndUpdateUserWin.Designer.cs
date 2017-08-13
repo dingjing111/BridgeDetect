@@ -39,7 +39,6 @@
             this.cmbUserLevel = new System.Windows.Forms.ComboBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.lblId = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.grpAddNewUser.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -89,9 +88,8 @@
             this.tableLayoutPanel1.Controls.Add(this.cmbUserLevel, 3, 7);
             this.tableLayoutPanel1.Controls.Add(this.btnConfirm, 5, 9);
             this.tableLayoutPanel1.Controls.Add(this.btnCancel, 7, 9);
-            this.tableLayoutPanel1.Controls.Add(this.lblId, 5, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 24);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 30);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9F));
@@ -105,7 +103,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(974, 645);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(974, 639);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblUserName
@@ -113,10 +111,10 @@
             this.lblUserName.AutoSize = true;
             this.lblUserName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblUserName.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblUserName.Location = new System.Drawing.Point(99, 61);
+            this.lblUserName.Location = new System.Drawing.Point(99, 60);
             this.lblUserName.Margin = new System.Windows.Forms.Padding(3);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(139, 39);
+            this.lblUserName.Size = new System.Drawing.Size(139, 38);
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "账户";
             this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -125,18 +123,18 @@
             // 
             this.txtUserName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtUserName.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtUserName.Location = new System.Drawing.Point(340, 61);
+            this.txtUserName.Location = new System.Drawing.Point(340, 60);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(236, 39);
+            this.txtUserName.Size = new System.Drawing.Size(236, 38);
             this.txtUserName.TabIndex = 1;
             // 
             // txtPassword
             // 
             this.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtPassword.Location = new System.Drawing.Point(340, 164);
+            this.txtPassword.Location = new System.Drawing.Point(340, 161);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(236, 39);
+            this.txtPassword.Size = new System.Drawing.Size(236, 38);
             this.txtPassword.TabIndex = 2;
             // 
             // lblPassword
@@ -144,10 +142,10 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPassword.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblPassword.Location = new System.Drawing.Point(99, 164);
+            this.lblPassword.Location = new System.Drawing.Point(99, 161);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(3);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(139, 39);
+            this.lblPassword.Size = new System.Drawing.Size(139, 38);
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "密码";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -157,7 +155,7 @@
             this.lblUserLevel.AutoSize = true;
             this.lblUserLevel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblUserLevel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblUserLevel.Location = new System.Drawing.Point(99, 370);
+            this.lblUserLevel.Location = new System.Drawing.Point(99, 363);
             this.lblUserLevel.Margin = new System.Windows.Forms.Padding(3);
             this.lblUserLevel.Name = "lblUserLevel";
             this.lblUserLevel.Size = new System.Drawing.Size(139, 32);
@@ -173,9 +171,9 @@
             "操作员",
             "主管",
             "系统管理员"});
-            this.cmbUserLevel.Location = new System.Drawing.Point(340, 370);
+            this.cmbUserLevel.Location = new System.Drawing.Point(340, 363);
             this.cmbUserLevel.Name = "cmbUserLevel";
-            this.cmbUserLevel.Size = new System.Drawing.Size(236, 26);
+            this.cmbUserLevel.Size = new System.Drawing.Size(236, 31);
             this.cmbUserLevel.TabIndex = 7;
             // 
             // btnConfirm
@@ -183,9 +181,9 @@
             this.btnConfirm.BackColor = System.Drawing.Color.SteelBlue;
             this.btnConfirm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Location = new System.Drawing.Point(659, 472);
+            this.btnConfirm.Location = new System.Drawing.Point(659, 464);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(81, 39);
+            this.btnConfirm.Size = new System.Drawing.Size(81, 38);
             this.btnConfirm.TabIndex = 8;
             this.btnConfirm.Text = "确定";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -196,32 +194,23 @@
             this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(805, 472);
+            this.btnCancel.Location = new System.Drawing.Point(805, 464);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 39);
+            this.btnCancel.Size = new System.Drawing.Size(75, 38);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(659, 264);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(59, 19);
-            this.lblId.TabIndex = 10;
-            this.lblId.Text = "lblId";
-            this.lblId.Visible = false;
-            // 
             // AddAndUpdateUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Movable = false;
             this.Name = "AddAndUpdateUser";
             this.Padding = new System.Windows.Forms.Padding(22, 72, 22, 24);
@@ -251,6 +240,5 @@
         private System.Windows.Forms.ComboBox cmbUserLevel;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Label lblId;
     }
 }

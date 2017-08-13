@@ -9,14 +9,14 @@ using System.Windows.Forms;
 
 namespace BridgeDetectSystem
 {
-    public partial class UserModifyWin : MetroFramework.Forms.MetroForm
+    public partial class AmplifiedVideo : MetroFramework.Forms.MetroForm
     {
-        public UserModifyWin()
+        public AmplifiedVideo()
         {
             InitializeComponent();
         }
 
-        private void UserModifyWin_Load(object sender, EventArgs e)
+        private void AmplifiedVideo_Load(object sender, EventArgs e)
         {
 
         }

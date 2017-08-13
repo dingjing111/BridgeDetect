@@ -33,6 +33,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnchorForceRecord));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnRead = new System.Windows.Forms.Button();
             this.btbDel = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -40,9 +41,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnRead = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +60,8 @@
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -93,6 +93,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1108, 226);
             this.panel3.TabIndex = 1;
+            // 
+            // btnRead
+            // 
+            this.btnRead.Location = new System.Drawing.Point(134, 46);
+            this.btnRead.Name = "btnRead";
+            this.btnRead.Size = new System.Drawing.Size(102, 46);
+            this.btnRead.TabIndex = 7;
+            this.btnRead.Text = "读取数据";
+            this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
             // btbDel
             // 
@@ -201,36 +211,6 @@
             this.dgv.TabIndex = 1;
             this.dgv.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dgv_RowStateChanged);
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1108, 66);
-            this.panel4.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1108, 66);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnRead
-            // 
-            this.btnRead.Location = new System.Drawing.Point(134, 46);
-            this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(102, 46);
-            this.btnRead.TabIndex = 7;
-            this.btnRead.Text = "读取数据";
-            this.btnRead.UseVisualStyleBackColor = true;
-            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "GUId";
@@ -244,7 +224,7 @@
             this.Column3.DataPropertyName = "time";
             this.Column3.HeaderText = "时间";
             this.Column3.Name = "Column3";
-            this.Column3.Width = 71;
+            this.Column3.Width = 76;
             // 
             // Column4
             // 
@@ -363,7 +343,27 @@
             this.Column19.DataPropertyName = "operator";
             this.Column19.HeaderText = "操作人";
             this.Column19.Name = "Column19";
-            this.Column19.Width = 71;
+            this.Column19.Width = 95;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1108, 66);
+            this.panel4.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1108, 66);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // AnchorForceRecord
             // 
@@ -374,6 +374,9 @@
             this.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Movable = false;
             this.Name = "AnchorForceRecord";
             this.Padding = new System.Windows.Forms.Padding(22, 72, 22, 24);
             this.Resizable = false;
