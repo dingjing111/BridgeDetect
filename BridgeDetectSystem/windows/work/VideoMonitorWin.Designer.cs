@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.btnAllVideo = new System.Windows.Forms.ToolStripMenuItem();
             this.btnVideo1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnVideo2 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnVideo3 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnVideo4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAllVideo = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRefresh = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -45,7 +46,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -71,12 +71,20 @@
             this.btnVideo2,
             this.btnVideo3,
             this.btnVideo4,
-            this.刷新ToolStripMenuItem});
+            this.btnRefresh});
             this.menuStrip1.Location = new System.Drawing.Point(22, 72);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1108, 48);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // btnAllVideo
+            // 
+            this.btnAllVideo.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnAllVideo.ForeColor = System.Drawing.Color.White;
+            this.btnAllVideo.Name = "btnAllVideo";
+            this.btnAllVideo.Size = new System.Drawing.Size(101, 44);
+            this.btnAllVideo.Text = "全部显示";
             // 
             // btnVideo1
             // 
@@ -110,13 +118,13 @@
             this.btnVideo4.Size = new System.Drawing.Size(71, 44);
             this.btnVideo4.Text = "4放大";
             // 
-            // btnAllVideo
+            // btnRefresh
             // 
-            this.btnAllVideo.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnAllVideo.ForeColor = System.Drawing.Color.White;
-            this.btnAllVideo.Name = "btnAllVideo";
-            this.btnAllVideo.Size = new System.Drawing.Size(101, 44);
-            this.btnAllVideo.Text = "全部显示";
+            this.btnRefresh.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(61, 44);
+            this.btnRefresh.Text = "刷新";
             // 
             // panel1
             // 
@@ -220,14 +228,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // 刷新ToolStripMenuItem
-            // 
-            this.刷新ToolStripMenuItem.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.刷新ToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.刷新ToolStripMenuItem.Name = "刷新ToolStripMenuItem";
-            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(61, 44);
-            this.刷新ToolStripMenuItem.Text = "刷新";
-            // 
             // VideoMonitorWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -284,6 +284,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolStripMenuItem 刷新ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnRefresh;
     }
 }
