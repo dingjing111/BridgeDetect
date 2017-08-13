@@ -8,22 +8,22 @@ using System.Media;
 using System.Text;
 using System.Windows.Forms;
 
-namespace BridgeDetectSystem
+namespace BridgeDetectSystem.windows
 {
-    public partial class WarningDialog : MetroFramework.Forms.MetroForm
+    public partial class WarningWin : MetroFramework.Forms.MetroForm
     {
-        public WarningDialog(string s)
+        public WarningWin()
         {
             InitializeComponent();
-            label2.Text = s;
         }
-        SoundPlayer sp = new SoundPlayer();
-        private void WarningDialog_Load(object sender, EventArgs e)
+
+        private void WarningWin_Load(object sender, EventArgs e)
         {
-            
-            sp.SoundLocation =GetPath();
+            sp.SoundLocation = GetPath();
             sp.PlayLooping();
         }
+        SoundPlayer sp = new SoundPlayer();
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -32,9 +32,14 @@ namespace BridgeDetectSystem
             this.Close();
         }
         private static string GetPath()
-        {          
-           string Path = @"../../warningwave\WarningVoice.wav";          
-           return Path;
+        {
+            string Path = @"../../warningwave\WarningVoice.wav";
+            return Path;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

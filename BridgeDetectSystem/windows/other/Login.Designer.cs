@@ -221,10 +221,6 @@ namespace BridgeDetectSystem
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private MetroFramework.Controls.MetroButton btnCancel;
-
-
-
-
     }
 }
 

@@ -27,9 +27,6 @@ namespace BridgeDetectSystem
             this.panel6.Width = this.panel3.Width / 2;
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

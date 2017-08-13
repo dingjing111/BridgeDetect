@@ -78,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="windows\WarningWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\WarningWin.Designer.cs">
+      <DependentUpon>WarningWin.cs</DependentUpon>
+    </Compile>
     <Compile Include="windows\work\AmplifiedVideo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     <Compile Include="windows\other\WarningDialog.Designer.cs">
       <DependentUpon>WarningDialog.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="windows\WarningWin.resx">
+      <DependentUpon>WarningWin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="windows\work\AmplifiedVideo.resx">
       <DependentUpon>AmplifiedVideo.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,7 +248,10 @@
   <ItemGroup>
     <Content Include="image\banner.jpg" />
     <Content Include="ico\logo.ico" />
+    <Content Include="image\warning.png" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\warn.jpg" />
     <Content Include="warningwave\WarningVoice.wav" />
   </ItemGroup>
   <ItemGroup />

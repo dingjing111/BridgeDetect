@@ -101,5 +101,7 @@ namespace BridgeDetectSystem
         {
             this.Close();
         }
+
+       
     }
 }

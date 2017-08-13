@@ -45,6 +45,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -65,11 +66,12 @@
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(93)))), ((int)(((byte)(152)))));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAllVideo,
             this.btnVideo1,
             this.btnVideo2,
             this.btnVideo3,
             this.btnVideo4,
-            this.btnAllVideo});
+            this.刷新ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(22, 72);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1108, 48);
@@ -83,7 +85,6 @@
             this.btnVideo1.Name = "btnVideo1";
             this.btnVideo1.Size = new System.Drawing.Size(71, 44);
             this.btnVideo1.Text = "1放大";
-            this.btnVideo1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // btnVideo2
             // 
@@ -219,6 +220,14 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // 刷新ToolStripMenuItem
+            // 
+            this.刷新ToolStripMenuItem.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.刷新ToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.刷新ToolStripMenuItem.Name = "刷新ToolStripMenuItem";
+            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(61, 44);
+            this.刷新ToolStripMenuItem.Text = "刷新";
+            // 
             // VideoMonitorWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -275,5 +284,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem 刷新ToolStripMenuItem;
     }
 }
