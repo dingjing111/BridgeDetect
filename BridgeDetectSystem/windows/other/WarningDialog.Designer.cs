@@ -41,9 +41,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(433, 66);
+            this.label1.Location = new System.Drawing.Point(434, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 40);
+            this.label1.Size = new System.Drawing.Size(143, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "请注意！";
             // 
@@ -54,7 +54,7 @@
             this.label2.ForeColor = System.Drawing.Color.Red;
             this.label2.Location = new System.Drawing.Point(286, 274);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 60);
+            this.label2.Size = new System.Drawing.Size(116, 48);
             this.label2.TabIndex = 1;
             this.label2.Text = "warn";
             // 
@@ -80,7 +80,7 @@
             // 
             // WarningDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -100,6 +100,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "报警提示";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WarningDialog_FormClosing);
             this.Load += new System.EventHandler(this.WarningDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -10,18 +10,37 @@ using System.Windows.Forms;
 
 namespace BridgeDetectSystem
 {
-    public partial class WarningDialog : MetroFramework.Forms.MetroForm
+    public partial class WarningDialog : Form
     {
-        public WarningDialog(string s)
+        public WarningDialog()
         {
             InitializeComponent();
-            label2.Text = s;
         }
+
+        private static object obj = new object();
+        private static WarningDialog instance;
+
+        public static WarningDialog GetInstance()
+        {
+            if (instance == null)
+            {
+                lock (obj)
+                {
+                    if (instance == null)
+                    {
+                        instance = new WarningDialog();
+                    }
+                }
+            }
+
+            return instance;
+        }
+
         SoundPlayer sp = new SoundPlayer();
         private void WarningDialog_Load(object sender, EventArgs e)
         {
             
-            sp.SoundLocation =GetPath();
+            sp.SoundLocation = @"C:\Users\dingjing\Desktop\warningsound\2.wav";
             sp.PlayLooping();
         }
 
@@ -31,10 +50,16 @@ namespace BridgeDetectSystem
             sp.Dispose();
             this.Close();
         }
-        private static string GetPath()
-        {          
-           string Path = @"../../warningwave\WarningVoice.wav";          
-           return Path;
+
+        internal static void DoWork(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void WarningDialog_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
         }
     }
 }
