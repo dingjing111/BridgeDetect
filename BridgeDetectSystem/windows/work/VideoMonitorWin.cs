@@ -18,21 +18,6 @@ namespace BridgeDetectSystem
         public VideoMonitorWin()
         {
             InitializeComponent();
-            instance = this;
-        }
-
-        private static volatile VideoMonitorWin instance = null;
-        private static object obj = new object();
-        public static VideoMonitorWin GetInstance()
-        {
-            lock (obj)
-            {
-                if (instance == null)
-                {
-                    new VideoMonitorWin();
-                }
-            }
-            return instance;
         }
 
         private void VideoMonitor_Load(object sender, EventArgs e)
@@ -41,7 +26,7 @@ namespace BridgeDetectSystem
 
             ShowPreview();
         }
-
+        
         private void initial()
         {
             #region 窗体初始化
@@ -78,17 +63,20 @@ namespace BridgeDetectSystem
         {
             for (int i = 0; i < 4; i++)
             {
-                PictureBox picbox = (PictureBox)this.panel1.Controls.Find("picBox" + (i + 1), true)[0];
-                try
+                Control[] ctr = this.panel1.Controls.Find("picBox" + (i + 1), true);
+                if (ctr.Length > 0)
                 {
-                    player.Preview(picbox, i);
-                }
-                catch (VideoPlayerException ex)
-                {
-                    MessageBox.Show("第" + (i + 1) + "路摄像头出现问题：" + ex.Message);
+                    PictureBox picbox = (PictureBox)ctr[0];
+                    try
+                    {
+                        player.Preview(picbox, i);
+                    }
+                    catch (VideoPlayerException ex)
+                    {
+                        MessageBox.Show("第" + (i + 1) + "路摄像头出现问题：" + ex.Message);
+                    }
                 }
             }
-
         }
 
         private void StopPreview()
@@ -112,12 +100,9 @@ namespace BridgeDetectSystem
             }
         }
 
-
-
         private void VideoMonitorWin_FormClosing_1(object sender, FormClosingEventArgs e)
         {
             player.CleanUp();
-            instance = null;
         }
 
         private void RemoveAllPanelAndPictureBox()
@@ -146,7 +131,7 @@ namespace BridgeDetectSystem
             PictureBox picbox = (PictureBox)Controls["picBox1"];
             try
             {
-                player.Preview(picbox, index);
+                player.Preview(picbox, index,0);
             }
             catch (VideoPlayerException ex)
             {
@@ -185,10 +170,9 @@ namespace BridgeDetectSystem
         private void btnAllVideo_Click(object sender, EventArgs e)
         {
             this.Close();
-            VideoMonitorWin win = VideoMonitorWin.GetInstance();
+            VideoMonitorWin win = new VideoMonitorWin();
             win.Show();
         }
-
 
     }
 }

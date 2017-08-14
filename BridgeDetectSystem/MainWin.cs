@@ -120,7 +120,7 @@ namespace BridgeDetectSystem
         /// <param name="e"></param>
         private void btnWalking_Click(object sender, EventArgs e)
         {
-            VideoMonitorWin win = VideoMonitorWin.GetInstance();
+            VideoMonitorWin win = new VideoMonitorWin();
             win.Show();
         }
 

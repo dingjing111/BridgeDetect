@@ -199,7 +199,8 @@ namespace BridgeDetectSystem.video
         /// </summary>
         /// <param name="RealPlayWnd">窗口PictureBox控件</param>
         /// <param name="index">预览的设备通道</param>
-        public void Preview(System.Windows.Forms.PictureBox RealPlayWnd, int index)
+        /// <param name="StreamType">码流类型，默认为子码流1，主码流的代码为0</param>
+        public void Preview(System.Windows.Forms.PictureBox RealPlayWnd, int index,uint StreamType=1)
         {
             if (m_lUserID < 0)
             {
@@ -210,7 +211,7 @@ namespace BridgeDetectSystem.video
                 CHCNetSDK.NET_DVR_PREVIEWINFO lpPreviewInfo = new CHCNetSDK.NET_DVR_PREVIEWINFO();
                 lpPreviewInfo.hPlayWnd = RealPlayWnd.Handle;//预览窗口 live view window
                 lpPreviewInfo.lChannel = iChannelNum[index];//预览的设备通道 the device channel number
-                lpPreviewInfo.dwStreamType = 1;//码流类型：0-主码流，1-子码流，2-码流3，3-码流4，以此类推
+                lpPreviewInfo.dwStreamType = StreamType;//码流类型：0-主码流，1-子码流，2-码流3，3-码流4，以此类推
                 lpPreviewInfo.dwLinkMode = 0;//连接方式：0- TCP方式，1- UDP方式，2- 多播方式，3- RTP方式，4-RTP/RTSP，5-RSTP/HTTP 
                 lpPreviewInfo.bBlocked = true; //0- 非阻塞取流，1- 阻塞取流
                 lpPreviewInfo.dwDisplayBufNum = 1; //播放库显示缓冲区最大帧数
