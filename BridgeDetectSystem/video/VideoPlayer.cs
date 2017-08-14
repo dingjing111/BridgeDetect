@@ -12,15 +12,7 @@ namespace BridgeDetectSystem.video
     /// dll调用顺序：
     /// 1.初始化SDK(NET_DVR_Init)->2.用户注册设备(NET_DVR_Login_V30)->3.视频预览模块->4.注销设备(NET_DVR_Logout)
     /// 
-    /// 此类使用方法：
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
+   
     public class VideoPlayerException : Exception
     {
         public VideoPlayerException(string message) : base(message) { }
@@ -56,7 +48,26 @@ namespace BridgeDetectSystem.video
 
         #endregion
 
-        public VideoPlayer(string DVRIPAddress, string DVRUserName, string DVRPassword, Int16 DVRPortNumber = 8000)
+        private static VideoPlayer instance = null;
+        public static VideoPlayer GetInstance()
+        {
+            if (instance == null)
+            {
+                throw new VideoPlayerException("未初始化视频播放类");
+            }
+            return instance;
+        }
+
+        public static void initClass(string DVRIPAddress, string DVRUserName, string DVRPassword, Int16 DVRPortNumber = 8000)
+        {
+            if (instance != null)
+            {
+                return;
+            }
+            instance = new VideoPlayer(DVRIPAddress, DVRUserName, DVRPassword,DVRPortNumber);
+        }
+
+        private VideoPlayer(string DVRIPAddress, string DVRUserName, string DVRPassword, Int16 DVRPortNumber = 8000)
         {
             this.DVRIPAddress = DVRIPAddress;
             this.DVRPortNumber = DVRPortNumber;
@@ -186,9 +197,10 @@ namespace BridgeDetectSystem.video
         /// <summary>
         /// 实时预览
         /// </summary>
-        /// <param name="RealPlayWnd"></param>
-        /// <param name="index"></param>
-        public void Preview(System.Windows.Forms.PictureBox RealPlayWnd, int index)
+        /// <param name="RealPlayWnd">窗口PictureBox控件</param>
+        /// <param name="index">预览的设备通道</param>
+        /// <param name="StreamType">码流类型，默认为子码流1，主码流的代码为0</param>
+        public void Preview(System.Windows.Forms.PictureBox RealPlayWnd, int index,uint StreamType=1)
         {
             if (m_lUserID < 0)
             {
@@ -199,7 +211,7 @@ namespace BridgeDetectSystem.video
                 CHCNetSDK.NET_DVR_PREVIEWINFO lpPreviewInfo = new CHCNetSDK.NET_DVR_PREVIEWINFO();
                 lpPreviewInfo.hPlayWnd = RealPlayWnd.Handle;//预览窗口 live view window
                 lpPreviewInfo.lChannel = iChannelNum[index];//预览的设备通道 the device channel number
-                lpPreviewInfo.dwStreamType = 1;//码流类型：0-主码流，1-子码流，2-码流3，3-码流4，以此类推
+                lpPreviewInfo.dwStreamType = StreamType;//码流类型：0-主码流，1-子码流，2-码流3，3-码流4，以此类推
                 lpPreviewInfo.dwLinkMode = 0;//连接方式：0- TCP方式，1- UDP方式，2- 多播方式，3- RTP方式，4-RTP/RTSP，5-RSTP/HTTP 
                 lpPreviewInfo.bBlocked = true; //0- 非阻塞取流，1- 阻塞取流
                 lpPreviewInfo.dwDisplayBufNum = 1; //播放库显示缓冲区最大帧数
@@ -234,11 +246,14 @@ namespace BridgeDetectSystem.video
         public void StopPreview(System.Windows.Forms.PictureBox RealPlayWnd, int index)
         {
             //停止预览 Stop live view 
-            if (!CHCNetSDK.NET_DVR_StopRealPlay(m_lRealHandle[index]))
+            if (m_lRealHandle[index] != -1)
             {
-                iLastErr = CHCNetSDK.NET_DVR_GetLastError();
-                str = "NET_DVR_StopRealPlay failed, error code= " + iLastErr;
-                throw new VideoPlayerException(str);
+                if (!CHCNetSDK.NET_DVR_StopRealPlay(m_lRealHandle[index]))
+                {
+                    iLastErr = CHCNetSDK.NET_DVR_GetLastError();
+                    str = "NET_DVR_StopRealPlay failed, error code= " + iLastErr;
+                    throw new VideoPlayerException(str);
+                }
             }
             m_lRealHandle[index] = -1;
             RealPlayWnd.Invalidate();//刷新窗体
