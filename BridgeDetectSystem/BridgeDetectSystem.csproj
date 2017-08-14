@@ -176,12 +176,6 @@
     <Compile Include="windows\other\UserRightWin.Designer.cs">
       <DependentUpon>UserRightWin.cs</DependentUpon>
     </Compile>
-    <Compile Include="windows\other\WarningDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="windows\other\WarningDialog.Designer.cs">
-      <DependentUpon>WarningDialog.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="windows\other\WarningWin.resx">
       <DependentUpon>WarningWin.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,9 +221,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="windows\other\UserRightWin.resx">
       <DependentUpon>UserRightWin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="windows\other\WarningDialog.resx">
-      <DependentUpon>WarningDialog.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
