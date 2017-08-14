@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BridgeDetectSystem.windows;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace BridgeDetectSystem.service
 {
     class WarningDialogManager
     {
-        public BackgroundWorker bgWork;
+        private BackgroundWorker bgWork;
         private static int count = 0;//测试用
 
         public WarningDialogManager()
@@ -51,7 +52,7 @@ namespace BridgeDetectSystem.service
             WarningDialog warningform = WarningDialog.GetInstance();
             warningform.Show();
             warningform.TopMost = true;
-            warningform.Invoke(new InvokeMethod(WarningDialog.DoWork), count);
+            warningform.Invoke(new InvokeMethod(warningform.DoWork), count);
         }
     }
 }

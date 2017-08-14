@@ -78,13 +78,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="windows\other\WarningWin.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="windows\other\WarningWin.Designer.cs">
-      <DependentUpon>WarningWin.cs</DependentUpon>
+    <Compile Include="TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="dao\MyEventArgs.cs" />
+    <Compile Include="windows\other\WarningDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\other\WarningDialog.Designer.cs">
+      <DependentUpon>WarningDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="entity\MyEventArgs.cs" />
     <Compile Include="service\WarningDialogManager.cs" />
     <Compile Include="video\CHCNetSDK.cs" />
     <Compile Include="video\PlayCtrl.cs" />
@@ -170,14 +181,11 @@
     <Compile Include="windows\other\UserRightWin.Designer.cs">
       <DependentUpon>UserRightWin.cs</DependentUpon>
     </Compile>
-    <Compile Include="windows\other\WarningDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="windows\other\WarningDialog.Designer.cs">
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="windows\other\WarningDialog.resx">
       <DependentUpon>WarningDialog.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="windows\other\WarningWin.resx">
-      <DependentUpon>WarningWin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="windows\work\VideoMonitorWin.resx">
       <DependentUpon>VideoMonitorWin.cs</DependentUpon>
@@ -203,6 +211,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="windows\record\SteeveDisplaceRecord.resx">
       <DependentUpon>SteeveDisplaceRecord.cs</DependentUpon>
@@ -218,9 +227,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="windows\other\UserRightWin.resx">
       <DependentUpon>UserRightWin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="windows\other\WarningDialog.resx">
-      <DependentUpon>WarningDialog.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
