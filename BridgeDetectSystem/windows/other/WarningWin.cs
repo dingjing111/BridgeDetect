@@ -25,21 +25,19 @@ namespace BridgeDetectSystem.windows
         SoundPlayer sp = new SoundPlayer();
        
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            sp.Stop();
-            sp.Dispose();
-            this.Close();
-        }
+      
         private static string GetPath()
         {
             string Path = @"../../warningwave\WarningVoice.wav";
             return Path;
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            sp.Stop();
+            sp.Dispose();
             this.Close();
+            
         }
     }
 }

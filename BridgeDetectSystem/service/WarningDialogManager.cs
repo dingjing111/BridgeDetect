@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BridgeDetectSystem.windows;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -48,10 +49,10 @@ namespace BridgeDetectSystem.service
         delegate void InvokeMethod(object obj);
         private void BgProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            WarningDialog warningform = WarningDialog.GetInstance();
-            warningform.Show();
-            warningform.TopMost = true;
-            warningform.Invoke(new InvokeMethod(WarningDialog.DoWork), count);
+            //WarningWin warningform = WarningWin.GetInstance();
+            //warningform.Show();
+            //warningform.TopMost = true;
+            //warningform.Invoke(new InvokeMethod(WarningWin.DoWork), count);
         }
     }
 }
