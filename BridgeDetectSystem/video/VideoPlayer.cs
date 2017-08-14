@@ -12,15 +12,7 @@ namespace BridgeDetectSystem.video
     /// dll调用顺序：
     /// 1.初始化SDK(NET_DVR_Init)->2.用户注册设备(NET_DVR_Login_V30)->3.视频预览模块->4.注销设备(NET_DVR_Logout)
     /// 
-    /// 此类使用方法：
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
+   
     public class VideoPlayerException : Exception
     {
         public VideoPlayerException(string message) : base(message) { }
@@ -56,7 +48,26 @@ namespace BridgeDetectSystem.video
 
         #endregion
 
-        public VideoPlayer(string DVRIPAddress, string DVRUserName, string DVRPassword, Int16 DVRPortNumber = 8000)
+        private static VideoPlayer instance = null;
+        public static VideoPlayer GetInstance()
+        {
+            if (instance == null)
+            {
+                throw new VideoPlayerException("未初始化视频播放类");
+            }
+            return instance;
+        }
+
+        public static void initClass(string DVRIPAddress, string DVRUserName, string DVRPassword, Int16 DVRPortNumber = 8000)
+        {
+            if (instance != null)
+            {
+                return;
+            }
+            instance = new VideoPlayer(DVRIPAddress, DVRUserName, DVRPassword,DVRPortNumber);
+        }
+
+        private VideoPlayer(string DVRIPAddress, string DVRUserName, string DVRPassword, Int16 DVRPortNumber = 8000)
         {
             this.DVRIPAddress = DVRIPAddress;
             this.DVRPortNumber = DVRPortNumber;
@@ -186,8 +197,8 @@ namespace BridgeDetectSystem.video
         /// <summary>
         /// 实时预览
         /// </summary>
-        /// <param name="RealPlayWnd"></param>
-        /// <param name="index"></param>
+        /// <param name="RealPlayWnd">窗口PictureBox控件</param>
+        /// <param name="index">预览的设备通道</param>
         public void Preview(System.Windows.Forms.PictureBox RealPlayWnd, int index)
         {
             if (m_lUserID < 0)
@@ -234,11 +245,14 @@ namespace BridgeDetectSystem.video
         public void StopPreview(System.Windows.Forms.PictureBox RealPlayWnd, int index)
         {
             //停止预览 Stop live view 
-            if (!CHCNetSDK.NET_DVR_StopRealPlay(m_lRealHandle[index]))
+            if (m_lRealHandle[index] != -1)
             {
-                iLastErr = CHCNetSDK.NET_DVR_GetLastError();
-                str = "NET_DVR_StopRealPlay failed, error code= " + iLastErr;
-                throw new VideoPlayerException(str);
+                if (!CHCNetSDK.NET_DVR_StopRealPlay(m_lRealHandle[index]))
+                {
+                    iLastErr = CHCNetSDK.NET_DVR_GetLastError();
+                    str = "NET_DVR_StopRealPlay failed, error code= " + iLastErr;
+                    throw new VideoPlayerException(str);
+                }
             }
             m_lRealHandle[index] = -1;
             RealPlayWnd.Invalidate();//刷新窗体
