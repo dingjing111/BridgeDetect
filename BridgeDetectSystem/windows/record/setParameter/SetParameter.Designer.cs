@@ -113,7 +113,7 @@
             this.tableLayoutPanel2.Controls.Add(this.btnSave, 1, 8);
             this.tableLayoutPanel2.Controls.Add(this.btnBack, 4, 8);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 26);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 22);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 12;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
@@ -128,7 +128,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(552, 797);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(552, 801);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // lblAnchorForceLimit
@@ -248,7 +248,7 @@
             this.grpSetSteevePara.Size = new System.Drawing.Size(550, 826);
             this.grpSetSteevePara.TabIndex = 0;
             this.grpSetSteevePara.TabStop = false;
-            this.grpSetSteevePara.Text = "吊杆参数设置";
+            this.grpSetSteevePara.Text = "吊杆报警参数设置";
             // 
             // tableLayoutPanel1
             // 
@@ -270,7 +270,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblSteeveForceDiffLimit, 0, 11);
             this.tableLayoutPanel1.Controls.Add(this.metroTextBox1, 2, 11);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 26);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 22);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 13;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692545F));
@@ -287,7 +287,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692544F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.689467F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(544, 797);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(544, 801);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // lblUpDis
@@ -424,7 +424,7 @@
             // 
             // SetParameter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 922);
             this.Controls.Add(this.panel1);

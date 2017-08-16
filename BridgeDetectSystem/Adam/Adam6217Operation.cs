@@ -12,8 +12,6 @@ namespace PSW2AdamTeach
 
         //标志：modbus通信是否已经开始
         private bool modbusStart;
-        //接收的数据数量
-        public int recCount { get; set; }
         //AdamSocker类型变量
         private AdamSocket adamModbus;
         //从站IP地址
@@ -31,11 +29,23 @@ namespace PSW2AdamTeach
         //研华系列总型号
         private Advantech.Adam.AdamType adamSeries;
 
+        public override int id
+        {
+            get;set;
+        }
+
+        public override Dictionary<int, string> dataDic
+        {
+            get;
+        }
+
         #endregion
 
         #region 构造函数
-        public Adam6217Operation(string ip)
+        public Adam6217Operation(string ip,int id)
         {
+            this.id = id;
+            dataDic = new Dictionary<int, string>();
             adamModbus = new AdamSocket();
             slaveIp = ip;
             modbusPort = 502;
@@ -80,10 +90,10 @@ namespace PSW2AdamTeach
         /// 读取全部通道数据过程
         /// </summary>
         /// <returns>返回全部通道字符串数据</returns>
-        public override List<string> Read()
+        public override Dictionary<int,string> Read()
         {
-            string[] strs = GetAllChannelValue();
-            return new List<string>(strs);
+            return GetAllChannelValue();
+            
         }
 
         /// <summary>
@@ -112,7 +122,6 @@ namespace PSW2AdamTeach
         private void Initalize()
         {
             modbusStart = false;
-            recCount = 0;
             adamModbus.AdamSeriesType = adamSeries;
             channelTotal = AnalogInput.GetChannelTotal(adamType);
             channelEnabled = new bool[channelTotal];
@@ -137,9 +146,10 @@ namespace PSW2AdamTeach
         /// 返回所有通道的数据，格式处理在这里设置
         /// </summary>
         /// <returns></returns>
-        private string[] GetAllChannelValue()
+        private Dictionary<int,string> GetAllChannelValue()
         {
-            string[] values = new string[channelTotal];
+            //string[] values = new string[channelTotal];
+            string value = "";
             int startIndex = 1;
             int[] data;
             float[] fValue = new float[channelTotal];
@@ -152,7 +162,9 @@ namespace PSW2AdamTeach
                     if (channelEnabled[i])
                     {
                         string valueFormat = AnalogInput.GetFloatFormat(adamType, channelRange[i]);
-                        values[i] = fValue[i].ToString(valueFormat) + " " + AnalogInput.GetUnitName(adamType, channelRange[i]);
+                        //values[i] = fValue[i].ToString(valueFormat) + " " + AnalogInput.GetUnitName(adamType, channelRange[i]);
+                        value = fValue[i].ToString(valueFormat);
+                        dataDic[i]= value;
                     }
                 }
             }
@@ -160,7 +172,7 @@ namespace PSW2AdamTeach
             {
                 throw new Adam6217OperationException("ip为：" + slaveIp + "，研华adam6217模块读取输入通道数据失败。");
             }
-            return values;
+            return dataDic;
         }
 
         /// <summary>

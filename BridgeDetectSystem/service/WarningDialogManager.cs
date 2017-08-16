@@ -24,13 +24,13 @@ namespace BridgeDetectSystem.service
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BgDoWork(object sender,DoWorkEventArgs e)
+        private void BgDoWork(object sender, DoWorkEventArgs e)
         {
             Thread.CurrentThread.Name = "报警后台线程";
             //写判断逻辑,
             while (true)
             {
-                if((count++ % 10) == 0)
+                if ((count++ % 10) == 0)
                 {
                     bgWork.ReportProgress(count);
                 }
