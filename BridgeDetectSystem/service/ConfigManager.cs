@@ -75,7 +75,7 @@ namespace BridgeDetectSystem.service
             basket_allowDisDiffLimit,
             //吊杆
             steeve_DisDiffLimit,
-            steeve_ForceUpLimit,
+            steeve_ForceLimit,
             steeve_ForceDiffLimit,
             //锚杆
             anchor_ForceLimit,
@@ -125,7 +125,7 @@ namespace BridgeDetectSystem.service
                 {ConfigKeys.basket_allowDisDiffLimit,new ConfigItem("挂篮位移允许误差", 0, 1000, 100 ) },
 
                 {ConfigKeys.steeve_DisDiffLimit,new ConfigItem("吊杆位移差值上限", 0, 1000, 100 ) },
-                {ConfigKeys.steeve_ForceUpLimit,new ConfigItem("吊杆受力上限", 0, 1000, 100 ) },
+                {ConfigKeys.steeve_ForceLimit,new ConfigItem("吊杆受力上限", 0, 1000, 100 ) },
                 {ConfigKeys.steeve_ForceDiffLimit,new ConfigItem("吊杆力差值上限", 0, 1000, 100 ) },
 
                 {ConfigKeys.anchor_ForceLimit,new ConfigItem("锚杆力上限", 0, 1000, 100 ) },
@@ -318,7 +318,6 @@ namespace BridgeDetectSystem.service
         //public double frontPivotDisLimit { get; set; }
 
     }
-
 
     public class ConfigManagerException : Exception
     {

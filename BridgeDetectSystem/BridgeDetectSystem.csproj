@@ -165,7 +165,6 @@
     <Compile Include="windows\record\AnchorForceRecord.Designer.cs">
       <DependentUpon>AnchorForceRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="util\Drawer.cs" />
     <Compile Include="windows\record\FrontPivotRecord.cs">
       <SubType>Form</SubType>
     </Compile>
