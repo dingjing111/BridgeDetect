@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Net.Sockets;
 
-namespace PSW2AdamTeach
+namespace BridgeDetectSystem.adam
 {
     public class Adam6217Operation : AdamOperation
     {

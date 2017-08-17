@@ -10,8 +10,9 @@ using log4net;
 using BridgeDetectSystem.windows;
 using BridgeDetectSystem.service;
 using BridgeDetectSystem.util;
-using PSW2AdamTeach;
+using BridgeDetectSystem.service;
 using System.Reflection;
+using BridgeDetectSystem.adam;
 
 namespace BridgeDetectSystem
 {

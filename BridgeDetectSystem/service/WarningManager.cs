@@ -1,4 +1,5 @@
-﻿using BridgeDetectSystem.entity;
+﻿using BridgeDetectSystem.adam;
+using BridgeDetectSystem.entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -24,7 +24,6 @@ namespace BridgeDetectSystem
         {
             this.initial();
 
-            ShowPreview();
         }
         
         private void initial()
@@ -55,7 +54,7 @@ namespace BridgeDetectSystem
                 MessageBox.Show("视频预览初始化出错! " + ex.Message);
                 return;
             }
-
+            ShowPreview();
             #endregion
         }
 
@@ -135,7 +134,7 @@ namespace BridgeDetectSystem
             }
             catch (VideoPlayerException ex)
             {
-                MessageBox.Show("第" + index + "路摄像头出现问题：" + ex.Message);
+                MessageBox.Show("第" + (index+1) + "路摄像头出现问题：" + ex.Message);
             }
         }
 

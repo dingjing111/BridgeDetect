@@ -25,7 +25,7 @@ namespace PSW2NPOI
         /// 转换datatable数据为Excel表格
         /// </summary>
         /// <param name="dt"></param>
-        public void ConvertTableToExcel(DataTable dt,string tableName=null)
+        public void ConvertTableToExcel(DataTable dt, string tableName = null)
         {
             HSSFSheet sheet;
 
@@ -55,6 +55,11 @@ namespace PSW2NPOI
                 HSSFRow row = (HSSFRow)sheet.CreateRow(i);
                 for (int j = 0; j < dt.Columns.Count; j++)
                 {
+                    var v = dt.Rows[i][j].ToString();
+                    if (dt.Rows[i][j].ToString()=="")
+                    {
+                        break;
+                    }
                     row.CreateCell(j).SetCellValue(dt.Rows[i][j].ToString());
                 }
             }
@@ -81,6 +86,7 @@ namespace PSW2NPOI
             workBook.Write(fileStream);
             fileStream.Close();
         }
+
 
     }
 }

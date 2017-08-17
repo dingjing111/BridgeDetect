@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PSW2AdamTeach
+namespace BridgeDetectSystem.adam
 {
     public abstract class AdamOperation 
     {

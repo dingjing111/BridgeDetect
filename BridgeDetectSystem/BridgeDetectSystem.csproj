@@ -102,17 +102,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adam\Adam6217Operation.cs" />
-    <Compile Include="Adam\AdamOperation.cs" />
+    <Compile Include="adam\Adam6217Operation.cs" />
+    <Compile Include="adam\AdamOperation.cs" />
     <Compile Include="entity\Anchor.cs" />
+    <Compile Include="service\ConfigManager.cs" />
     <Compile Include="service\ExportToExcel.cs" />
     <Compile Include="service\OperateSql.cs" />
-    <Compile Include="service\ParameterManager.cs" />
     <Compile Include="entity\FrontPivot.cs" />
     <Compile Include="entity\RailWay.cs" />
     <Compile Include="entity\Sensor.cs" />
     <Compile Include="entity\Steeve.cs" />
-    <Compile Include="Adam\AdamHelper.cs" />
+    <Compile Include="adam\AdamHelper.cs" />
     <Compile Include="NPOI\NPOIHelper.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -137,6 +137,12 @@
     <Compile Include="video\CHCNetSDK.cs" />
     <Compile Include="video\PlayCtrl.cs" />
     <Compile Include="video\VideoPlayer.cs" />
+    <Compile Include="windows\other\WarningWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\other\WarningWin.Designer.cs">
+      <DependentUpon>WarningWin.cs</DependentUpon>
+    </Compile>
     <Compile Include="windows\work\VideoMonitorWin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     <EmbeddedResource Include="windows\other\WarningDialog.resx">
       <DependentUpon>WarningDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="windows\other\WarningWin.resx">
+      <DependentUpon>WarningWin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="windows\work\VideoMonitorWin.resx">
       <DependentUpon>VideoMonitorWin.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,6 +292,7 @@
     <Content Include="image\warning2.jpg" />
     <Content Include="MetroFramework.txt" />
     <Content Include="warningwave\WarningVoice.wav" />
+    <Content Include="warningwave\WarningVoice2.wav" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

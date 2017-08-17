@@ -1,9 +1,10 @@
-﻿using PSW2AdamTeach;
+﻿using BridgeDetectSystem.service;
 using System;
 using System.Collections.Generic;
 using System.Threading;
 using BridgeDetectSystem.entity;
-namespace BridgeDetectSystem.service
+
+namespace BridgeDetectSystem.adam
 {
     public class AdamHelper
     {
