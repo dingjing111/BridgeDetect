@@ -15,6 +15,7 @@ namespace BridgeDetectSystem
         {
             InitializeComponent();
         }
+
         private void initial()
         {
             this.panel2.Width = this.panel1.Width / 2;
@@ -23,6 +24,7 @@ namespace BridgeDetectSystem
         private void SteeveParaSet_Load(object sender, EventArgs e)
         {
             this.initial();
+
         }
 
        

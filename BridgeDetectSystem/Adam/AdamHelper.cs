@@ -10,10 +10,10 @@ namespace BridgeDetectSystem.service
         #region  字段
 
         private List<AdamOperation> list;
-        private Timer readTimer;
         private Dictionary<int, Dictionary<int, string>> allDataDic;
         
 
+        public Timer readTimer { get; set; }
         public Dictionary<int, Steeve> steeveDic { get; }
         public Dictionary<int, Anchor> anchorDic { get; }
         public Dictionary<int, FrontPivot> frontPivotDic { get; }
@@ -30,7 +30,7 @@ namespace BridgeDetectSystem.service
             this.steeveDic = new Dictionary<int, Steeve>();
             this.anchorDic = new Dictionary<int, Anchor>();
             this.frontPivotDic = new Dictionary<int, FrontPivot>();
-            this.railWayDic = new Dictionary<int, RailWay>();
+            this.railWayDic = new Dictionary<int, RailWay>(); 
 
             try
             {
@@ -92,6 +92,9 @@ namespace BridgeDetectSystem.service
             }
         }
 
+        /// <summary>
+        /// 增加模块，只需要改变这个方法中的算法就行了。
+        /// </summary>
         private void ConvertToRealValue()
         {
             Dictionary<int, string> tempDic;

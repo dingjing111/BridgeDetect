@@ -60,13 +60,17 @@ namespace BridgeDetectSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var dic = adamHelper.steeveDic;
-            StringBuilder sb = new StringBuilder();
-            foreach(var d in dic)
+            while (true)
             {
-                sb.Append("key: " + d.Key).Append("; value: " + d.Value);
+                var dic = adamHelper.steeveDic;
+                StringBuilder sb = new StringBuilder();
+                foreach (var d in dic)
+                {
+                    sb.Append("key: " + d.Key).Append("; value: " + d.Value.GetForce() + "|" + d.Value.GetDisplace());
+                    sb.Append("\n");
+                }
+                MessageBox.Show(sb.ToString());
             }
-            MessageBox.Show(sb.ToString());
         }
     }
 }
