@@ -8,7 +8,7 @@ namespace BridgeDetectSystem.service
 {
     class WarningManager
     {
-        private ParameterManager config;
+        private ConfigManager config;
         private AdamHelper adamHelper;
 
 

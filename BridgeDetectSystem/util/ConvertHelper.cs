@@ -8,6 +8,13 @@ namespace BridgeDetectSystem.util
     /// </summary>    
     public sealed class ConvertHelper
     {
+        
+        //public static string DoubleToString(double value,int bitCount)
+        //{
+
+        //}
+
+
         #region 补足位数
         /// <summary>
         /// 指定字符串的固定长度，如果字符串小于固定长度，
