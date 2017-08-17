@@ -105,6 +105,7 @@
     <Compile Include="Adam\Adam6217Operation.cs" />
     <Compile Include="Adam\AdamOperation.cs" />
     <Compile Include="entity\Anchor.cs" />
+    <Compile Include="service\ExportToExcel.cs" />
     <Compile Include="service\OperateSql.cs" />
     <Compile Include="service\ParameterManager.cs" />
     <Compile Include="entity\FrontPivot.cs" />

@@ -1,7 +1,11 @@
 ﻿using BridgeDetectSystem.service;
+using BridgeDetectSystem.util;
+using PSW2NPOI;
 using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.IO;
 
 namespace BridgeDetectSystem
 {
@@ -11,26 +15,18 @@ namespace BridgeDetectSystem
         {
             InitializeComponent();
         }
-
+        string sql = "select * from AnchorForce";
         private void AnchorForceWindow_Load(object sender, EventArgs e)
         {
             this.initial();
+           
             try
             {
-                OperateSql.LoadData(dgv);//加载数据
-                if(dgv.Rows[1].Cells[9].Value.ToString()=="")
-                {
-                    dgv.Columns[16].Visible = false;
-                    dgv.Columns[9].Visible = false;
-                    dgv.Columns[10].Visible = false;
-                    dgv.Columns[11].Visible = false;
-                    dgv.Columns[12].Visible = false;
-                    dgv.Columns[13].Visible = false;
-                    dgv.Columns[14].Visible = false;
-                    dgv.Columns[15].Visible = false;
-                }
+                OperateSql.LoadData(sql, dgv);
+
+
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -87,13 +83,19 @@ namespace BridgeDetectSystem
         {
             try
             {
-                OperateSql.LoadData(dgv);//加载数据
+                OperateSql.LoadData(sql,dgv);//加载数据
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-       
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            string path= @"D:\excelFile\锚杆力记录.xls";
+            ExportToExcel.ExportData(sql, path);
+            MessageBox.Show("操作成功！");
+        }
     }
 }

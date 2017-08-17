@@ -37,7 +37,7 @@
             this.btbDel = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgv = new System.Windows.Forms.DataGridView();
@@ -87,7 +87,7 @@
             this.panel3.Controls.Add(this.btbDel);
             this.panel3.Controls.Add(this.btnInsert);
             this.panel3.Controls.Add(this.btnClose);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btnExport);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 600);
             this.panel3.Name = "panel3";
@@ -137,17 +137,18 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // button1
+            // btnExport
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(115)))), ((int)(((byte)(177)))));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(841, 46);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 46);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "导出";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(115)))), ((int)(((byte)(177)))));
+            this.btnExport.ForeColor = System.Drawing.Color.White;
+            this.btnExport.Location = new System.Drawing.Point(841, 46);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(93, 46);
+            this.btnExport.TabIndex = 3;
+            this.btnExport.Text = "导出";
+            this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // panel2
             // 
@@ -203,7 +204,7 @@
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.Location = new System.Drawing.Point(0, 0);
             this.dgv.Name = "dgv";
-            this.dgv.RowHeadersWidth = 80;
+            this.dgv.RowHeadersWidth = 100;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv.RowTemplate.Height = 27;
@@ -226,97 +227,97 @@
             // 
             // Column4
             // 
-            this.Column4.DataPropertyName = "s1";
+            this.Column4.DataPropertyName = "F1";
             this.Column4.HeaderText = "1(kN)";
             this.Column4.Name = "Column4";
             // 
             // Column5
             // 
-            this.Column5.DataPropertyName = "s2";
+            this.Column5.DataPropertyName = "F2";
             this.Column5.HeaderText = "2(kN)";
             this.Column5.Name = "Column5";
             // 
             // Column6
             // 
-            this.Column6.DataPropertyName = "s3";
+            this.Column6.DataPropertyName = "F3";
             this.Column6.HeaderText = "3(kN)";
             this.Column6.Name = "Column6";
             // 
             // Column7
             // 
-            this.Column7.DataPropertyName = "s4";
+            this.Column7.DataPropertyName = "F4";
             this.Column7.HeaderText = "4(kN)";
             this.Column7.Name = "Column7";
             // 
             // Column9
             // 
-            this.Column9.DataPropertyName = "s5";
+            this.Column9.DataPropertyName = "F5";
             this.Column9.HeaderText = "5(kN)";
             this.Column9.Name = "Column9";
             // 
             // Column10
             // 
-            this.Column10.DataPropertyName = "s6";
+            this.Column10.DataPropertyName = "F6";
             this.Column10.HeaderText = "6(kN)";
             this.Column10.Name = "Column10";
             // 
             // Column11
             // 
-            this.Column11.DataPropertyName = "s7";
+            this.Column11.DataPropertyName = "F7";
             this.Column11.HeaderText = "7(kN)";
             this.Column11.Name = "Column11";
             // 
             // Column12
             // 
-            this.Column12.DataPropertyName = "s8";
+            this.Column12.DataPropertyName = "F8";
             this.Column12.HeaderText = "8(kN)";
             this.Column12.Name = "Column12";
             // 
             // Column8
             // 
-            this.Column8.DataPropertyName = "s9";
+            this.Column8.DataPropertyName = "F9";
             this.Column8.HeaderText = "9(kN)";
             this.Column8.Name = "Column8";
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "s10";
+            this.Column2.DataPropertyName = "F10";
             this.Column2.HeaderText = "10(kN)";
             this.Column2.Name = "Column2";
             // 
             // Column13
             // 
-            this.Column13.DataPropertyName = "s11";
+            this.Column13.DataPropertyName = "F11";
             this.Column13.HeaderText = "11(kN)";
             this.Column13.Name = "Column13";
             // 
             // Column14
             // 
-            this.Column14.DataPropertyName = "s12";
+            this.Column14.DataPropertyName = "F12";
             this.Column14.HeaderText = "12(kN)";
             this.Column14.Name = "Column14";
             // 
             // Column15
             // 
-            this.Column15.DataPropertyName = "s13";
+            this.Column15.DataPropertyName = "F13";
             this.Column15.HeaderText = "13(kN)";
             this.Column15.Name = "Column15";
             // 
             // Column16
             // 
-            this.Column16.DataPropertyName = "s14";
+            this.Column16.DataPropertyName = "F14";
             this.Column16.HeaderText = "14(kN)";
             this.Column16.Name = "Column16";
             // 
             // Column17
             // 
-            this.Column17.DataPropertyName = "s15";
+            this.Column17.DataPropertyName = "F15";
             this.Column17.HeaderText = "15(kN)";
             this.Column17.Name = "Column17";
             // 
             // Column18
             // 
-            this.Column18.DataPropertyName = "s16";
+            this.Column18.DataPropertyName = "F16";
             this.Column18.HeaderText = "16(kN)";
             this.Column18.Name = "Column18";
             // 
@@ -385,7 +386,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Button btbDel;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BridgeDetectSystem.service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,10 +16,22 @@ namespace BridgeDetectSystem
         {
             InitializeComponent();
         }
-
+        string sql = "select * from SteeveForce";
         private void steeveforce_Load(object sender, EventArgs e)
         {
             this.initial();
+          
+            try
+            {
+                OperateSql.LoadData(sql, dgv);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
         #region 初始化窗体
         private void initial()
@@ -33,6 +46,18 @@ namespace BridgeDetectSystem
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgv_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+            e.Row.HeaderCell.Value = string.Format("{0}", e.Row.Index + 1);
+        }
+
+        private void btbExport_Click(object sender, EventArgs e)
+        {
+            string path = @"D:\excelFile\吊杆力记录.xls";
+            ExportToExcel.ExportData(sql, path);
+            MessageBox.Show("操作成功！");
         }
     }
 }

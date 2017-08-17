@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BridgeDetectSystem.service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,10 +16,23 @@ namespace BridgeDetectSystem
         {
             InitializeComponent();
         }
-
+        string sql = "select * from AlarmRecord";
         private void warn_Load(object sender, EventArgs e)
         {
             this.initial();
+            
+            try
+            {
+                OperateSql.LoadData(sql, dgv);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
 
         #region 初始化窗体
@@ -34,6 +48,18 @@ namespace BridgeDetectSystem
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+            e.Row.HeaderCell.Value = string.Format("{0}", e.Row.Index + 1);
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            string path = @"D:\excelFile\报警记录.xls";
+            ExportToExcel.ExportData(sql, path);
+            MessageBox.Show("操作成功！");
         }
     }
 }

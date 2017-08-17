@@ -13,8 +13,6 @@ namespace BridgeDetectSystem.service
        
        
         private static volatile OperateSql instance;
-     
-
         public static OperateSql GetInstance()
         {
             if (instance == null)
@@ -24,17 +22,32 @@ namespace BridgeDetectSystem.service
             return instance;
         }
         /// <summary>
-        /// 加载数据库中的数据，显示
+        /// 加载数据表
         /// </summary>
-        /// <param name="dgv">datagridview控件</param>
-        public static void LoadData(DataGridView dgv)                 
+        /// <param name="sql">sql语句</param>
+        /// <param name="dgv">控件datagridview</param>
+        public static void LoadData(string sql ,DataGridView dgv)
         {
-            string sql = "select * from SteeveDisplacement";
             DBHelper dbhelper = DBHelper.GetInstance();
             DataTable dt = dbhelper.ExecuteSqlDataAdapter(sql, null, 0);
             dgv.DataSource = dt;
-            dgv.AutoGenerateColumns =false;
+            OperateSql.RemoveNULL(dgv);
+            dgv.AutoGenerateColumns = false;
             dgv.Invalidate();
+        }     
+        /// <summary>
+        /// 空列视为不可见
+        /// </summary>
+        /// <param name="dgv"></param>
+        public static void RemoveNULL(DataGridView dgv)
+        {
+            for (int i = 0; i < dgv.Columns.Count; i++)
+            {
+                if (dgv.Rows[0].Cells[i].Value == System.DBNull.Value)
+                {
+                    dgv.Columns[i].Visible = false;
+                }
+            }
         }
         /// <summary>
         /// 插入一万条数据
@@ -43,7 +56,7 @@ namespace BridgeDetectSystem.service
         {
             int n = 10000;
             int r = -1;
-            string insertSql = "insert into test2 values(newid(),1.01,2.0,3,4,5,6,7,8,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'操作员',getdate())";
+            string insertSql = "insert into AnchorForce values(newid(),1.01,2.22,3.033,4.0,5,6,7,8.8,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'操作员',getdate())";
             DBHelper dbheler = DBHelper.GetInstance();
             while (n > 0)
             {
@@ -60,7 +73,7 @@ namespace BridgeDetectSystem.service
         /// </summary>
         public static void DeleteData()
         {
-            string sql = "delete  from test2";
+            string sql = "delete  from AnchorForce";
             DBHelper dbheler = DBHelper.GetInstance();
             int r = dbheler.ExecuteNonQuery(sql, null);
             if (r > 0)
