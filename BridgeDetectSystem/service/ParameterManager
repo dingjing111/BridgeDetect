@@ -6,7 +6,8 @@ using System.Text;
 namespace BridgeDetectSystem.entity
 {
 
-    class ConfigManager
+    public class ParameterManager
     {
+
     }
 }

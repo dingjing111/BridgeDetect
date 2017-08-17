@@ -6,6 +6,11 @@ namespace PSW2AdamTeach
 {
     public abstract class AdamOperation 
     {
+        //模块的编号
+        public abstract int id { get; set; }
+        //模块接收到的数据
+        public abstract Dictionary<int, string> dataDic { get; }
+
         /// <summary>
         /// 初始化模块配置，并建立连接
         /// </summary>
@@ -14,7 +19,7 @@ namespace PSW2AdamTeach
         /// 读模块所有通道数据
         /// </summary>
         /// <returns></returns>
-        public abstract List<string> Read();
+        public abstract Dictionary<int,string> Read();
         /// <summary>
         /// 读模块指定通道数据
         /// </summary>

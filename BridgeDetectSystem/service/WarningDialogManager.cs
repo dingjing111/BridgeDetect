@@ -11,7 +11,7 @@ namespace BridgeDetectSystem.service
 {
     class WarningDialogManager
     {
-        public BackgroundWorker bgWork;
+        private BackgroundWorker bgWork;
         private static int count = 0;//测试用
 
         public WarningDialogManager()
@@ -24,13 +24,13 @@ namespace BridgeDetectSystem.service
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BgDoWork(object sender,DoWorkEventArgs e)
+        private void BgDoWork(object sender, DoWorkEventArgs e)
         {
             Thread.CurrentThread.Name = "报警后台线程";
             //写判断逻辑,
             while (true)
             {
-                if((count++ % 10) == 0)
+                if ((count++ % 10) == 0)
                 {
                     bgWork.ReportProgress(count);
                 }
@@ -49,10 +49,10 @@ namespace BridgeDetectSystem.service
         delegate void InvokeMethod(object obj);
         private void BgProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            //WarningWin warningform = WarningWin.GetInstance();
-            //warningform.Show();
-            //warningform.TopMost = true;
-            //warningform.Invoke(new InvokeMethod(WarningWin.DoWork), count);
+            WarningDialog warningform = WarningDialog.GetInstance();
+            warningform.Show();
+            warningform.TopMost = true;
+            warningform.Invoke(new InvokeMethod(warningform.DoWork), count);
         }
     }
 }

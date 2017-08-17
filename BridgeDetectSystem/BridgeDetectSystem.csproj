@@ -38,6 +38,25 @@
     <StartupObject>BridgeDetectSystem.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Advantech.Adam, Version=8.2.12.0, Culture=neutral, PublicKeyToken=c24039c75946be9c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>refdll\Advantech.Adam.DLL</HintPath>
+    </Reference>
+    <Reference Include="Advantech.Common, Version=8.2.12.0, Culture=neutral, PublicKeyToken=c24039c75946be9c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>refdll\Advantech.Common.DLL</HintPath>
+    </Reference>
+    <Reference Include="Advantech.Graph">
+      <HintPath>refdll\Advantech.Graph.dll</HintPath>
+    </Reference>
+    <Reference Include="Advantech.Protocol, Version=8.2.12.0, Culture=neutral, PublicKeyToken=c24039c75946be9c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>refdll\Advantech.Protocol.DLL</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>refdll\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>refdll\log4net.dll</HintPath>
@@ -57,13 +76,18 @@
       <HintPath>refdll\MetroFramework.Fonts.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PSW2AdamTeach">
-      <HintPath>refdll\PSW2AdamTeach.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="NPOI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>refdll\NPOI.dll</HintPath>
     </Reference>
-    <Reference Include="PSW2NPOI">
-      <HintPath>refdll\PSW2NPOI.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>refdll\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>refdll\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>refdll\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -78,19 +102,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adam\Adam6217Operation.cs" />
+    <Compile Include="Adam\AdamOperation.cs" />
+    <Compile Include="entity\Anchor.cs" />
+    <Compile Include="service\ParameterManager.cs" />
+    <Compile Include="entity\FrontPivot.cs" />
+    <Compile Include="entity\RailWay.cs" />
+    <Compile Include="entity\Sensor.cs" />
+    <Compile Include="entity\Steeve.cs" />
+    <Compile Include="Adam\AdamHelper.cs" />
+    <Compile Include="NPOI\NPOIHelper.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="service\OperateSql.cs" />
-    <Compile Include="windows\other\WarningWin.cs">
+    <Compile Include="service\WarningManager.cs" />
+    <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="windows\other\WarningWin.Designer.cs">
-      <DependentUpon>WarningWin.cs</DependentUpon>
+    <Compile Include="TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="dao\MyEventArgs.cs" />
+    <Compile Include="windows\other\WarningDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\other\WarningDialog.Designer.cs">
+      <DependentUpon>WarningDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="entity\MyEventArgs.cs" />
     <Compile Include="service\WarningDialogManager.cs" />
     <Compile Include="video\CHCNetSDK.cs" />
     <Compile Include="video\PlayCtrl.cs" />
@@ -116,7 +156,7 @@
       <DependentUpon>AlarmRecord.cs</DependentUpon>
     </Compile>
     <Compile Include="util\ConvertHelper.cs" />
-    <Compile Include="dao\DBHelper.cs" />
+    <Compile Include="util\DBHelper.cs" />
     <Compile Include="util\Encrypt.cs" />
     <Compile Include="service\UserRightManager.cs" />
     <Compile Include="windows\record\AnchorForceRecord.cs">
@@ -125,6 +165,7 @@
     <Compile Include="windows\record\AnchorForceRecord.Designer.cs">
       <DependentUpon>AnchorForceRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="util\Drawer.cs" />
     <Compile Include="windows\record\FrontPivotRecord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,8 +216,11 @@
     <Compile Include="windows\other\UserRightWin.Designer.cs">
       <DependentUpon>UserRightWin.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="windows\other\WarningWin.resx">
-      <DependentUpon>WarningWin.cs</DependentUpon>
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="windows\other\WarningDialog.resx">
+      <DependentUpon>WarningDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="windows\work\VideoMonitorWin.resx">
       <DependentUpon>VideoMonitorWin.cs</DependentUpon>
@@ -234,8 +278,8 @@
   <ItemGroup>
     <Content Include="image\banner.jpg" />
     <Content Include="ico\logo.ico" />
-    <Content Include="image\warn.jpg" />
     <Content Include="image\warning.png" />
+    <Content Include="image\warning2.jpg" />
     <Content Include="MetroFramework.txt" />
     <Content Include="warningwave\WarningVoice.wav" />
   </ItemGroup>
