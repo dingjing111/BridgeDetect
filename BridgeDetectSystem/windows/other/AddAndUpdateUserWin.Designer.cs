@@ -218,6 +218,7 @@
             this.Text = "用户管理";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.AddAndUpdateUser_Load);
             this.panel1.ResumeLayout(false);
             this.grpAddNewUser.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

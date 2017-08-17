@@ -1,4 +1,4 @@
-﻿using BridgeDetectSystem.dao;
+﻿
 using BridgeDetectSystem.entity;
 using System;
 using System.Collections.Generic;
@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using BridgeDetectSystem.util;
 
 namespace BridgeDetectSystem
 {
@@ -156,6 +157,11 @@ namespace BridgeDetectSystem
             MessageBox.Show(msg);
         }
         #endregion
+
+        private void AddAndUpdateUser_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     public class InputException : Exception
     {
