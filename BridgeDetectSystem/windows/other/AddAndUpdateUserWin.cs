@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace BridgeDetectSystem
 {
@@ -18,10 +19,6 @@ namespace BridgeDetectSystem
             InitializeComponent();
         }
 
-        private void AddAndUpdateUser_Load(object sender, EventArgs e)
-        {
-
-        }
         private int TP { get; set; } //标识1，新增窗口。。2，修改窗口
         string IDTemp;
         public void SetText(object sender,EventArgs e)
@@ -91,9 +88,24 @@ namespace BridgeDetectSystem
                     b = "无";
                     c = "无";
                 }
+                
                 string sql = string.Format("insert into UserManager(userName,password,rightLevel,viewLog,ParameterSet,systemSet) values('{0}','{1}',{2},'{3}','{4}','{5}')", txtUserName.Text, txtPassword.Text,level,a,b,c);
-                DBHelper dbhelper = DBHelper.GetInstance();
-                r= dbhelper.ExecuteNonQuery(sql);
+                if (txtUserName.Text == "" || txtPassword.Text == "" || level == 0)
+                {
+                    new InputException();
+                }
+                else
+                {
+                    try
+                    {
+                        DBHelper dbhelper = DBHelper.GetInstance();
+                        r = dbhelper.ExecuteNonQuery(sql);
+                    }
+                    catch (SqlException ex)
+                    {
+                       MessageBox.Show(ex.Message);
+                    }
+                }
             }
             else if (this.TP == 2)           //修改
             {
@@ -123,12 +135,32 @@ namespace BridgeDetectSystem
                     c = "无";
                 }
                 string sql = string.Format("update UserManager set userName='{0}',password='{1}',rightLevel={2},viewLog='{3}',parameterSet='{4}',systemSet='{5}' where phid={6}", txtUserName.Text, txtPassword.Text, level, a, b, c,IDTemp);
-                DBHelper dbhelper = DBHelper.GetInstance();
-              r=  dbhelper.ExecuteNonQuery(sql);
+                if (txtUserName.Text == "" || txtPassword.Text == "" || cmbUserLevel.SelectedIndex > 2 || cmbUserLevel.SelectedIndex < 0)
+                {
+                    new InputException();
+                }
+                else
+                {
+                    try
+                    {
+                        DBHelper dbhelper = DBHelper.GetInstance();
+                        r = dbhelper.ExecuteNonQuery(sql);
+                    }
+                    catch (SqlException ex)
+                    {
+                       MessageBox.Show(ex.Message);
+                    }
+                }
             }
             string msg = r > 0 ? "操作成功" : "操作失败";
             MessageBox.Show(msg);
         }
         #endregion
+    }
+    public class InputException : Exception
+    {
+        public InputException() : base() {
+            System.Windows.Forms.MessageBox.Show("请输入正确");
+        }
     }
 }

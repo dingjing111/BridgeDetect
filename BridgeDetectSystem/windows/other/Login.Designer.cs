@@ -131,7 +131,7 @@ namespace BridgeDetectSystem
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(127, 28);
             this.txtPassword.TabIndex = 101;
-            this.txtPassword.Text = "admin";
+            this.txtPassword.Text = "12345";
             // 
             // btnConfirm
             // 

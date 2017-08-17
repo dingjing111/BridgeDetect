@@ -78,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="service\OperateSql.cs" />
     <Compile Include="windows\other\WarningWin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,7 +125,6 @@
     <Compile Include="windows\record\AnchorForceRecord.Designer.cs">
       <DependentUpon>AnchorForceRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="util\Drawer.cs" />
     <Compile Include="windows\record\FrontPivotRecord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +202,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="windows\record\SteeveDisplaceRecord.resx">
       <DependentUpon>SteeveDisplaceRecord.cs</DependentUpon>
@@ -228,6 +234,7 @@
   <ItemGroup>
     <Content Include="image\banner.jpg" />
     <Content Include="ico\logo.ico" />
+    <Content Include="image\warn.jpg" />
     <Content Include="image\warning.png" />
     <Content Include="MetroFramework.txt" />
     <Content Include="warningwave\WarningVoice.wav" />
