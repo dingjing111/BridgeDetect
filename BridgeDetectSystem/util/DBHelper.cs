@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Threading;
 
-namespace BridgeDetectSystem.dao
+namespace BridgeDetectSystem.util
 {
     public class DBHelper
     {

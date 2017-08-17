@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using BridgeDetectSystem.windows;
 using BridgeDetectSystem.service;
+using BridgeDetectSystem.util;
 using PSW2AdamTeach;
 
 namespace BridgeDetectSystem
@@ -16,6 +17,7 @@ namespace BridgeDetectSystem
     {
         WarningDialog warning;
         AdamHelper adamHelper;
+        ConfigManager configManager;
 
         public TestForm()
         {
@@ -36,8 +38,28 @@ namespace BridgeDetectSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message+ ex.GetType());
             }
+
+            bool isResetDb = true;
+            try
+            {
+                if (isResetDb)
+                {
+                    ConfigManager.Initialize(DBHelper.GetInstance(), false);
+                    ConfigManager.GetInstance().RecreateDbTable();
+                }
+                else
+                {
+                    ConfigManager.Initialize(DBHelper.GetInstance());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"无法初始化配置管理系统，程序将退出。\n错误:\n {ex.Message}\n {ex.StackTrace}", 
+                    "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -54,7 +76,7 @@ namespace BridgeDetectSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
-            WarningDialogManager manager = new WarningDialogManager();
+            WarningDialogManager manager = new WarningDialogManager() ;
             manager.BgStart();
         }
 
@@ -71,6 +93,12 @@ namespace BridgeDetectSystem
                 }
                 MessageBox.Show(sb.ToString());
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            configManager = ConfigManager.GetInstance();
+            configManager.StoreConfigToDb();
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using BridgeDetectSystem.entity;
-using BridgeDetectSystem.dao;
+using BridgeDetectSystem.util;
 
 namespace BridgeDetectSystem
 {

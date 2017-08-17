@@ -1,4 +1,4 @@
-﻿using BridgeDetectSystem.dao;
+﻿using BridgeDetectSystem.util;
 using BridgeDetectSystem.entity;
 using System;
 using System.Collections.Generic;
@@ -17,7 +17,7 @@ namespace BridgeDetectSystem.service
 
         private UserRightManager(string userName, string password)
         {
-            user = new User(userName, password);
+            user = new User(userName, password); 
             dbHelper = DBHelper.GetInstance();
         }
 

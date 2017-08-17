@@ -41,7 +41,7 @@ namespace BridgeDetectSystem.service
             }
             catch (AdamException ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                throw ex;
             }
             this.readTimer = new Timer(_ =>
             {
@@ -52,7 +52,7 @@ namespace BridgeDetectSystem.service
                 catch (Exception ex)
                 {
                     readTimer.Change(Timeout.Infinite, Timeout.Infinite);
-                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                    throw ex;
                 }
             }, null, 0, readTimerPeriod);
         }
