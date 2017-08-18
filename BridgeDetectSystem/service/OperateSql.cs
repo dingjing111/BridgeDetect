@@ -8,19 +8,8 @@ using System.Windows.Forms;
 
 namespace BridgeDetectSystem.service
 {
-   public class OperateSql
-    {
-       
-       
-        private static volatile OperateSql instance;
-        public static OperateSql GetInstance()
-        {
-            if (instance == null)
-            {
-                throw new Exception("实例未初始化。");
-            }
-            return instance;
-        }
+   public static class OperateSql
+    {   
         /// <summary>
         /// 加载数据表
         /// </summary>
@@ -56,7 +45,7 @@ namespace BridgeDetectSystem.service
         {
             int n = 10000;
             int r = -1;
-            string insertSql = "insert into AnchorForce values(newid(),1.01,2.22,3.033,4.0,5,6,7,8.8,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'操作员',getdate())";
+            string insertSql = "insert into AnchorForce values(newid(),getdate(),'工人李某',1.01,2.22,3.033,4.0,5,6,7,8.8,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)";
             DBHelper dbheler = DBHelper.GetInstance();
             while (n > 0)
             {

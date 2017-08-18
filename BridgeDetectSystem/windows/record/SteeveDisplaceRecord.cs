@@ -56,9 +56,9 @@ namespace BridgeDetectSystem
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            string path = @"D:\excelFile\吊杆位移记录.xls";
-            ExportToExcel.ExportData(sql, path);
-            MessageBox.Show("操作成功！");
+          
+            ExportToExcel.ExportData(sql);
+          
         }
     }
 }

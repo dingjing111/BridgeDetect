@@ -6,6 +6,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace BridgeDetectSystem.service
 {
@@ -15,15 +16,36 @@ namespace BridgeDetectSystem.service
     /// </summary>
     /// <param name="sql">sql语句，为查询表的语句</param>
     /// <param name="path">保存excel文件的路径</param>
-        public static void ExportData (String sql,string path)
+        public static void ExportData (String sql)
         {
-            NPOIHelper NP = new NPOIHelper();
+            NPOIHelper npoi = new NPOIHelper();
             DBHelper dbhelper = DBHelper.GetInstance();
             DataTable dt = dbhelper.ExecuteSqlDataAdapter(sql, null, 0);
-            NP.ConvertTableToExcel(dt);
-            FileStream file = new FileStream(path, FileMode.Create);
-            NP.WriteToFile(file);
+        
+
+            try
+            {
+                npoi.ConvertTableToExcel(dt);
+
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel文件|*.xls";
+                saveFileDialog.FileName = ConvertToString(DateTime.Now);
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.Create);
+                    npoi.WriteToFile(fs);
+                    MessageBox.Show("表" + dt.TableName + "生成成功");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+         
         }
-       
+        private  static string ConvertToString(DateTime dateTime)
+        {
+            return dateTime.ToString("yyyy-MM-dd HH-mm-ss ");
+        }
     }
 }

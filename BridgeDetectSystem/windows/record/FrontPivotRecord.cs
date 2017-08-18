@@ -44,10 +44,15 @@ namespace BridgeDetectSystem
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            string path = @"D:\excelFile\前支点位移.xls";
-            ExportToExcel.ExportData(sql, path);
-            MessageBox.Show("操作成功！");
+            
+            ExportToExcel.ExportData(sql);
+           
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
