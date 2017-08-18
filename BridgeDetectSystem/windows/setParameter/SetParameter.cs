@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BridgeDetectSystem.service;
+using BridgeDetectSystem.util;
 
 namespace BridgeDetectSystem
 {
@@ -70,7 +71,7 @@ namespace BridgeDetectSystem
             {
                 SetConfigValue();
                 configManager.StoreConfigToDb();
-                MessageBox.Show("报警设置保存成功！");
+                AutoClosingMessageBox.Show("报警设置保存成功！", "提示", 2000);
             }
             catch (Exception ex)
             {
@@ -79,17 +80,20 @@ namespace BridgeDetectSystem
         }
 
         private void SetConfigValue()
-        { 
-            double v1=0;
-            try
-            {
-              v1 = double.Parse(txtBasketUpDisLimit.Text);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Source); 
-            }
-            configManager.Set(ConfigManager.ConfigKeys.basket_upDisLimit,v1);
+        {
+            configManager.Set(ConfigManager.ConfigKeys.basket_upDisLimit, Convert.ToDouble(txtBasketUpDisLimit.Value));
+            configManager.Set(ConfigManager.ConfigKeys.basket_downDisLimit, Convert.ToDouble(txtBasketDownDisLimit.Value));
+            configManager.Set(ConfigManager.ConfigKeys.basket_allowDisDiffLimit, Convert.ToDouble(txtBasketAllowDisDiffLimit.Value));
+
+            configManager.Set(ConfigManager.ConfigKeys.steeve_DisDiffLimit, Convert.ToDouble(txtSteeveDisDiffLimit.Value));
+            configManager.Set(ConfigManager.ConfigKeys.steeve_ForceLimit, Convert.ToDouble(txtSteeveForceUpLimit.Value));
+            configManager.Set(ConfigManager.ConfigKeys.steeve_ForceDiffLimit, Convert.ToDouble(txtSteeveForceDiffLimit.Value));
+
+            configManager.Set(ConfigManager.ConfigKeys.anchor_ForceLimit, Convert.ToDouble(txtAnchorForceLimit.Value));
+            configManager.Set(ConfigManager.ConfigKeys.anchor_ForceDiffLimit, Convert.ToDouble(txtAnchorForceDiffLimit.Value));
+
+            configManager.Set(ConfigManager.ConfigKeys.frontPivot_DisLimit, Convert.ToDouble(txtFrontPivotDisLimit.Value));
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -97,6 +101,6 @@ namespace BridgeDetectSystem
             this.Close();
         }
 
-     
+
     }
 }
