@@ -79,7 +79,7 @@ namespace BridgeDetectSystem
         }
 
         private void SetConfigValue()
-        {
+        { 
             double v1=0;
             try
             {
