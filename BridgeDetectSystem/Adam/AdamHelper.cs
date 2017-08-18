@@ -112,11 +112,11 @@ namespace BridgeDetectSystem.adam
                 {
                     for (int j = 0; j < 4; j++)
                     {
-                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 60);
+                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 70,100);
                         tempDic.TryGetValue(j, out forceData);
                         forceSensor.readValue = double.Parse(forceData);
 
-                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 30);
+                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 80,1);
                         tempDic.TryGetValue(j + 4, out disData);
                         disSensor.readValue = double.Parse(disData);
 
@@ -130,7 +130,7 @@ namespace BridgeDetectSystem.adam
                     int count = 0;
                     for (j = 0; j < 4; j++)
                     {
-                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 60);
+                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 60,10);
                         tempDic.TryGetValue(j, out forceData);
                         forceSensor.readValue = double.Parse(forceData);
 
@@ -139,7 +139,7 @@ namespace BridgeDetectSystem.adam
                     }
                     for (j = 4; j < 6; j++)
                     {
-                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 5);
+                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 5,100);
                         tempDic.TryGetValue(j, out disData);
                         disSensor.readValue = double.Parse(disData);
 
@@ -149,7 +149,7 @@ namespace BridgeDetectSystem.adam
                     count = 0;
                     if (j == 6)
                     {
-                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 30);
+                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 30,100);
                         tempDic.TryGetValue(j, out disData);
                         disSensor.readValue = double.Parse(disData);
 

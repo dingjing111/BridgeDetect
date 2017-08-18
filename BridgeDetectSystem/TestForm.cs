@@ -10,9 +10,9 @@ using log4net;
 using BridgeDetectSystem.windows;
 using BridgeDetectSystem.service;
 using BridgeDetectSystem.util;
-using BridgeDetectSystem.service;
 using System.Reflection;
 using BridgeDetectSystem.adam;
+using System.Threading;
 
 namespace BridgeDetectSystem
 {
@@ -44,7 +44,7 @@ namespace BridgeDetectSystem
                 MessageBox.Show(ex.Message + ex.GetType());
             }
 
-            bool isResetDb = true;
+            bool isResetDb = false;
             try
             {
                 DBHelper dbHelper = DBHelper.GetInstance();
@@ -65,6 +65,7 @@ namespace BridgeDetectSystem
             }
 
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             warning = WarningDialog.GetInstance();
@@ -86,17 +87,21 @@ namespace BridgeDetectSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            while (true)
+            new Thread(() =>
             {
-                var dic = adamHelper.steeveDic;
-                StringBuilder sb = new StringBuilder();
-                foreach (var d in dic)
+                while (true)
                 {
-                    sb.Append("key: " + d.Key).Append("; value: " + d.Value.GetForce() + "|" + d.Value.GetDisplace());
-                    sb.Append("\n");
+                    var dic = adamHelper.steeveDic;
+                    StringBuilder sb = new StringBuilder();
+                    foreach (var d in dic)
+                    {
+                        sb.Append("key: " + d.Key).Append("; value: " + d.Value.GetForce() + "|" + d.Value.GetDisplace());
+                        sb.Append("\n");
+                    }
+                    MessageBox.Show(sb.ToString());
+                    Thread.Sleep(200);
                 }
-                MessageBox.Show(sb.ToString());
-            }
+            }).Start();
         }
 
         private void button5_Click(object sender, EventArgs e)

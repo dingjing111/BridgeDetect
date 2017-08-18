@@ -257,7 +257,7 @@ namespace BridgeDetectSystem.service
                 {
                     throw new ConfigManagerException("[LoadConfigFromDb] Unknown config key: " + key);
                 }
-                double value = (double)reader.GetValue(1);
+                double value = (float)reader.GetValue(1);
                 tempConfig[configKey].value = value;
             }
             reader.Close();

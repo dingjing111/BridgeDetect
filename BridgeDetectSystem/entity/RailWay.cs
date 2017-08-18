@@ -9,7 +9,7 @@ namespace BridgeDetectSystem.entity
     {
         public int id;
         private double displace;
-        public Sensor disSensor { get; set; }
+        private Sensor disSensor;
 
         public RailWay(int id, Sensor disSensor)
         {

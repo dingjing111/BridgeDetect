@@ -11,7 +11,7 @@ namespace BridgeDetectSystem.entity
         private int outputStart; //输出信号下限
         private int outputEnd; //输出信号上限
         private int range; //传感器量程
-
+        private int coefficient;// 单位转换，需要乘的系数
         private double _readValue;
 
         public double readValue
@@ -31,12 +31,13 @@ namespace BridgeDetectSystem.entity
             get;set;
         }
 
-        public Sensor(SensorType kind, int outputStart, int outputEnd, int range)
+        public Sensor(SensorType kind, int outputStart, int outputEnd, int range,int coefficient)
         {
             this.kind = kind;
             this.outputStart = outputStart;
             this.outputEnd = outputEnd;
             this.range = range;
+            this.coefficient = coefficient;
             this._readValue = outputStart;
         }
 
@@ -46,7 +47,7 @@ namespace BridgeDetectSystem.entity
         /// <returns></returns>
         public double GetRealValue()
         {
-            return range * (readValue - 4) / (outputEnd - outputStart);
+            return range * (readValue - 4) *coefficient/ (outputEnd - outputStart);
         }
    
     }

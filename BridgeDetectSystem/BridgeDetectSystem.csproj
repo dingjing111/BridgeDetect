@@ -164,9 +164,7 @@
     <Compile Include="windows\record\AlarmRecord.Designer.cs">
       <DependentUpon>AlarmRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="util\ConvertHelper.cs" />
     <Compile Include="util\DBHelper.cs" />
-    <Compile Include="util\Encrypt.cs" />
     <Compile Include="service\UserRightManager.cs" />
     <Compile Include="windows\record\AnchorForceRecord.cs">
       <SubType>Form</SubType>

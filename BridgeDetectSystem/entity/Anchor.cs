@@ -8,8 +8,8 @@ namespace BridgeDetectSystem.entity
     public class Anchor
     {
         public int id { get; set; }
-        private double force; 
-        public Sensor forceSensor { get; set; }
+        private double force;
+        private Sensor forceSensor;
 
         public Anchor(int id, Sensor forceSensor)
         {

@@ -8,19 +8,8 @@ using System.Windows.Forms;
 
 namespace BridgeDetectSystem.service
 {
-   public class OperateSql
+   public static class OperateSql
     {
-       
-       
-        private static volatile OperateSql instance;
-        public static OperateSql GetInstance()
-        {
-            if (instance == null)
-            {
-                throw new Exception("实例未初始化。");
-            }
-            return instance;
-        }
         /// <summary>
         /// 加载数据表
         /// </summary>

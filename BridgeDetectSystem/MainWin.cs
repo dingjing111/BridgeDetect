@@ -9,7 +9,6 @@ using System.Text;
 using System.Windows.Forms;
 using BridgeDetectSystem.entity;
 using MetroForm = MetroFramework.Forms.MetroForm;
-using BridgeDetectSystem.service;
 using BridgeDetectSystem.adam;
 using BridgeDetectSystem.util;
 
