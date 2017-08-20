@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BridgeDetectSystem.service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,12 +15,12 @@ namespace BridgeDetectSystem.windows
     {
         SoundPlayer sp = new SoundPlayer();
 
-        #region 单列
-
+        #region 单例
+        private WarningManager manager;
         private static object obj = new object();
         private static WarningDialog instance;
 
-        public static WarningDialog GetInstance()
+        public static WarningDialog GetInstance(WarningManager manager)
         {
             if (instance == null)
             {
@@ -27,7 +28,7 @@ namespace BridgeDetectSystem.windows
                 {
                     if (instance == null)
                     {
-                        instance = new WarningDialog();
+                        instance = new WarningDialog(manager);
                     }
                 }
             }
@@ -37,27 +38,24 @@ namespace BridgeDetectSystem.windows
 
         #endregion
 
-        public WarningDialog()
+        public WarningDialog(WarningManager manager)
         {
             InitializeComponent();
-        }
-
-        private void WarningWin_Load(object sender, EventArgs e)
-        {
-           
+            this.manager = manager;
         }
        
         private void button1_Click(object sender, EventArgs e)
         {
-            sp.Stop();
-            sp.Dispose();
+            StopSound();
+
+            manager.ContinueThread();
+
             this.Close();
         }
 
         private void WarningDialog_Activated(object sender, EventArgs e)
         {
-            sp.SoundLocation = GetPath();
-            sp.PlayLooping();
+            PlaySound();
         }
 
         private void WarningDialog_FormClosing(object sender, FormClosingEventArgs e)
@@ -66,17 +64,24 @@ namespace BridgeDetectSystem.windows
             this.Hide();
         }
 
+        private void PlaySound()
+        {
+            string Path = @"../../warningwave\WarningVoice.wav";
+            sp.SoundLocation = Path;
+            sp.PlayLooping();
+        }
 
-        internal void DoWork(object obj)
+        private void StopSound()
+        {
+            sp.Stop();
+            sp.Dispose();
+        }
+
+        //由报警管理类WarningDialogManager调用，传入参数为报警信息
+        public void DoWork(object obj)
         {
             this.lblWarningText.Text = obj.ToString();
 
-        }
-
-        private static string GetPath()
-        {
-            string Path = @"../../warningwave\WarningVoice.wav";
-            return Path;
         }
     }
 }

@@ -18,9 +18,10 @@ namespace BridgeDetectSystem
 {
     public partial class TestForm : Form
     {
-        WarningDialog warning;
+        WarningDialog warningDialog;
         AdamHelper adamHelper;
         ConfigManager configManager;
+        WarningManager warningManager;
 
         public TestForm()
         {
@@ -68,21 +69,21 @@ namespace BridgeDetectSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            warning = WarningDialog.GetInstance();
-            warning.Show();
-            warning.TopMost = true;
+            warningDialog = WarningDialog.GetInstance(warningManager);
+            warningDialog.Show();
+            warningDialog.TopMost = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            warning.Hide();
+            warningDialog.Hide();
         }
 
 
         private void button4_Click(object sender, EventArgs e)
         {
-            WarningDialogManager manager = new WarningDialogManager();
-            manager.BgStart();
+            warningManager = WarningManager.GetInstance();
+            warningManager.BgStart();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -119,6 +120,12 @@ namespace BridgeDetectSystem
             ILog log = LogManager.GetLogger("参数设置");
             string str = "hello";
             log.Info(str);
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            PouringState ps = new PouringState();
+            ps.Show();
         }
     }
 }

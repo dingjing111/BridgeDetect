@@ -10,23 +10,27 @@ namespace BridgeDetectSystem.adam
     {
         #region  字段
 
-        private List<AdamOperation> list;
+        private List<AdamOperation> adamList;
         private Dictionary<int, Dictionary<int, string>> allDataDic;
         
 
-        public Timer readTimer { get; set; }
+        public Timer readTimer { get; }
         public Dictionary<int, Steeve> steeveDic { get; }
         public Dictionary<int, Anchor> anchorDic { get; }
         public Dictionary<int, FrontPivot> frontPivotDic { get; }
         public Dictionary<int, RailWay> railWayDic { get; }
 
+        public double steeveDisStandard { get; set; }
+        public double frontPivotDisStandard { get; set; }
+
         #endregion
 
+        #region 单例
         private static volatile AdamHelper instance = null;
 
         private AdamHelper(List<AdamOperation> list, int readTimerPeriod)
         {
-            this.list = list;
+            this.adamList = list;
             this.allDataDic = new Dictionary<int, Dictionary<int, string>>();
             this.steeveDic = new Dictionary<int, Steeve>();
             this.anchorDic = new Dictionary<int, Anchor>();
@@ -35,15 +39,22 @@ namespace BridgeDetectSystem.adam
 
             try
             {
+                //初始化每个研华模块
                 foreach (AdamOperation oper in list)
                 {
                     oper.Init();
                 }
+
+                //读取初始的值一次，并记录在字段steeveDisStandard、frontPivotDisStandard中
+                //之后作为报警的基准
+                ReadStandardValue();
             }
             catch (AdamException ex)
             {
                 throw ex;
             }
+
+            //后台每隔一段时间读取一次数据
             this.readTimer = new Timer(_ =>
             {
                 try
@@ -58,6 +69,7 @@ namespace BridgeDetectSystem.adam
             }, null, 0, readTimerPeriod);
         }
 
+    
         public static AdamHelper Initialize(List<AdamOperation> list, int readTimerPeriod)
         {
             if (instance != null)
@@ -77,6 +89,7 @@ namespace BridgeDetectSystem.adam
             return instance;
         }
 
+        #endregion
 
         #region 方法
         private static readonly object obj = new object(); //锁对象
@@ -84,7 +97,7 @@ namespace BridgeDetectSystem.adam
         {
             lock (obj)
             {
-                foreach (AdamOperation oper in list)
+                foreach (AdamOperation oper in adamList)
                 {
                     allDataDic[oper.id]= oper.Read();
                 }
@@ -104,9 +117,9 @@ namespace BridgeDetectSystem.adam
             Sensor forceSensor;
             Sensor disSensor;
 
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < adamList.Count; i++)
             {
-                allDataDic.TryGetValue(list[i].id, out tempDic);
+                allDataDic.TryGetValue(adamList[i].id, out tempDic);
 
                 if (i == 0)
                 {
@@ -160,16 +173,24 @@ namespace BridgeDetectSystem.adam
             }
         }
 
-
-        #endregion
-
-        public class AdamHelperException : AdamException
+        /// <summary>
+        /// 读取初始数值作为基准，只读一次
+        /// </summary>
+        private void ReadStandardValue()
         {
-            public AdamHelperException(string message) : base(message) { }
-            public AdamHelperException(string message, Exception innerException) : base(message, innerException) { }
+            int index = 0;
+            int first = 0;
+            int second = 1;
+            steeveDisStandard= double.Parse(adamList[index].Read(first));
+            frontPivotDisStandard = double.Parse(adamList[index].Read(second));
         }
 
-
+        #endregion
+    }
+    public class AdamHelperException : AdamException
+    {
+        public AdamHelperException(string message) : base(message) { }
+        public AdamHelperException(string message, Exception innerException) : base(message, innerException) { }
     }
 
 
