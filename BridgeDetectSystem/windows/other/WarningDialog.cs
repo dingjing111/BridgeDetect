@@ -80,7 +80,12 @@ namespace BridgeDetectSystem.windows
         //由报警管理类WarningDialogManager调用，传入参数为报警信息
         public void DoWork(object obj)
         {
-            this.lblWarningText.Text = obj.ToString();
+            var list = obj as List<string>;
+
+            foreach(string str in list)
+            {
+                listBoxWarning.Items.Add(str);
+            }
 
         }
     }

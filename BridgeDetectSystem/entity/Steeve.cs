@@ -10,8 +10,8 @@ namespace BridgeDetectSystem.entity
         public  int id; //吊杆编号：0,1,2,3,4...
         private double force; //吊杆力 ：KN
         private double displace; //位移：cm;
-        private Sensor disSensor { get; set; }
-        private Sensor forceSensor { get; set; }
+        private Sensor disSensor;
+        private Sensor forceSensor;
 
         public Steeve(int id,Sensor forceSensor, Sensor disSensor)
         {

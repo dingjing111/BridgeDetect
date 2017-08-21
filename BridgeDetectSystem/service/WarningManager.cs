@@ -13,15 +13,17 @@ namespace BridgeDetectSystem.service
 {
     public class WarningManager
     {
+
+        #region 字段
+
         private BackgroundWorker bgWork;
-        private static int count = 0;//测试用
         private ConfigManager config;
         private AdamHelper adamHelper;
-        private WarningObject warningObj;
-
+        //private WarningObject warningObj;
+        private List<string> warningList;
         //同步信号，当报警发生时，暂停当前线程。需要手动重新启动线程，
         //在WarningDialog界面中传入信号到当前类
-        private ManualResetEvent manualReset = new ManualResetEvent(true); 
+        private ManualResetEvent manualReset = new ManualResetEvent(true);
 
         /// <summary>
         /// 单例
@@ -29,7 +31,6 @@ namespace BridgeDetectSystem.service
         private WarningManager()
         {
             bgWork = new BackgroundWorker();
-            warningObj = new WarningObject();
             config = ConfigManager.GetInstance();
             adamHelper = AdamHelper.GetInstance();
         }
@@ -38,8 +39,9 @@ namespace BridgeDetectSystem.service
         {
             return instance;
         }
+        #endregion
 
-
+        #region 后台报警线程相关
         /// <summary>
         /// 主界面调用，开始后台报警线程
         /// </summary>
@@ -73,7 +75,7 @@ namespace BridgeDetectSystem.service
             WarningDialog warningform = WarningDialog.GetInstance(this);
             warningform.Show();
             warningform.TopMost = true;
-            warningform.Invoke(new InvokeMethod(warningform.DoWork), count);
+            warningform.Invoke(new InvokeMethod(warningform.DoWork), warningList);
         }
 
         /// <summary>
@@ -92,12 +94,10 @@ namespace BridgeDetectSystem.service
                 //直到收到Reset信号。然后，直到收到Set信号,就继续工作。
                 manualReset.WaitOne();
 
-                //if ((count++ % 10) == 0)
-                //{
-                //    bgWork.ReportProgress(count);
-                //}
+                //warningObj = new WarningObject();
+                warningList = new List<string>();
 
-                CkeckSteeveForce();
+                CheckSteeveForce();
 
                 CheckSteeveDis();
 
@@ -107,34 +107,163 @@ namespace BridgeDetectSystem.service
 
                 CheckMainTruss();
 
+                if (warningList.Count > 0)
+                {
+                    
+                    bgWork.ReportProgress(0);
+                }
 
                 Thread.Sleep(1000);
             }
         }
 
+        #endregion
+
+        #region 报警的具体逻辑
+
+        /// <summary>
+        /// 主桁架报警
+        /// </summary>
         private void CheckMainTruss()
         {
+
         }
 
+        /// <summary>
+        /// 前支点位移报警
+        /// </summary>
         private void CheckFrontPivotDis()
         {
+            var dic = adamHelper.frontPivotDic;
+            List<double> disDiffList = new List<double>();
+
+            foreach(var kv in dic)
+            {
+                disDiffList.Add(kv.Value.GetDisplace());
+            }
+            double first = Math.Abs(disDiffList[0] - adamHelper.first_frontPivotDisStandard);
+            double second = Math.Abs(disDiffList[1] - adamHelper.second_frontPivotDisStandard);
+            if (first> 0)
+            {
+                warningList.Add("1号前支点沉降超过设定值！！！");
+            }
+            if (second > 0)
+            {
+                warningList.Add("2号前支点沉降超过设定值！！！");
+            }
         }
 
+        /// <summary>
+        /// 锚杆力报警
+        /// </summary>
         private void CheckAnchorForce()
         {
+            CheckForce(adamHelper.anchorDic, "锚杆");
         }
 
+        /// <summary>
+        /// 吊杆位移报警
+        /// </summary>
         private void CheckSteeveDis()
         {
-        }
-
-        private void CkeckSteeveForce()
-        {
             var dic = adamHelper.steeveDic;
+            List<double> disList = new List<double>();
+            foreach (var kv in dic)
+            {
+                disList.Add(kv.Value.GetDisplace());
+            }
 
+            for (int i = 0; i < disList.Count; i++)
+            {
+                if (disList[i] > adamHelper.steeveDisStandard)
+                {
+                    warningList.Add("第" + i + "号吊杆位移过大,值为：" + disList[i] + "(cm)");
+                }
+            }
 
-            warningObj.Add(new WarningObjectItem(WarningType.firstSteeve_forceLarger));
+            double sum = 0;
+            foreach (var val in disList)
+            {
+                sum += val;
+            }
+
+            double average = sum / disList.Count;
+            double realDis = average - adamHelper.steeveDisStandard;
+            double allowDisDiff = config.Get(ConfigManager.ConfigKeys.basket_allowDisDiffLimit);
+            if (realDis > 0)
+            {
+                if (realDis - config.Get(ConfigManager.ConfigKeys.basket_upDisLimit) > allowDisDiff)
+                {
+                    warningList.Add("挂篮上升位移，超过设定值报警。上升的位移平均值为：" + realDis);
+                }
+            }
+            else
+            {
+                if (Math.Abs(realDis) - config.Get(ConfigManager.ConfigKeys.basket_downDisLimit) > allowDisDiff)
+                {
+                    warningList.Add("挂篮下降位移，超过设定值报警。下降的位移平均值为：" + Math.Abs(realDis));
+                }
+            }
+
         }
 
+        /// <summary>
+        /// 吊杆力报警
+        /// </summary>
+        private void CheckSteeveForce()
+        {
+            CheckForce(adamHelper.steeveDic, "吊杆");
+        }
+
+        private void CheckForce(object obj, string str)
+        {
+            List<double> forceList = new List<double>();
+            if (obj is Dictionary<int, Steeve>)
+            {
+                var dic = obj as Dictionary<int, Steeve>;
+                foreach (var kv in dic)
+                {
+                    forceList.Add(kv.Value.GetForce());
+                }
+            }
+            else if (obj is Dictionary<int, Anchor>)
+            {
+                var dic = obj as Dictionary<int, Anchor>;
+                foreach (var kv in dic)
+                {
+
+                    forceList.Add(kv.Value.GetForce());
+                }
+            }
+
+            for (int i = 0; i < forceList.Count; i++)
+            {
+                if (forceList[i] >= config.Get(ConfigManager.ConfigKeys.steeve_ForceLimit))
+                {
+                    warningList.Add("第" + i + "号" + str + "力过大,值为：" + forceList[i] + "(KN)");
+                }
+            }
+
+            double forceDiff = config.Get(ConfigManager.ConfigKeys.steeve_ForceDiffLimit);
+            for (int i = 0; i < forceList.Count; i++)
+            {
+                for (int j = i + 1; j < forceList.Count; j++)
+                {
+                    if (Math.Abs(forceList[i] - forceList[j]) >= forceDiff)
+                    {
+                        warningList.Add("第" + i + "、" + j + "号" + str + "之间力差值过大。值分别为："
+                            + forceList[i] + "(KN)" + "||" + forceList[j] + "KN");
+                    }
+                }
+            }
+        }
+
+        #endregion
+
+        #region 数据库操作，记录报警
+
+
+
+        #endregion
     }
 }

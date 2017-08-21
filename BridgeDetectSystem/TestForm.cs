@@ -88,21 +88,24 @@ namespace BridgeDetectSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            new Thread(() =>
-            {
-                while (true)
-                {
-                    var dic = adamHelper.steeveDic;
-                    StringBuilder sb = new StringBuilder();
-                    foreach (var d in dic)
-                    {
-                        sb.Append("key: " + d.Key).Append("; value: " + d.Value.GetForce() + "|" + d.Value.GetDisplace());
-                        sb.Append("\n");
-                    }
-                    MessageBox.Show(sb.ToString());
-                    Thread.Sleep(200);
-                }
-            }).Start();
+            Thread th = new Thread(() =>
+             {
+                 int count = 1;
+                 while (count++ <= 10)
+                 {
+                     var dic = adamHelper.steeveDic;
+                     StringBuilder sb = new StringBuilder();
+                     foreach (var d in dic)
+                     {
+                         sb.Append("key: " + d.Key).Append("; value: " + d.Value.GetForce() + "|" + d.Value.GetDisplace());
+                         sb.Append("\n");
+                     }
+                     MessageBox.Show(sb.ToString());
+                     Thread.Sleep(200);
+                 }
+             });
+            th.IsBackground = true;
+            th.Start();
         }
 
         private void button5_Click(object sender, EventArgs e)

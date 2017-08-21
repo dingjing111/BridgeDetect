@@ -12,7 +12,7 @@ namespace BridgeDetectSystem.adam
 
         private List<AdamOperation> adamList;
         private Dictionary<int, Dictionary<int, string>> allDataDic;
-        
+
 
         public Timer readTimer { get; }
         public Dictionary<int, Steeve> steeveDic { get; }
@@ -21,8 +21,8 @@ namespace BridgeDetectSystem.adam
         public Dictionary<int, RailWay> railWayDic { get; }
 
         public double steeveDisStandard { get; set; }
-        public double frontPivotDisStandard { get; set; }
-
+        public double first_frontPivotDisStandard { get; set; }
+        public double second_frontPivotDisStandard { get; set; }
         #endregion
 
         #region 单例
@@ -35,7 +35,7 @@ namespace BridgeDetectSystem.adam
             this.steeveDic = new Dictionary<int, Steeve>();
             this.anchorDic = new Dictionary<int, Anchor>();
             this.frontPivotDic = new Dictionary<int, FrontPivot>();
-            this.railWayDic = new Dictionary<int, RailWay>(); 
+            this.railWayDic = new Dictionary<int, RailWay>();
 
             try
             {
@@ -69,7 +69,7 @@ namespace BridgeDetectSystem.adam
             }, null, 0, readTimerPeriod);
         }
 
-    
+
         public static AdamHelper Initialize(List<AdamOperation> list, int readTimerPeriod)
         {
             if (instance != null)
@@ -99,7 +99,7 @@ namespace BridgeDetectSystem.adam
             {
                 foreach (AdamOperation oper in adamList)
                 {
-                    allDataDic[oper.id]= oper.Read();
+                    allDataDic[oper.id] = oper.Read();
                 }
 
                 ConvertToRealValue();
@@ -125,16 +125,16 @@ namespace BridgeDetectSystem.adam
                 {
                     for (int j = 0; j < 4; j++)
                     {
-                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 70,100);
+                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 70, 100);
                         tempDic.TryGetValue(j, out forceData);
                         forceSensor.readValue = double.Parse(forceData);
 
-                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 80,1);
+                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 60, 10);
                         tempDic.TryGetValue(j + 4, out disData);
                         disSensor.readValue = double.Parse(disData);
 
                         Steeve steeve = new Steeve(j, forceSensor, disSensor);
-                        steeveDic[steeve.id] = steeve; 
+                        steeveDic[steeve.id] = steeve;
                     }
                 }
                 else if (i == 1)
@@ -143,7 +143,7 @@ namespace BridgeDetectSystem.adam
                     int count = 0;
                     for (j = 0; j < 4; j++)
                     {
-                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 60,10);
+                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 60, 10);
                         tempDic.TryGetValue(j, out forceData);
                         forceSensor.readValue = double.Parse(forceData);
 
@@ -152,7 +152,7 @@ namespace BridgeDetectSystem.adam
                     }
                     for (j = 4; j < 6; j++)
                     {
-                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 5,100);
+                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 5, 100);
                         tempDic.TryGetValue(j, out disData);
                         disSensor.readValue = double.Parse(disData);
 
@@ -162,7 +162,7 @@ namespace BridgeDetectSystem.adam
                     count = 0;
                     if (j == 6)
                     {
-                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 30,100);
+                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 30, 100);
                         tempDic.TryGetValue(j, out disData);
                         disSensor.readValue = double.Parse(disData);
 
@@ -178,11 +178,25 @@ namespace BridgeDetectSystem.adam
         /// </summary>
         private void ReadStandardValue()
         {
-            int index = 0;
-            int first = 0;
-            int second = 1;
-            steeveDisStandard= double.Parse(adamList[index].Read(first));
-            frontPivotDisStandard = double.Parse(adamList[index].Read(second));
+            List<double> disList = new List<double>();
+            Sensor sensor = new Sensor(SensorType.displaceSensor, 4, 20, 70, 100);
+
+            for (int i = 0; i < 4; i++)
+            {
+                sensor.readValue = double.Parse(adamList[0].Read(i));
+                   
+                disList.Add(sensor.GetRealValue());
+            }
+
+            double sum = 0;
+            foreach (double val in disList)
+            {
+                sum += val;
+            }
+            steeveDisStandard = Math.Round(sum / 4, 3);
+
+            //first_frontPivotDisStandard = Math.Round(double.Parse(adamList[1].Read(4)));
+            //second_frontPivotDisStandard = Math.Round(double.Parse(adamList[1].Read(5)));
         }
 
         #endregion

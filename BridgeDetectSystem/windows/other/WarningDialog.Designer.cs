@@ -31,12 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WarningDialog));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblWarningType = new MetroFramework.Controls.MetroLabel();
-            this.lblWarningText = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.listBoxWarning = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -64,9 +63,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
-            this.tableLayoutPanel1.Controls.Add(this.lblWarningType, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblWarningText, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 3, 6);
+            this.tableLayoutPanel1.Controls.Add(this.listBoxWarning, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 5, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -84,34 +82,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.395349F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(738, 538);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // lblWarningType
-            // 
-            this.lblWarningType.AutoSize = true;
-            this.lblWarningType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblWarningType.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblWarningType.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblWarningType.ForeColor = System.Drawing.Color.Red;
-            this.lblWarningType.Location = new System.Drawing.Point(222, 72);
-            this.lblWarningType.Margin = new System.Windows.Forms.Padding(2);
-            this.lblWarningType.Name = "lblWarningType";
-            this.lblWarningType.Size = new System.Drawing.Size(291, 68);
-            this.lblWarningType.TabIndex = 1;
-            this.lblWarningType.Text = "报警类型";
-            this.lblWarningType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblWarningText
-            // 
-            this.lblWarningText.AutoSize = true;
-            this.lblWarningText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblWarningText.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblWarningText.ForeColor = System.Drawing.Color.Red;
-            this.lblWarningText.Location = new System.Drawing.Point(222, 144);
-            this.lblWarningText.Margin = new System.Windows.Forms.Padding(2);
-            this.lblWarningText.Name = "lblWarningText";
-            this.lblWarningText.Size = new System.Drawing.Size(291, 63);
-            this.lblWarningText.TabIndex = 2;
-            this.lblWarningText.Text = "报警文字";
             // 
             // tableLayoutPanel2
             // 
@@ -168,6 +138,17 @@
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
+            // listBoxWarning
+            // 
+            this.listBoxWarning.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxWarning.FormattingEnabled = true;
+            this.listBoxWarning.ItemHeight = 12;
+            this.listBoxWarning.Location = new System.Drawing.Point(223, 73);
+            this.listBoxWarning.Name = "listBoxWarning";
+            this.tableLayoutPanel1.SetRowSpan(this.listBoxWarning, 4);
+            this.listBoxWarning.Size = new System.Drawing.Size(289, 357);
+            this.listBoxWarning.TabIndex = 1;
+            // 
             // WarningDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -189,7 +170,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WarningDialog_FormClosing);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -201,11 +181,10 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private MetroFramework.Controls.MetroLabel lblWarningType;
-        private System.Windows.Forms.Label lblWarningText;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ListBox listBoxWarning;
     }
 }

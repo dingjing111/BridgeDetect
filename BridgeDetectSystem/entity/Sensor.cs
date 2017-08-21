@@ -8,12 +8,12 @@ namespace BridgeDetectSystem.entity
     public class Sensor
     {
         public SensorType kind { get; } //传感器种类
-        private int outputStart; //输出信号下限
-        private int outputEnd; //输出信号上限
-        private int range; //传感器量程
-        private int coefficient;// 单位转换，需要乘的系数
-        private double _readValue;
-
+        private double outputStart; //输出信号下限
+        private double outputEnd; //输出信号上限
+        private double range; //传感器量程
+        private double coefficient;// 单位转换，需要乘的系数
+        private double _readValue; //读取到的实时数据，需要转换为实际值
+        private int digits; //小数点后保留几位
         public double readValue
         {
             //get
@@ -31,7 +31,7 @@ namespace BridgeDetectSystem.entity
             get;set;
         }
 
-        public Sensor(SensorType kind, int outputStart, int outputEnd, int range,int coefficient)
+        public Sensor(SensorType kind, double outputStart, double outputEnd, double range,double coefficient,int digits=3)
         {
             this.kind = kind;
             this.outputStart = outputStart;
@@ -39,6 +39,7 @@ namespace BridgeDetectSystem.entity
             this.range = range;
             this.coefficient = coefficient;
             this._readValue = outputStart;
+            this.digits = digits;
         }
 
         /// <summary>
@@ -47,7 +48,7 @@ namespace BridgeDetectSystem.entity
         /// <returns></returns>
         public double GetRealValue()
         {
-            return range * (readValue - 4) *coefficient/ (outputEnd - outputStart);
+            return Math.Round(range * (readValue - 4) *coefficient/ (outputEnd - outputStart),digits);
         }
    
     }
