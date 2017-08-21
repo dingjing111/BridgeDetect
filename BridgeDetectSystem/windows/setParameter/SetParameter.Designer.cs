@@ -80,7 +80,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(22, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1108, 816);
+            this.panel1.Size = new System.Drawing.Size(1108, 826);
             this.panel1.TabIndex = 2;
             // 
             // panel3
@@ -89,7 +89,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(550, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(558, 816);
+            this.panel3.Size = new System.Drawing.Size(558, 826);
             this.panel3.TabIndex = 1;
             // 
             // grpSetAnchorPara
@@ -99,7 +99,7 @@
             this.grpSetAnchorPara.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.grpSetAnchorPara.Location = new System.Drawing.Point(0, 0);
             this.grpSetAnchorPara.Name = "grpSetAnchorPara";
-            this.grpSetAnchorPara.Size = new System.Drawing.Size(558, 816);
+            this.grpSetAnchorPara.Size = new System.Drawing.Size(558, 826);
             this.grpSetAnchorPara.TabIndex = 0;
             this.grpSetAnchorPara.TabStop = false;
             this.grpSetAnchorPara.Text = "锚杆与前支点报警参数设置";
@@ -122,7 +122,7 @@
             this.tableLayoutPanel2.Controls.Add(this.txtAnchorForceDiffLimit, 3, 3);
             this.tableLayoutPanel2.Controls.Add(this.txtFrontPivotDisLimit, 3, 5);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 22);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 26);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 12;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
@@ -137,7 +137,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(552, 791);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(552, 797);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // lblAnchorForceLimit
@@ -146,10 +146,10 @@
             this.tableLayoutPanel2.SetColumnSpan(this.lblAnchorForceLimit, 2);
             this.lblAnchorForceLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorForceLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorForceLimit.Location = new System.Drawing.Point(3, 68);
+            this.lblAnchorForceLimit.Location = new System.Drawing.Point(3, 69);
             this.lblAnchorForceLimit.Margin = new System.Windows.Forms.Padding(3);
             this.lblAnchorForceLimit.Name = "lblAnchorForceLimit";
-            this.lblAnchorForceLimit.Size = new System.Drawing.Size(214, 59);
+            this.lblAnchorForceLimit.Size = new System.Drawing.Size(214, 60);
             this.lblAnchorForceLimit.TabIndex = 0;
             this.lblAnchorForceLimit.Text = "锚杆受力上限(kN)";
             this.lblAnchorForceLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -160,10 +160,10 @@
             this.tableLayoutPanel2.SetColumnSpan(this.lblAnchorForceDiffLimit, 2);
             this.lblAnchorForceDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorForceDiffLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorForceDiffLimit.Location = new System.Drawing.Point(3, 198);
+            this.lblAnchorForceDiffLimit.Location = new System.Drawing.Point(3, 201);
             this.lblAnchorForceDiffLimit.Margin = new System.Windows.Forms.Padding(3);
             this.lblAnchorForceDiffLimit.Name = "lblAnchorForceDiffLimit";
-            this.lblAnchorForceDiffLimit.Size = new System.Drawing.Size(214, 59);
+            this.lblAnchorForceDiffLimit.Size = new System.Drawing.Size(214, 60);
             this.lblAnchorForceDiffLimit.TabIndex = 2;
             this.lblAnchorForceDiffLimit.Text = "锚杆力差值上限(kN)";
             this.lblAnchorForceDiffLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -174,10 +174,10 @@
             this.tableLayoutPanel2.SetColumnSpan(this.lblFrontPivotDisLimit, 2);
             this.lblFrontPivotDisLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblFrontPivotDisLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblFrontPivotDisLimit.Location = new System.Drawing.Point(3, 328);
+            this.lblFrontPivotDisLimit.Location = new System.Drawing.Point(3, 333);
             this.lblFrontPivotDisLimit.Margin = new System.Windows.Forms.Padding(3);
             this.lblFrontPivotDisLimit.Name = "lblFrontPivotDisLimit";
-            this.lblFrontPivotDisLimit.Size = new System.Drawing.Size(214, 59);
+            this.lblFrontPivotDisLimit.Size = new System.Drawing.Size(214, 60);
             this.lblFrontPivotDisLimit.TabIndex = 3;
             this.lblFrontPivotDisLimit.Text = "前支点位移上限(cm)";
             this.lblFrontPivotDisLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -187,9 +187,9 @@
             this.btnSave.BackColor = System.Drawing.Color.SteelBlue;
             this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(113, 523);
+            this.btnSave.Location = new System.Drawing.Point(113, 531);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(104, 59);
+            this.btnSave.Size = new System.Drawing.Size(104, 60);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -200,9 +200,9 @@
             this.btnBack.BackColor = System.Drawing.Color.SteelBlue;
             this.btnBack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(388, 523);
+            this.btnBack.Location = new System.Drawing.Point(388, 531);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(104, 59);
+            this.btnBack.Size = new System.Drawing.Size(104, 60);
             this.btnBack.TabIndex = 8;
             this.btnBack.Text = "返回";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -214,10 +214,10 @@
             this.txtAnchorForceLimit.DecimalPlaces = 1;
             this.txtAnchorForceLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorForceLimit.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtAnchorForceLimit.Location = new System.Drawing.Point(276, 66);
+            this.txtAnchorForceLimit.Location = new System.Drawing.Point(276, 67);
             this.txtAnchorForceLimit.Margin = new System.Windows.Forms.Padding(1);
             this.txtAnchorForceLimit.Name = "txtAnchorForceLimit";
-            this.txtAnchorForceLimit.Size = new System.Drawing.Size(218, 44);
+            this.txtAnchorForceLimit.Size = new System.Drawing.Size(218, 53);
             this.txtAnchorForceLimit.TabIndex = 9;
             this.txtAnchorForceLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -227,9 +227,9 @@
             this.txtAnchorForceDiffLimit.DecimalPlaces = 1;
             this.txtAnchorForceDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorForceDiffLimit.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtAnchorForceDiffLimit.Location = new System.Drawing.Point(278, 198);
+            this.txtAnchorForceDiffLimit.Location = new System.Drawing.Point(278, 201);
             this.txtAnchorForceDiffLimit.Name = "txtAnchorForceDiffLimit";
-            this.txtAnchorForceDiffLimit.Size = new System.Drawing.Size(214, 44);
+            this.txtAnchorForceDiffLimit.Size = new System.Drawing.Size(214, 53);
             this.txtAnchorForceDiffLimit.TabIndex = 10;
             this.txtAnchorForceDiffLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -239,9 +239,9 @@
             this.txtFrontPivotDisLimit.DecimalPlaces = 1;
             this.txtFrontPivotDisLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFrontPivotDisLimit.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtFrontPivotDisLimit.Location = new System.Drawing.Point(278, 328);
+            this.txtFrontPivotDisLimit.Location = new System.Drawing.Point(278, 333);
             this.txtFrontPivotDisLimit.Name = "txtFrontPivotDisLimit";
-            this.txtFrontPivotDisLimit.Size = new System.Drawing.Size(214, 44);
+            this.txtFrontPivotDisLimit.Size = new System.Drawing.Size(214, 53);
             this.txtFrontPivotDisLimit.TabIndex = 11;
             this.txtFrontPivotDisLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -251,7 +251,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(550, 816);
+            this.panel2.Size = new System.Drawing.Size(550, 826);
             this.panel2.TabIndex = 0;
             // 
             // grpSetSteevePara
@@ -261,7 +261,7 @@
             this.grpSetSteevePara.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.grpSetSteevePara.Location = new System.Drawing.Point(0, 0);
             this.grpSetSteevePara.Name = "grpSetSteevePara";
-            this.grpSetSteevePara.Size = new System.Drawing.Size(550, 816);
+            this.grpSetSteevePara.Size = new System.Drawing.Size(550, 826);
             this.grpSetSteevePara.TabIndex = 0;
             this.grpSetSteevePara.TabStop = false;
             this.grpSetSteevePara.Text = "吊杆报警参数设置";
@@ -286,7 +286,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtSteeveForceUpLimit, 2, 9);
             this.tableLayoutPanel1.Controls.Add(this.txtSteeveForceDiffLimit, 2, 11);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 22);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 26);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 13;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692545F));
@@ -303,7 +303,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692544F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.689467F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(544, 791);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(544, 797);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // lblUpDis
@@ -311,10 +311,10 @@
             this.lblUpDis.AutoSize = true;
             this.lblUpDis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblUpDis.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblUpDis.Location = new System.Drawing.Point(3, 63);
+            this.lblUpDis.Location = new System.Drawing.Point(3, 64);
             this.lblUpDis.Margin = new System.Windows.Forms.Padding(3);
             this.lblUpDis.Name = "lblUpDis";
-            this.lblUpDis.Size = new System.Drawing.Size(211, 54);
+            this.lblUpDis.Size = new System.Drawing.Size(211, 55);
             this.lblUpDis.TabIndex = 0;
             this.lblUpDis.Text = "挂篮上升位移(cm)";
             this.lblUpDis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -324,10 +324,10 @@
             this.lblDownDis.AutoSize = true;
             this.lblDownDis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDownDis.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblDownDis.Location = new System.Drawing.Point(3, 183);
+            this.lblDownDis.Location = new System.Drawing.Point(3, 186);
             this.lblDownDis.Margin = new System.Windows.Forms.Padding(3);
             this.lblDownDis.Name = "lblDownDis";
-            this.lblDownDis.Size = new System.Drawing.Size(211, 54);
+            this.lblDownDis.Size = new System.Drawing.Size(211, 55);
             this.lblDownDis.TabIndex = 2;
             this.lblDownDis.Text = "挂篮下降位移(cm)";
             this.lblDownDis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -337,10 +337,10 @@
             this.lblAllowDisDiffLimit.AutoSize = true;
             this.lblAllowDisDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAllowDisDiffLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAllowDisDiffLimit.Location = new System.Drawing.Point(3, 303);
+            this.lblAllowDisDiffLimit.Location = new System.Drawing.Point(3, 308);
             this.lblAllowDisDiffLimit.Margin = new System.Windows.Forms.Padding(3);
             this.lblAllowDisDiffLimit.Name = "lblAllowDisDiffLimit";
-            this.lblAllowDisDiffLimit.Size = new System.Drawing.Size(211, 54);
+            this.lblAllowDisDiffLimit.Size = new System.Drawing.Size(211, 55);
             this.lblAllowDisDiffLimit.TabIndex = 3;
             this.lblAllowDisDiffLimit.Text = "挂篮位移允许误差(cm)";
             this.lblAllowDisDiffLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -350,10 +350,10 @@
             this.lblSteeveDisDiffLimit.AutoSize = true;
             this.lblSteeveDisDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSteeveDisDiffLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveDisDiffLimit.Location = new System.Drawing.Point(3, 423);
+            this.lblSteeveDisDiffLimit.Location = new System.Drawing.Point(3, 430);
             this.lblSteeveDisDiffLimit.Margin = new System.Windows.Forms.Padding(3);
             this.lblSteeveDisDiffLimit.Name = "lblSteeveDisDiffLimit";
-            this.lblSteeveDisDiffLimit.Size = new System.Drawing.Size(211, 54);
+            this.lblSteeveDisDiffLimit.Size = new System.Drawing.Size(211, 55);
             this.lblSteeveDisDiffLimit.TabIndex = 4;
             this.lblSteeveDisDiffLimit.Text = "吊杆位移差上限(cm)";
             this.lblSteeveDisDiffLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -363,10 +363,10 @@
             this.lblSteeveForceLimit.AutoSize = true;
             this.lblSteeveForceLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSteeveForceLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveForceLimit.Location = new System.Drawing.Point(3, 543);
+            this.lblSteeveForceLimit.Location = new System.Drawing.Point(3, 552);
             this.lblSteeveForceLimit.Margin = new System.Windows.Forms.Padding(3);
             this.lblSteeveForceLimit.Name = "lblSteeveForceLimit";
-            this.lblSteeveForceLimit.Size = new System.Drawing.Size(211, 54);
+            this.lblSteeveForceLimit.Size = new System.Drawing.Size(211, 55);
             this.lblSteeveForceLimit.TabIndex = 8;
             this.lblSteeveForceLimit.Text = "吊杆受力上限(kN)";
             this.lblSteeveForceLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -376,10 +376,10 @@
             this.lblSteeveForceDiffLimit.AutoSize = true;
             this.lblSteeveForceDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSteeveForceDiffLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveForceDiffLimit.Location = new System.Drawing.Point(3, 663);
+            this.lblSteeveForceDiffLimit.Location = new System.Drawing.Point(3, 674);
             this.lblSteeveForceDiffLimit.Margin = new System.Windows.Forms.Padding(3);
             this.lblSteeveForceDiffLimit.Name = "lblSteeveForceDiffLimit";
-            this.lblSteeveForceDiffLimit.Size = new System.Drawing.Size(211, 54);
+            this.lblSteeveForceDiffLimit.Size = new System.Drawing.Size(211, 55);
             this.lblSteeveForceDiffLimit.TabIndex = 10;
             this.lblSteeveForceDiffLimit.Text = "吊杆力差值上限(kN)";
             this.lblSteeveForceDiffLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -390,10 +390,10 @@
             this.txtBasketAllowDisDiffLimit.DecimalPlaces = 1;
             this.txtBasketAllowDisDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtBasketAllowDisDiffLimit.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtBasketAllowDisDiffLimit.Location = new System.Drawing.Point(272, 301);
+            this.txtBasketAllowDisDiffLimit.Location = new System.Drawing.Point(272, 306);
             this.txtBasketAllowDisDiffLimit.Margin = new System.Windows.Forms.Padding(1);
             this.txtBasketAllowDisDiffLimit.Name = "txtBasketAllowDisDiffLimit";
-            this.txtBasketAllowDisDiffLimit.Size = new System.Drawing.Size(215, 44);
+            this.txtBasketAllowDisDiffLimit.Size = new System.Drawing.Size(215, 53);
             this.txtBasketAllowDisDiffLimit.TabIndex = 12;
             this.txtBasketAllowDisDiffLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -402,10 +402,10 @@
             this.txtBasketUpDisLimit.DecimalPlaces = 1;
             this.txtBasketUpDisLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtBasketUpDisLimit.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtBasketUpDisLimit.Location = new System.Drawing.Point(272, 61);
+            this.txtBasketUpDisLimit.Location = new System.Drawing.Point(272, 62);
             this.txtBasketUpDisLimit.Margin = new System.Windows.Forms.Padding(1);
             this.txtBasketUpDisLimit.Name = "txtBasketUpDisLimit";
-            this.txtBasketUpDisLimit.Size = new System.Drawing.Size(215, 44);
+            this.txtBasketUpDisLimit.Size = new System.Drawing.Size(215, 53);
             this.txtBasketUpDisLimit.TabIndex = 13;
             this.txtBasketUpDisLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -414,10 +414,10 @@
             this.txtBasketDownDisLimit.DecimalPlaces = 1;
             this.txtBasketDownDisLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtBasketDownDisLimit.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtBasketDownDisLimit.Location = new System.Drawing.Point(272, 181);
+            this.txtBasketDownDisLimit.Location = new System.Drawing.Point(272, 184);
             this.txtBasketDownDisLimit.Margin = new System.Windows.Forms.Padding(1);
             this.txtBasketDownDisLimit.Name = "txtBasketDownDisLimit";
-            this.txtBasketDownDisLimit.Size = new System.Drawing.Size(215, 44);
+            this.txtBasketDownDisLimit.Size = new System.Drawing.Size(215, 53);
             this.txtBasketDownDisLimit.TabIndex = 14;
             this.txtBasketDownDisLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -426,9 +426,9 @@
             this.txtSteeveDisDiffLimit.DecimalPlaces = 1;
             this.txtSteeveDisDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDisDiffLimit.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtSteeveDisDiffLimit.Location = new System.Drawing.Point(274, 423);
+            this.txtSteeveDisDiffLimit.Location = new System.Drawing.Point(274, 430);
             this.txtSteeveDisDiffLimit.Name = "txtSteeveDisDiffLimit";
-            this.txtSteeveDisDiffLimit.Size = new System.Drawing.Size(211, 44);
+            this.txtSteeveDisDiffLimit.Size = new System.Drawing.Size(211, 53);
             this.txtSteeveDisDiffLimit.TabIndex = 15;
             this.txtSteeveDisDiffLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -437,10 +437,10 @@
             this.txtSteeveForceUpLimit.DecimalPlaces = 1;
             this.txtSteeveForceUpLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveForceUpLimit.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtSteeveForceUpLimit.Location = new System.Drawing.Point(272, 541);
+            this.txtSteeveForceUpLimit.Location = new System.Drawing.Point(272, 550);
             this.txtSteeveForceUpLimit.Margin = new System.Windows.Forms.Padding(1);
             this.txtSteeveForceUpLimit.Name = "txtSteeveForceUpLimit";
-            this.txtSteeveForceUpLimit.Size = new System.Drawing.Size(215, 44);
+            this.txtSteeveForceUpLimit.Size = new System.Drawing.Size(215, 53);
             this.txtSteeveForceUpLimit.TabIndex = 16;
             this.txtSteeveForceUpLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -449,18 +449,18 @@
             this.txtSteeveForceDiffLimit.DecimalPlaces = 1;
             this.txtSteeveForceDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveForceDiffLimit.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtSteeveForceDiffLimit.Location = new System.Drawing.Point(272, 661);
+            this.txtSteeveForceDiffLimit.Location = new System.Drawing.Point(272, 672);
             this.txtSteeveForceDiffLimit.Margin = new System.Windows.Forms.Padding(1);
             this.txtSteeveForceDiffLimit.Name = "txtSteeveForceDiffLimit";
-            this.txtSteeveForceDiffLimit.Size = new System.Drawing.Size(215, 44);
+            this.txtSteeveForceDiffLimit.Size = new System.Drawing.Size(215, 53);
             this.txtSteeveForceDiffLimit.TabIndex = 17;
             this.txtSteeveForceDiffLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // SetParameter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 912);
+            this.ClientSize = new System.Drawing.Size(1152, 922);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
