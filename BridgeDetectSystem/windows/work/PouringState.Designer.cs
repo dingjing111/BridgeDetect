@@ -223,7 +223,7 @@
             this.btnFirstPage.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnFirstPage.ForeColor = System.Drawing.Color.White;
             this.btnFirstPage.Name = "btnFirstPage";
-            this.btnFirstPage.Size = new System.Drawing.Size(61, 44);
+            this.btnFirstPage.Size = new System.Drawing.Size(52, 44);
             this.btnFirstPage.Text = "首页";
             this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
             // 
@@ -232,7 +232,7 @@
             this.btnSetParameter.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnSetParameter.ForeColor = System.Drawing.Color.White;
             this.btnSetParameter.Name = "btnSetParameter";
-            this.btnSetParameter.Size = new System.Drawing.Size(101, 44);
+            this.btnSetParameter.Size = new System.Drawing.Size(84, 44);
             this.btnSetParameter.Text = "参数设置";
             this.btnSetParameter.Click += new System.EventHandler(this.btnSetParameter_Click);
             // 
@@ -241,7 +241,7 @@
             this.btnExit.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(61, 44);
+            this.btnExit.Size = new System.Drawing.Size(52, 44);
             this.btnExit.Text = "退出";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -253,7 +253,7 @@
             this.panel1.Location = new System.Drawing.Point(22, 120);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1108, 778);
+            this.panel1.Size = new System.Drawing.Size(1108, 768);
             this.panel1.TabIndex = 1;
             // 
             // panel3
@@ -263,7 +263,7 @@
             this.panel3.Location = new System.Drawing.Point(556, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(552, 778);
+            this.panel3.Size = new System.Drawing.Size(552, 768);
             this.panel3.TabIndex = 1;
             // 
             // grpSteeveDis
@@ -275,7 +275,7 @@
             this.grpSteeveDis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpSteeveDis.Name = "grpSteeveDis";
             this.grpSteeveDis.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpSteeveDis.Size = new System.Drawing.Size(552, 778);
+            this.grpSteeveDis.Size = new System.Drawing.Size(552, 768);
             this.grpSteeveDis.TabIndex = 0;
             this.grpSteeveDis.TabStop = false;
             this.grpSteeveDis.Text = "吊杆位移(cm)";
@@ -285,10 +285,10 @@
             this.panel7.Controls.Add(this.panel9);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(3, 385);
+            this.panel7.Location = new System.Drawing.Point(3, 381);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(546, 391);
+            this.panel7.Size = new System.Drawing.Size(546, 385);
             this.panel7.TabIndex = 1;
             // 
             // panel9
@@ -297,7 +297,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(271, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(275, 391);
+            this.panel9.Size = new System.Drawing.Size(275, 385);
             this.panel9.TabIndex = 1;
             // 
             // groupBox2
@@ -306,7 +306,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(275, 391);
+            this.groupBox2.Size = new System.Drawing.Size(275, 385);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "重置按钮";
@@ -324,7 +324,7 @@
             this.tableLayoutPanel5.Controls.Add(this.btnResetSteeve, 4, 3);
             this.tableLayoutPanel5.Controls.Add(this.btnResetFrontPivot, 4, 5);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 24);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 20);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 8;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.3002F));
@@ -335,7 +335,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.86357F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.57721F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.57721F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(269, 364);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(269, 362);
             this.tableLayoutPanel5.TabIndex = 5;
             // 
             // lblResetSteeve
@@ -344,7 +344,7 @@
             this.tableLayoutPanel5.SetColumnSpan(this.lblResetSteeve, 2);
             this.lblResetSteeve.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblResetSteeve.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblResetSteeve.Location = new System.Drawing.Point(43, 138);
+            this.lblResetSteeve.Location = new System.Drawing.Point(43, 137);
             this.lblResetSteeve.Name = "lblResetSteeve";
             this.lblResetSteeve.Size = new System.Drawing.Size(106, 46);
             this.lblResetSteeve.TabIndex = 2;
@@ -357,7 +357,7 @@
             this.tableLayoutPanel5.SetColumnSpan(this.lblFrontPivot, 2);
             this.lblFrontPivot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblFrontPivot.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblFrontPivot.Location = new System.Drawing.Point(43, 230);
+            this.lblFrontPivot.Location = new System.Drawing.Point(43, 229);
             this.lblFrontPivot.Name = "lblFrontPivot";
             this.lblFrontPivot.Size = new System.Drawing.Size(106, 46);
             this.lblFrontPivot.TabIndex = 3;
@@ -369,26 +369,28 @@
             this.btnResetSteeve.BackColor = System.Drawing.Color.SteelBlue;
             this.btnResetSteeve.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnResetSteeve.ForeColor = System.Drawing.Color.White;
-            this.btnResetSteeve.Location = new System.Drawing.Point(202, 138);
+            this.btnResetSteeve.Location = new System.Drawing.Point(202, 137);
             this.btnResetSteeve.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnResetSteeve.Name = "btnResetSteeve";
             this.btnResetSteeve.Size = new System.Drawing.Size(64, 46);
             this.btnResetSteeve.TabIndex = 4;
             this.btnResetSteeve.Text = "重置";
             this.btnResetSteeve.UseVisualStyleBackColor = false;
+            this.btnResetSteeve.Click += new System.EventHandler(this.btnResetSteeve_Click);
             // 
             // btnResetFrontPivot
             // 
             this.btnResetFrontPivot.BackColor = System.Drawing.Color.SteelBlue;
             this.btnResetFrontPivot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnResetFrontPivot.ForeColor = System.Drawing.Color.White;
-            this.btnResetFrontPivot.Location = new System.Drawing.Point(202, 230);
+            this.btnResetFrontPivot.Location = new System.Drawing.Point(202, 229);
             this.btnResetFrontPivot.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnResetFrontPivot.Name = "btnResetFrontPivot";
             this.btnResetFrontPivot.Size = new System.Drawing.Size(64, 46);
             this.btnResetFrontPivot.TabIndex = 5;
             this.btnResetFrontPivot.Text = "重置";
             this.btnResetFrontPivot.UseVisualStyleBackColor = false;
+            this.btnResetFrontPivot.Click += new System.EventHandler(this.btnResetFrontPivot_Click);
             // 
             // panel8
             // 
@@ -396,7 +398,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(271, 391);
+            this.panel8.Size = new System.Drawing.Size(271, 385);
             this.panel8.TabIndex = 0;
             // 
             // groupBox1
@@ -405,7 +407,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(271, 391);
+            this.groupBox1.Size = new System.Drawing.Size(271, 385);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "前支点位移(cm)";
@@ -426,7 +428,7 @@
             this.tableLayoutPanel4.Controls.Add(this.lblFrontDIsDiffLimit, 1, 5);
             this.tableLayoutPanel4.Controls.Add(this.txtFrontDIsDiffLimit, 3, 5);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 24);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 20);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 8;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.3002F));
@@ -437,7 +439,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.86357F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.57721F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.57721F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(265, 364);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(265, 362);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // lblFrontPivotDis1
@@ -447,7 +449,7 @@
             this.lblFrontPivotDis1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblFrontPivotDis1.Location = new System.Drawing.Point(28, 48);
             this.lblFrontPivotDis1.Name = "lblFrontPivotDis1";
-            this.lblFrontPivotDis1.Size = new System.Drawing.Size(89, 44);
+            this.lblFrontPivotDis1.Size = new System.Drawing.Size(89, 43);
             this.lblFrontPivotDis1.TabIndex = 0;
             this.lblFrontPivotDis1.Text = "1";
             this.lblFrontPivotDis1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -460,7 +462,7 @@
             this.txtFrontPivotDis1.Location = new System.Drawing.Point(144, 48);
             this.txtFrontPivotDis1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.txtFrontPivotDis1.Name = "txtFrontPivotDis1";
-            this.txtFrontPivotDis1.Size = new System.Drawing.Size(85, 44);
+            this.txtFrontPivotDis1.Size = new System.Drawing.Size(85, 43);
             this.txtFrontPivotDis1.TabIndex = 1;
             // 
             // lblFrontPivotDis2
@@ -468,7 +470,7 @@
             this.lblFrontPivotDis2.AutoSize = true;
             this.lblFrontPivotDis2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblFrontPivotDis2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblFrontPivotDis2.Location = new System.Drawing.Point(28, 138);
+            this.lblFrontPivotDis2.Location = new System.Drawing.Point(28, 137);
             this.lblFrontPivotDis2.Name = "lblFrontPivotDis2";
             this.lblFrontPivotDis2.Size = new System.Drawing.Size(89, 46);
             this.lblFrontPivotDis2.TabIndex = 2;
@@ -480,7 +482,7 @@
             this.tableLayoutPanel4.SetColumnSpan(this.txtFrontPivotDis2, 2);
             this.txtFrontPivotDis2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFrontPivotDis2.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtFrontPivotDis2.Location = new System.Drawing.Point(144, 138);
+            this.txtFrontPivotDis2.Location = new System.Drawing.Point(144, 137);
             this.txtFrontPivotDis2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.txtFrontPivotDis2.Name = "txtFrontPivotDis2";
             this.txtFrontPivotDis2.Size = new System.Drawing.Size(85, 46);
@@ -491,7 +493,7 @@
             this.lblFrontDIsDiffLimit.AutoSize = true;
             this.lblFrontDIsDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblFrontDIsDiffLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblFrontDIsDiffLimit.Location = new System.Drawing.Point(28, 230);
+            this.lblFrontDIsDiffLimit.Location = new System.Drawing.Point(28, 229);
             this.lblFrontDIsDiffLimit.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.lblFrontDIsDiffLimit.Name = "lblFrontDIsDiffLimit";
             this.lblFrontDIsDiffLimit.Size = new System.Drawing.Size(89, 43);
@@ -504,7 +506,7 @@
             this.tableLayoutPanel4.SetColumnSpan(this.txtFrontDIsDiffLimit, 2);
             this.txtFrontDIsDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFrontDIsDiffLimit.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtFrontDIsDiffLimit.Location = new System.Drawing.Point(144, 230);
+            this.txtFrontDIsDiffLimit.Location = new System.Drawing.Point(144, 229);
             this.txtFrontDIsDiffLimit.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.txtFrontDIsDiffLimit.Name = "txtFrontDIsDiffLimit";
             this.txtFrontDIsDiffLimit.Size = new System.Drawing.Size(85, 46);
@@ -514,7 +516,7 @@
             // 
             this.panel6.Controls.Add(this.tableLayoutPanel2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(3, 23);
+            this.panel6.Location = new System.Drawing.Point(3, 19);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(546, 362);
@@ -1052,7 +1054,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(556, 778);
+            this.panel2.Size = new System.Drawing.Size(556, 768);
             this.panel2.TabIndex = 0;
             // 
             // grpSteeveForce
@@ -1064,7 +1066,7 @@
             this.grpSteeveForce.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpSteeveForce.Name = "grpSteeveForce";
             this.grpSteeveForce.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpSteeveForce.Size = new System.Drawing.Size(556, 778);
+            this.grpSteeveForce.Size = new System.Drawing.Size(556, 768);
             this.grpSteeveForce.TabIndex = 0;
             this.grpSteeveForce.TabStop = false;
             this.grpSteeveForce.Text = "吊杆力(kN)";
@@ -1073,10 +1075,10 @@
             // 
             this.panel5.Controls.Add(this.grpAnchorForce);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 385);
+            this.panel5.Location = new System.Drawing.Point(3, 381);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(550, 391);
+            this.panel5.Size = new System.Drawing.Size(550, 385);
             this.panel5.TabIndex = 1;
             // 
             // grpAnchorForce
@@ -1087,7 +1089,7 @@
             this.grpAnchorForce.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpAnchorForce.Name = "grpAnchorForce";
             this.grpAnchorForce.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpAnchorForce.Size = new System.Drawing.Size(550, 391);
+            this.grpAnchorForce.Size = new System.Drawing.Size(550, 385);
             this.grpAnchorForce.TabIndex = 0;
             this.grpAnchorForce.TabStop = false;
             this.grpAnchorForce.Text = "锚杆力(kN)";
@@ -1140,7 +1142,7 @@
             this.tableLayoutPanel3.Controls.Add(this.lblAnchorF1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.txtAnchorF1, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 23);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 10;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -1153,7 +1155,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(544, 366);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(544, 364);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // txtMaxAnchorForceDiff
@@ -1163,7 +1165,7 @@
             this.txtMaxAnchorForceDiff.Location = new System.Drawing.Point(380, 325);
             this.txtMaxAnchorForceDiff.Margin = new System.Windows.Forms.Padding(1);
             this.txtMaxAnchorForceDiff.Name = "txtMaxAnchorForceDiff";
-            this.txtMaxAnchorForceDiff.Size = new System.Drawing.Size(163, 40);
+            this.txtMaxAnchorForceDiff.Size = new System.Drawing.Size(163, 38);
             this.txtMaxAnchorForceDiff.TabIndex = 39;
             // 
             // lblMaxAnchorForceDiff
@@ -1174,7 +1176,7 @@
             this.lblMaxAnchorForceDiff.Location = new System.Drawing.Point(271, 325);
             this.lblMaxAnchorForceDiff.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.lblMaxAnchorForceDiff.Name = "lblMaxAnchorForceDiff";
-            this.lblMaxAnchorForceDiff.Size = new System.Drawing.Size(108, 40);
+            this.lblMaxAnchorForceDiff.Size = new System.Drawing.Size(108, 38);
             this.lblMaxAnchorForceDiff.TabIndex = 38;
             this.lblMaxAnchorForceDiff.Text = "力最大差值";
             this.lblMaxAnchorForceDiff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1186,7 +1188,7 @@
             this.txtAnchorForceDiffLimit.Location = new System.Drawing.Point(109, 325);
             this.txtAnchorForceDiffLimit.Margin = new System.Windows.Forms.Padding(1);
             this.txtAnchorForceDiffLimit.Name = "txtAnchorForceDiffLimit";
-            this.txtAnchorForceDiffLimit.Size = new System.Drawing.Size(161, 40);
+            this.txtAnchorForceDiffLimit.Size = new System.Drawing.Size(161, 38);
             this.txtAnchorForceDiffLimit.TabIndex = 37;
             // 
             // lblAnchorForceDiffLimit
@@ -1197,7 +1199,7 @@
             this.lblAnchorForceDiffLimit.Location = new System.Drawing.Point(0, 325);
             this.lblAnchorForceDiffLimit.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.lblAnchorForceDiffLimit.Name = "lblAnchorForceDiffLimit";
-            this.lblAnchorForceDiffLimit.Size = new System.Drawing.Size(108, 40);
+            this.lblAnchorForceDiffLimit.Size = new System.Drawing.Size(108, 38);
             this.lblAnchorForceDiffLimit.TabIndex = 36;
             this.lblAnchorForceDiffLimit.Text = "力差值上限";
             this.lblAnchorForceDiffLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1621,7 +1623,7 @@
             // 
             this.panel4.Controls.Add(this.tableLayoutPanel1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(3, 23);
+            this.panel4.Location = new System.Drawing.Point(3, 19);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(550, 362);
@@ -2154,9 +2156,9 @@
             // 
             // PouringState
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 922);
+            this.ClientSize = new System.Drawing.Size(1152, 912);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));

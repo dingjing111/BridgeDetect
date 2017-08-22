@@ -192,7 +192,7 @@ namespace BridgeDetectSystem.adam
                 if (channelEnabled[index])
                 {
                     string valueFormat = AnalogInput.GetFloatFormat(adamType, channelRange[index]);
-                    value = fValue.ToString(valueFormat) + " " + AnalogInput.GetUnitName(adamType, channelRange[index]);
+                    value = fValue.ToString(valueFormat);
                 }
             }
             else

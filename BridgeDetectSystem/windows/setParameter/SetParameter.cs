@@ -7,17 +7,50 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BridgeDetectSystem.service;
+using BridgeDetectSystem.util;
 
 namespace BridgeDetectSystem
 {
     public partial class SetParameter : MetroFramework.Forms.MetroForm
     {
         ConfigManager configManager;
+        List<NumericUpDown> numericList;
+        List<ConfigManager.ConfigKeys> configKeysList;
 
         public SetParameter()
         {
             InitializeComponent();
             configManager = ConfigManager.GetInstance();
+
+            numericList = new List<NumericUpDown>()
+            {
+                txtBasketUpDisLimit,
+                txtBasketDownDisLimit,
+                txtBasketAllowDisDiffLimit,
+
+                txtSteeveDisDiffLimit,
+                txtSteeveForceUpLimit,
+                txtSteeveForceDiffLimit,
+
+                txtAnchorForceLimit,
+                txtAnchorForceDiffLimit,
+                txtFrontPivotDisLimit,
+            };
+
+            configKeysList = new List<ConfigManager.ConfigKeys>()
+            {
+                ConfigManager.ConfigKeys.basket_upDisLimit,
+                ConfigManager.ConfigKeys.basket_downDisLimit,
+                ConfigManager.ConfigKeys.basket_allowDisDiffLimit,
+
+                ConfigManager.ConfigKeys.steeve_DisDiffLimit,
+                ConfigManager.ConfigKeys.steeve_ForceLimit,
+                ConfigManager.ConfigKeys.steeve_ForceDiffLimit,
+
+                ConfigManager.ConfigKeys.anchor_ForceLimit,
+                ConfigManager.ConfigKeys.anchor_ForceDiffLimit,
+                ConfigManager.ConfigKeys.frontPivot_DisLimit,
+            };
         }
 
         private void initial()
@@ -25,38 +58,36 @@ namespace BridgeDetectSystem
             this.panel2.Width = this.panel1.Width / 2;
             this.panel1.BackColor = Color.FromArgb(255, 50, 161, 206);
 
-            #region label显示设置
 
-            lblUpDis.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.basket_upDisLimit);
-            lblDownDis.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.basket_downDisLimit);
-            lblAllowDisDiffLimit.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.basket_allowDisDiffLimit);
+            SetNumericValue(numericList, configKeysList);
 
-            lblSteeveDisDiffLimit.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.steeve_DisDiffLimit);
-            lblSteeveForceLimit.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.steeve_ForceLimit);
-            lblSteeveForceDiffLimit.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.steeve_ForceDiffLimit);
+            //#region label显示设置
+            //lblUpDis.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.basket_upDisLimit);
+            //lblDownDis.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.basket_downDisLimit);
+            //lblAllowDisDiffLimit.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.basket_allowDisDiffLimit);
 
-            lblAnchorForceLimit.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.anchor_ForceLimit);
-            lblAnchorForceDiffLimit.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.anchor_ForceDiffLimit);
+            //lblSteeveDisDiffLimit.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.steeve_DisDiffLimit);
+            //lblSteeveForceLimit.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.steeve_ForceLimit);
+            //lblSteeveForceDiffLimit.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.steeve_ForceDiffLimit);
 
-            lblFrontPivotDisLimit.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.frontPivot_DisLimit);
+            //lblAnchorForceLimit.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.anchor_ForceLimit);
+            //lblAnchorForceDiffLimit.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.anchor_ForceDiffLimit);
 
-            #endregion
+            //lblFrontPivotDisLimit.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.frontPivot_DisLimit);
+            //#endregion
 
-            #region 设置的数值显示
-            txtBasketUpDisLimit.Text = configManager.Get(ConfigManager.ConfigKeys.basket_upDisLimit).ToString("0.0");
-            txtBasketDownDisLimit.Text = configManager.Get(ConfigManager.ConfigKeys.basket_downDisLimit).ToString("0.0");
-            txtBasketAllowDisDiffLimit.Text = configManager.Get(ConfigManager.ConfigKeys.basket_allowDisDiffLimit).ToString("0.0");
-
-            txtSteeveDisDiffLimit.Text = configManager.Get(ConfigManager.ConfigKeys.steeve_DisDiffLimit).ToString("0.0");
-            txtSteeveForceUpLimit.Text = configManager.Get(ConfigManager.ConfigKeys.steeve_ForceLimit).ToString("0.0");
-            txtSteeveForceDiffLimit.Text = configManager.Get(ConfigManager.ConfigKeys.steeve_ForceDiffLimit).ToString("0.0");
-
-            txtAnchorForceLimit.Text = configManager.Get(ConfigManager.ConfigKeys.anchor_ForceLimit).ToString("0.0");
-            txtAnchorForceDiffLimit.Text = configManager.Get(ConfigManager.ConfigKeys.anchor_ForceDiffLimit).ToString("0.0");
-
-            txtFrontPivotDisLimit.Text = configManager.Get(ConfigManager.ConfigKeys.frontPivot_DisLimit).ToString("0.0");
-            #endregion
         }
+
+        private void SetNumericValue(List<NumericUpDown> numericList, List<ConfigManager.ConfigKeys> configKeysList)
+        {
+            for (int i = 0; i < numericList.Count; i++)
+            {
+                numericList[i].Value = Convert.ToDecimal(configManager.Get(configKeysList[i]));
+                numericList[i].Maximum = Convert.ToDecimal(configManager.GetMaxValue(configKeysList[i]));
+                numericList[i].Minimum = Convert.ToDecimal(configManager.GetMinValue(configKeysList[i]));
+            }
+        }
+
 
         private void SteeveParaSet_Load(object sender, EventArgs e)
         {
@@ -70,7 +101,7 @@ namespace BridgeDetectSystem
             {
                 SetConfigValue();
                 configManager.StoreConfigToDb();
-                MessageBox.Show("报警设置保存成功！");
+                AutoClosingMessageBox.Show("报警设置保存成功！", "提示", 1000);
             }
             catch (Exception ex)
             {
@@ -80,16 +111,10 @@ namespace BridgeDetectSystem
 
         private void SetConfigValue()
         {
-            double v1=0;
-            try
+            for(int i = 0; i < numericList.Count; i++)
             {
-              v1 = double.Parse(txtBasketUpDisLimit.Text);
+                configManager.Set(configKeysList[i], Convert.ToDouble(numericList[i].Value));
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Source); 
-            }
-            configManager.Set(ConfigManager.ConfigKeys.basket_upDisLimit,v1);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -97,6 +122,6 @@ namespace BridgeDetectSystem
             this.Close();
         }
 
-     
+
     }
 }

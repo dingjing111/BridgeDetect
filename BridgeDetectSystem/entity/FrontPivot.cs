@@ -8,8 +8,8 @@ namespace BridgeDetectSystem.entity
     public class FrontPivot
     {
         public int id; 
-        private double displace; 
-        public Sensor disSensor { get; set; }
+        private double displace;
+        private Sensor disSensor;
 
         public FrontPivot(int id, Sensor disSensor)
         {

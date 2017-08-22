@@ -119,14 +119,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="service\RecreateRecordManager.cs" />
-    <Compile Include="service\WarningManager.cs" />
+    <Compile Include="entity\WarningObject.cs" />
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="util\AutoClosingMessageBox.cs" />
     <Compile Include="windows\other\WarningDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,16 +134,10 @@
       <DependentUpon>WarningDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="entity\MyEventArgs.cs" />
-    <Compile Include="service\WarningDialogManager.cs" />
+    <Compile Include="service\WarningManager.cs" />
     <Compile Include="video\CHCNetSDK.cs" />
     <Compile Include="video\PlayCtrl.cs" />
     <Compile Include="video\VideoPlayer.cs" />
-    <Compile Include="windows\other\WarningWin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="windows\other\WarningWin.Designer.cs">
-      <DependentUpon>WarningWin.cs</DependentUpon>
-    </Compile>
     <Compile Include="windows\work\VideoMonitorWin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,9 +158,7 @@
     <Compile Include="windows\record\AlarmRecord.Designer.cs">
       <DependentUpon>AlarmRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="util\ConvertHelper.cs" />
     <Compile Include="util\DBHelper.cs" />
-    <Compile Include="util\Encrypt.cs" />
     <Compile Include="service\UserRightManager.cs" />
     <Compile Include="windows\record\AnchorForceRecord.cs">
       <SubType>Form</SubType>
@@ -229,9 +221,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="windows\other\WarningDialog.resx">
       <DependentUpon>WarningDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="windows\other\WarningWin.resx">
-      <DependentUpon>WarningWin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="windows\work\VideoMonitorWin.resx">
       <DependentUpon>VideoMonitorWin.cs</DependentUpon>

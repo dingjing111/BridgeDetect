@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using log4net;
@@ -8,14 +12,16 @@ using BridgeDetectSystem.service;
 using BridgeDetectSystem.util;
 using System.Reflection;
 using BridgeDetectSystem.adam;
+using System.Threading;
 
 namespace BridgeDetectSystem
 {
     public partial class TestForm : Form
     {
-        WarningDialog warning;
+        WarningDialog warningDialog;
         AdamHelper adamHelper;
         ConfigManager configManager;
+        WarningManager warningManager;
 
         public TestForm()
         {
@@ -39,7 +45,7 @@ namespace BridgeDetectSystem
                 MessageBox.Show(ex.Message + ex.GetType());
             }
 
-            bool isResetDb = true;
+            bool isResetDb = false;
             try
             {
                 DBHelper dbHelper = DBHelper.GetInstance();
@@ -60,38 +66,46 @@ namespace BridgeDetectSystem
             }
 
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            warning = WarningDialog.GetInstance();
-            warning.Show();
-            warning.TopMost = true;
+            warningDialog = WarningDialog.GetInstance(warningManager);
+            warningDialog.Show();
+            warningDialog.TopMost = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            warning.Hide();
+            warningDialog.Hide();
         }
 
 
         private void button4_Click(object sender, EventArgs e)
         {
-            WarningDialogManager manager = new WarningDialogManager();
-            manager.BgStart();
+            warningManager = WarningManager.GetInstance();
+            warningManager.BgStart();
         }
 
-        private void button3_Click(object sender, EventArgs e)//测试接受数据
+        private void button3_Click(object sender, EventArgs e)
         {
-            while (true)
-            {
-                var dic = adamHelper.steeveDic;
-                StringBuilder sb = new StringBuilder();
-                foreach (var d in dic)
-                {
-                    sb.Append("key: " + d.Key).Append("; value: " + d.Value.GetForce() + "|" + d.Value.GetDisplace());
-                    sb.Append("\n");
-                }
-                MessageBox.Show(sb.ToString());
-            }
+            Thread th = new Thread(() =>
+             {
+                 int count = 1;
+                 while (count++ <= 10)
+                 {
+                     var dic = adamHelper.steeveDic;
+                     StringBuilder sb = new StringBuilder();
+                     foreach (var d in dic)
+                     {
+                         sb.Append("key: " + d.Key).Append("; value: " + d.Value.GetForce() + "|" + d.Value.GetDisplace());
+                         sb.Append("\n");
+                     }
+                     MessageBox.Show(sb.ToString());
+                     Thread.Sleep(200);
+                 }
+             });
+            th.IsBackground = true;
+            th.Start();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -111,14 +125,10 @@ namespace BridgeDetectSystem
             log.Info(str);
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void metroButton1_Click(object sender, EventArgs e)
         {
-            RecreateRecordManager rrm = new RecreateRecordManager();
-            
-            rrm.RecreateUserManagerTable();
-            
+            PouringState ps = new PouringState();
+            ps.Show();
         }
-
-       
     }
 }

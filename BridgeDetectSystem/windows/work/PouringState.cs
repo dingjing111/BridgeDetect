@@ -17,18 +17,26 @@ namespace BridgeDetectSystem
         }
         private void initial()
         {
+           
+
+
+
+        }
+        private void SteeveForceAndDisplacement16_Load(object sender, EventArgs e)
+        {
+            #region 界面 panel 相关
             this.panel1.BackColor = Color.FromArgb(255, 50, 161, 206);
             this.panel2.Width = this.panel1.Width / 2;
             this.panel4.Height = (this.panel1.Height - menuStrip1.Height) / 2;
             this.panel6.Height = (this.panel1.Height - menuStrip1.Height) / 2;
-            this.panel8.Width = this.panel7.Width/2;
-        }
-        private void SteeveForceAndDisplacement16_Load(object sender, EventArgs e)
-        {
+            this.panel8.Width = this.panel7.Width / 2;
+            #endregion
+
             this.initial();
 
         }
 
+        #region 菜单栏按钮功能方法
         private void btnExit_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("你确定退出吗？ ",
@@ -45,15 +53,22 @@ namespace BridgeDetectSystem
             this.Close();
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSetParameter_Click(object sender, EventArgs e)
         {
             SetParameter win = new SetParameter();
             win.Show();
+        }
+
+        #endregion
+
+        private void btnResetSteeve_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnResetFrontPivot_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

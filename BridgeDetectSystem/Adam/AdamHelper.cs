@@ -10,40 +10,51 @@ namespace BridgeDetectSystem.adam
     {
         #region  字段
 
-        private List<AdamOperation> list;                              
+        private List<AdamOperation> adamList;
         private Dictionary<int, Dictionary<int, string>> allDataDic;
-        
 
-        public Timer readTimer { get; set; }
+
+        public Timer readTimer { get; }
         public Dictionary<int, Steeve> steeveDic { get; }
         public Dictionary<int, Anchor> anchorDic { get; }
         public Dictionary<int, FrontPivot> frontPivotDic { get; }
         public Dictionary<int, RailWay> railWayDic { get; }
 
+        public double steeveDisStandard { get; set; }
+        public double first_frontPivotDisStandard { get; set; }
+        public double second_frontPivotDisStandard { get; set; }
         #endregion
 
+        #region 单例
         private static volatile AdamHelper instance = null;
 
         private AdamHelper(List<AdamOperation> list, int readTimerPeriod)
         {
-            this.list = list;
-            this.allDataDic = new Dictionary<int, Dictionary<int, string>>();//所有数据集合
-            this.steeveDic = new Dictionary<int, Steeve>();                  //吊杆力和位移集合
-            this.anchorDic = new Dictionary<int, Anchor>();                  //锚杆力集合
-            this.frontPivotDic = new Dictionary<int, FrontPivot>();          //前支点位移集合
-            this.railWayDic = new Dictionary<int, RailWay>();                //行走位移集合
+            this.adamList = list;
+            this.allDataDic = new Dictionary<int, Dictionary<int, string>>();
+            this.steeveDic = new Dictionary<int, Steeve>();
+            this.anchorDic = new Dictionary<int, Anchor>();
+            this.frontPivotDic = new Dictionary<int, FrontPivot>();
+            this.railWayDic = new Dictionary<int, RailWay>();
 
             try
             {
+                //初始化每个研华模块
                 foreach (AdamOperation oper in list)
                 {
                     oper.Init();
                 }
+
+                //读取初始的值一次，并记录在字段steeveDisStandard、frontPivotDisStandard中
+                //之后作为报警的基准
+                ReadStandardValue();
             }
             catch (AdamException ex)
             {
                 throw ex;
             }
+
+            //后台每隔一段时间读取一次数据
             this.readTimer = new Timer(_ =>
             {
                 try
@@ -58,7 +69,8 @@ namespace BridgeDetectSystem.adam
             }, null, 0, readTimerPeriod);
         }
 
-        public static AdamHelper Initialize(List<AdamOperation> list, int readTimerPeriod)   //初始化
+
+        public static AdamHelper Initialize(List<AdamOperation> list, int readTimerPeriod)
         {
             if (instance != null)
             {
@@ -68,7 +80,7 @@ namespace BridgeDetectSystem.adam
             return instance;
         }
 
-        public static AdamHelper GetInstance()                                               //单例模式
+        public static AdamHelper GetInstance()
         {
             if (instance == null)
             {
@@ -77,6 +89,7 @@ namespace BridgeDetectSystem.adam
             return instance;
         }
 
+        #endregion
 
         #region 方法
         private static readonly object obj = new object(); //锁对象
@@ -84,9 +97,9 @@ namespace BridgeDetectSystem.adam
         {
             lock (obj)
             {
-                foreach (AdamOperation oper in list)
+                foreach (AdamOperation oper in adamList)
                 {
-                    allDataDic[oper.id]= oper.Read();
+                    allDataDic[oper.id] = oper.Read();
                 }
 
                 ConvertToRealValue();
@@ -104,24 +117,24 @@ namespace BridgeDetectSystem.adam
             Sensor forceSensor;
             Sensor disSensor;
 
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < adamList.Count; i++)
             {
-                allDataDic.TryGetValue(list[i].id, out tempDic);
+                allDataDic.TryGetValue(adamList[i].id, out tempDic);
 
                 if (i == 0)
                 {
                     for (int j = 0; j < 4; j++)
                     {
-                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 60);
+                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 70, 100);
                         tempDic.TryGetValue(j, out forceData);
                         forceSensor.readValue = double.Parse(forceData);
 
-                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 30);
+                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 60, 10);
                         tempDic.TryGetValue(j + 4, out disData);
                         disSensor.readValue = double.Parse(disData);
 
                         Steeve steeve = new Steeve(j, forceSensor, disSensor);
-                        steeveDic[steeve.id] = steeve; 
+                        steeveDic[steeve.id] = steeve;
                     }
                 }
                 else if (i == 1)
@@ -130,7 +143,7 @@ namespace BridgeDetectSystem.adam
                     int count = 0;
                     for (j = 0; j < 4; j++)
                     {
-                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 60);
+                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 60, 10);
                         tempDic.TryGetValue(j, out forceData);
                         forceSensor.readValue = double.Parse(forceData);
 
@@ -139,7 +152,7 @@ namespace BridgeDetectSystem.adam
                     }
                     for (j = 4; j < 6; j++)
                     {
-                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 5);
+                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 5, 100);
                         tempDic.TryGetValue(j, out disData);
                         disSensor.readValue = double.Parse(disData);
 
@@ -149,7 +162,7 @@ namespace BridgeDetectSystem.adam
                     count = 0;
                     if (j == 6)
                     {
-                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 30);
+                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 30, 100);
                         tempDic.TryGetValue(j, out disData);
                         disSensor.readValue = double.Parse(disData);
 
@@ -160,16 +173,38 @@ namespace BridgeDetectSystem.adam
             }
         }
 
-
-        #endregion
-
-        public class AdamHelperException : AdamException
+        /// <summary>
+        /// 读取初始数值作为基准，只读一次
+        /// </summary>
+        private void ReadStandardValue()
         {
-            public AdamHelperException(string message) : base(message) { }
-            public AdamHelperException(string message, Exception innerException) : base(message, innerException) { }
+            List<double> disList = new List<double>();
+            Sensor sensor = new Sensor(SensorType.displaceSensor, 4, 20, 70, 100);
+
+            for (int i = 0; i < 4; i++)
+            {
+                sensor.readValue = double.Parse(adamList[0].Read(i));
+                   
+                disList.Add(sensor.GetRealValue());
+            }
+
+            double sum = 0;
+            foreach (double val in disList)
+            {
+                sum += val;
+            }
+            steeveDisStandard = Math.Round(sum / 4, 3);
+
+            //first_frontPivotDisStandard = Math.Round(double.Parse(adamList[1].Read(4)));
+            //second_frontPivotDisStandard = Math.Round(double.Parse(adamList[1].Read(5)));
         }
 
-
+        #endregion
+    }
+    public class AdamHelperException : AdamException
+    {
+        public AdamHelperException(string message) : base(message) { }
+        public AdamHelperException(string message, Exception innerException) : base(message, innerException) { }
     }
 
 

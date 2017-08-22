@@ -9,7 +9,6 @@ using System.Text;
 using System.Windows.Forms;
 using BridgeDetectSystem.entity;
 using MetroForm = MetroFramework.Forms.MetroForm;
-using BridgeDetectSystem.service;
 using BridgeDetectSystem.adam;
 using BridgeDetectSystem.util;
 
@@ -154,40 +153,7 @@ namespace BridgeDetectSystem
 
         private void MainWin_Load(object sender, EventArgs e)
         {
-            List<AdamOperation> list = new List<AdamOperation>
-            {
-                new Adam6217Operation("192.168.1.3", 0)
-            };
-
-            try
-            {
-                AdamHelper.Initialize(list, 500);
-                AdamHelper adamHelper = AdamHelper.GetInstance();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.GetType());
-            }
-
-            bool isResetDb = true;
-            try
-            {
-                DBHelper dbHelper = DBHelper.GetInstance();
-                if (isResetDb)
-                {
-                    ConfigManager.Initialize(dbHelper, false);
-                    ConfigManager.GetInstance().RecreateDbTable();
-                }
-                else
-                {
-                    ConfigManager.Initialize(dbHelper);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"无法初始化配置管理系统，程序将退出。\n错误:\n {ex.Message}\n {ex.StackTrace}",
-                    "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
     }
 }
