@@ -26,6 +26,7 @@ namespace BridgeDetectSystem
         private void SteeveForceAndDisplacement16_Load(object sender, EventArgs e)
         {
             this.initial();
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)

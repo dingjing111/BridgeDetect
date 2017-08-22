@@ -10,7 +10,7 @@ namespace BridgeDetectSystem.adam
     {
         #region  字段
 
-        private List<AdamOperation> list;
+        private List<AdamOperation> list;                              
         private Dictionary<int, Dictionary<int, string>> allDataDic;
         
 
@@ -27,11 +27,11 @@ namespace BridgeDetectSystem.adam
         private AdamHelper(List<AdamOperation> list, int readTimerPeriod)
         {
             this.list = list;
-            this.allDataDic = new Dictionary<int, Dictionary<int, string>>();
-            this.steeveDic = new Dictionary<int, Steeve>();
-            this.anchorDic = new Dictionary<int, Anchor>();
-            this.frontPivotDic = new Dictionary<int, FrontPivot>();
-            this.railWayDic = new Dictionary<int, RailWay>(); 
+            this.allDataDic = new Dictionary<int, Dictionary<int, string>>();//所有数据集合
+            this.steeveDic = new Dictionary<int, Steeve>();                  //吊杆力和位移集合
+            this.anchorDic = new Dictionary<int, Anchor>();                  //锚杆力集合
+            this.frontPivotDic = new Dictionary<int, FrontPivot>();          //前支点位移集合
+            this.railWayDic = new Dictionary<int, RailWay>();                //行走位移集合
 
             try
             {
@@ -58,7 +58,7 @@ namespace BridgeDetectSystem.adam
             }, null, 0, readTimerPeriod);
         }
 
-        public static AdamHelper Initialize(List<AdamOperation> list, int readTimerPeriod)
+        public static AdamHelper Initialize(List<AdamOperation> list, int readTimerPeriod)   //初始化
         {
             if (instance != null)
             {
@@ -68,7 +68,7 @@ namespace BridgeDetectSystem.adam
             return instance;
         }
 
-        public static AdamHelper GetInstance()
+        public static AdamHelper GetInstance()                                               //单例模式
         {
             if (instance == null)
             {

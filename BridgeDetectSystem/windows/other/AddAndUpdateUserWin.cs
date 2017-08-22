@@ -10,6 +10,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using BridgeDetectSystem.util;
+using System.Threading;
 
 namespace BridgeDetectSystem
 {
@@ -155,6 +156,8 @@ namespace BridgeDetectSystem
             }
             string msg = r > 0 ? "操作成功" : "操作失败";
             MessageBox.Show(msg);
+      
+            this.Close();
         }
         #endregion
 

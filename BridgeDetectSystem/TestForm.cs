@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using log4net;
 using BridgeDetectSystem.windows;
 using BridgeDetectSystem.service;
 using BridgeDetectSystem.util;
-using BridgeDetectSystem.service;
 using System.Reflection;
 using BridgeDetectSystem.adam;
 
@@ -84,7 +79,7 @@ namespace BridgeDetectSystem
             manager.BgStart();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)//测试接受数据
         {
             while (true)
             {
@@ -115,5 +110,15 @@ namespace BridgeDetectSystem
             string str = "hello";
             log.Info(str);
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            RecreateRecordManager rrm = new RecreateRecordManager();
+            
+            rrm.RecreateUserManagerTable();
+            
+        }
+
+       
     }
 }

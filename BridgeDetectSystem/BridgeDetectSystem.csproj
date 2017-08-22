@@ -119,6 +119,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="service\RecreateRecordManager.cs" />
     <Compile Include="service\WarningManager.cs" />
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
