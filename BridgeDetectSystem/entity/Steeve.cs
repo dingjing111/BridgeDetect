@@ -20,7 +20,7 @@ namespace BridgeDetectSystem.entity
             this.forceSensor = forceSensor;
         }
 
-        public double GetForce()
+        public double GetForce()         
         {
             if (forceSensor == null)
             {

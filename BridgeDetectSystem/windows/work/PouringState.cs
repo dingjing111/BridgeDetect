@@ -33,6 +33,7 @@ namespace BridgeDetectSystem
             #endregion 
 
             this.initial();
+
         }
 
         #region 菜单栏按钮功能方法
