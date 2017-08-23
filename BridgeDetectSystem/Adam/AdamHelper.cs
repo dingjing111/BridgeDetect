@@ -125,11 +125,11 @@ namespace BridgeDetectSystem.adam
                 {
                     for (int j = 0; j < 4; j++)
                     {
-                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 70, 100);
+                        forceSensor = new Sensor(SensorType.forceSensor, 3.987, 20, 60, 10);
                         tempDic.TryGetValue(j, out forceData);
                         forceSensor.readValue = double.Parse(forceData);
 
-                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 60, 10);
+                        disSensor = new Sensor(SensorType.displaceSensor, 4.035, 20,70, 100);
                         tempDic.TryGetValue(j + 4, out disData);
                         disSensor.readValue = double.Parse(disData);
 

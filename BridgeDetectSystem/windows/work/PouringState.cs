@@ -6,11 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using BridgeDetectSystem.adam;
 
 namespace BridgeDetectSystem
 {
     public partial class PouringState : MetroFramework.Forms.MetroForm
     {
+        AdamHelper adamHelper = AdamHelper.GetInstance(); 
+    
         public PouringState()
         {
             InitializeComponent();
@@ -18,9 +21,6 @@ namespace BridgeDetectSystem
         private void initial()
         {
            
-
-
-
         }
         private void SteeveForceAndDisplacement16_Load(object sender, EventArgs e)
         {
@@ -30,12 +30,13 @@ namespace BridgeDetectSystem
             this.panel4.Height = (this.panel1.Height - menuStrip1.Height) / 2;
             this.panel6.Height = (this.panel1.Height - menuStrip1.Height) / 2;
             this.panel8.Width = this.panel7.Width / 2;
-            #endregion
+            #endregion 
 
             this.initial();
         }
 
         #region 菜单栏按钮功能方法
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("你确定退出吗？ ",

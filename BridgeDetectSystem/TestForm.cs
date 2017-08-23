@@ -45,7 +45,7 @@ namespace BridgeDetectSystem
                 MessageBox.Show(ex.Message + ex.GetType());
             }
 
-            bool isResetDb = false;
+            bool isResetDb = true;
             try
             {
                 DBHelper dbHelper = DBHelper.GetInstance();
@@ -65,11 +65,20 @@ namespace BridgeDetectSystem
                     "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            try
+            {
+                warningManager = WarningManager.GetInstance();
+                warningDialog = WarningDialog.GetInstance(warningManager);
+                configManager = ConfigManager.GetInstance();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            warningDialog = WarningDialog.GetInstance(warningManager);
             warningDialog.Show();
             warningDialog.TopMost = true;
         }
@@ -82,7 +91,6 @@ namespace BridgeDetectSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
-            warningManager = WarningManager.GetInstance();
             warningManager.BgStart();
         }
 
@@ -110,7 +118,6 @@ namespace BridgeDetectSystem
 
         private void button5_Click(object sender, EventArgs e)
         {
-            configManager = ConfigManager.GetInstance();
             configManager.StoreConfigToDb();
         }
 
