@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="entity\WarningObject.cs" />
     <Compile Include="service\RecreateRecordManager.cs" />
+    <Compile Include="service\SetTextValueManager.cs" />
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
