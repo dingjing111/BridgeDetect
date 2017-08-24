@@ -97,7 +97,7 @@ namespace BridgeDetectSystem
         private void button3_Click(object sender, EventArgs e)
         {
             Thread th = new Thread(() =>
-             {
+             { 
                  int count = 1;
                  while (count++ <= 10)
                  {
