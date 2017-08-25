@@ -8,7 +8,8 @@ namespace BridgeDetectSystem.service
 {
    public class SetTextValueManager
     {
-        public static void SetValueToText(double[] array, ref MetroTextBox txt1, ref MetroTextBox txt2, ref MetroTextBox txt3, ref MetroTextBox txt4, ref MetroTextBox txtmax, ref MetroTextBox txtmaxdiff)
+        public static void SetValueToText(double[] array, ref MetroTextBox txt1, ref MetroTextBox txt2, 
+            ref MetroTextBox txt3, ref MetroTextBox txt4, ref MetroTextBox txtmax, ref MetroTextBox txtmaxdiff)
         {
             double Max = array.Max();
             double Min = array.Min();
@@ -19,7 +20,6 @@ namespace BridgeDetectSystem.service
             txt4.Text = array[3].ToString();
             txtmax.Text = Max.ToString();
             txtmaxdiff.Text = MaxDiff.ToString();
-
         }
     }
 }

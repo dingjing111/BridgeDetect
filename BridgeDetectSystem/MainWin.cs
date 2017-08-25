@@ -152,7 +152,7 @@ namespace BridgeDetectSystem
         }
 
         private void MainWin_Load(object sender, EventArgs e)
-        {
+        { 
             
         }
     }
