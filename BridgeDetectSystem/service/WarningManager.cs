@@ -216,37 +216,42 @@ namespace BridgeDetectSystem.service
         {
             CheckForce(adamHelper.steeveDic, "吊杆");
         }
-
+        double forceLimit;
+        double forceDiff;
         private void CheckForce(object obj, string str)
         {
+           
+
             List<double> forceList = new List<double>();
-            if (obj is Dictionary<int, Steeve>)
+            if (obj is Dictionary<int, Steeve>)           //吊杆力
             {
+                forceLimit = config.Get(ConfigManager.ConfigKeys.steeve_ForceLimit);
+                forceDiff= config.Get(ConfigManager.ConfigKeys.steeve_ForceDiffLimit);
                 var dic = obj as Dictionary<int, Steeve>;
                 foreach (var kv in dic)
                 {
                     forceList.Add(kv.Value.GetForce());
-                }
+                }             
             }
-            else if (obj is Dictionary<int, Anchor>)
-            {
+            else if (obj is Dictionary<int, Anchor>)      //锚杆力
+            {   
+                forceLimit= config.Get(ConfigManager.ConfigKeys.anchor_ForceLimit);
+                forceDiff= config.Get(ConfigManager.ConfigKeys.anchor_ForceDiffLimit);
                 var dic = obj as Dictionary<int, Anchor>;
                 foreach (var kv in dic)
                 {
-
                     forceList.Add(kv.Value.GetForce());
                 }
             }
-
+            
+           
             for (int i = 0; i < forceList.Count; i++)
             {
-                if (forceList[i] >= config.Get(ConfigManager.ConfigKeys.steeve_ForceLimit))
+                if (forceList[i] >=forceLimit)
                 {
                     warningList.Add("第" + i + "号" + str + "力过大,值为：" + forceList[i] + "(KN)");
                 }
-            }
-
-            double forceDiff = config.Get(ConfigManager.ConfigKeys.steeve_ForceDiffLimit);
+            }         
             for (int i = 0; i < forceList.Count; i++)
             {
                 for (int j = i + 1; j < forceList.Count; j++)
