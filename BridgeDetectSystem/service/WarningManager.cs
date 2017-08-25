@@ -158,7 +158,7 @@ namespace BridgeDetectSystem.service
         /// </summary>
         private void CheckAnchorForce()
         {
-            CheckForce(adamHelper.anchorDic, "锚杆");
+            CheckForce(adamHelper.anchorDic, "锚杆",1);
         }
 
         /// <summary>
@@ -212,10 +212,10 @@ namespace BridgeDetectSystem.service
         /// </summary>
         private void CheckSteeveForce()
         {
-            CheckForce(adamHelper.steeveDic, "吊杆");
+            CheckForce(adamHelper.steeveDic, "吊杆",0);
         }
 
-        private void CheckForce(object obj, string str)
+        private void CheckForce(object obj, string str,int index)
         {
             List<double> forceList = new List<double>();
             if (obj is Dictionary<int, Steeve>)
@@ -236,20 +236,33 @@ namespace BridgeDetectSystem.service
                 }
             }
 
+            double limit=0;
+            double diff=0;
+            if (index == 0)
+            {
+                limit = config.Get(ConfigManager.ConfigKeys.steeve_ForceLimit);
+                diff = config.Get(ConfigManager.ConfigKeys.steeve_ForceDiffLimit);
+            }
+            else
+            {
+                limit = config.Get(ConfigManager.ConfigKeys.anchor_ForceLimit);
+                diff = config.Get(ConfigManager.ConfigKeys.anchor_ForceDiffLimit);
+            }
+
             for (int i = 0; i < forceList.Count; i++)
             {
-                if (forceList[i] >= config.Get(ConfigManager.ConfigKeys.steeve_ForceLimit))
+                if (forceList[i] >= limit)
                 {
                     warningList.Add("第" + i + "号" + str + "力过大,值为：" + forceList[i] + "(KN)");
                 }
             }
 
-            double forceDiff = config.Get(ConfigManager.ConfigKeys.steeve_ForceDiffLimit);
+             ;
             for (int i = 0; i < forceList.Count; i++)
             {
                 for (int j = i + 1; j < forceList.Count; j++)
                 {
-                    if (Math.Abs(forceList[i] - forceList[j]) >= forceDiff)
+                    if (Math.Abs(forceList[i] - forceList[j]) >= diff)
                     {
                         warningList.Add("第" + i + "、" + j + "号" + str + "之间力差值过大。值分别为："
                             + forceList[i] + "(KN)" + "||" + forceList[j] + "KN");

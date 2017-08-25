@@ -25,5 +25,11 @@ namespace BridgeDetectSystem
             // TestForm testform = new TestForm();
             // Application.Run(testform);
         }
+
+        private static void Initialize()
+        {
+
+        }
+
     }
 }
