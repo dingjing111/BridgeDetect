@@ -38,7 +38,7 @@ namespace BridgeDetectSystem.service
                                         DROP TABLE dbo.AlarmRecord; ");
             dbHelper.ExecuteNonQuery(
                 @"create table AlarmRecord
-                (GUId uniqueidentifier NOT NULL,
+                (guid uniqueidentifier NOT NULL,
 	             time datetime NULL,
 	             warntype nvarchar(50) NULL,
 	             operator nvarchar(50) NULL,
@@ -53,14 +53,13 @@ namespace BridgeDetectSystem.service
                                         DROP TABLE dbo.AnchorForce; ");
             dbHelper.ExecuteNonQuery(
                 @"create table AnchorForce
-                ([GUId] [uniqueidentifier] NOT NULL,
+                ([guid] [uniqueidentifier] NOT NULL,
 	             [time] [datetime] NULL,
 	             [operator] [nvarchar](50) NULL,
 	             [position1] [real] NULL,
 	             [position2] [real] NULL,
 	             [position3] [real] NULL,
-	             [position4] [real] NULL,
-	            
+	             [position4] [real] NULL,	            
                 )");
         }
         /// <summary>
@@ -72,7 +71,7 @@ namespace BridgeDetectSystem.service
                                         DROP TABLE dbo.FrontPivotDis; ");
             dbHelper.ExecuteNonQuery(
                 @"create table FrontPivotDis
-                ([GUId] [uniqueidentifier] NOT NULL,
+                ([guid] [uniqueidentifier] NOT NULL,
 	             [time] [datetime] NULL,
 	             [operator] [nvarchar](50) NULL,
 	             [position1] [real] NULL,
@@ -88,13 +87,13 @@ namespace BridgeDetectSystem.service
                                         DROP TABLE dbo.SteeveDisplacement; ");
             dbHelper.ExecuteNonQuery(
                 @"create table SteeveDisplacement
-                ([GUId] [uniqueidentifier] NOT NULL,
-	[time] [datetime] NULL,
-	[operator] [nvarchar](50) NULL,
-	[position1] [real] NULL,
-	[position2] [real] NULL,
-	[position3] [real] NULL,
-	[position4] [real] NULL,	
+                ([guid] [uniqueidentifier] NOT NULL,
+	                [time] [datetime] NULL,
+	                [operator] [nvarchar](50) NULL,
+	                [position1] [real] NULL,
+	                [position2] [real] NULL,
+	                [position3] [real] NULL,
+	                [position4] [real] NULL,	
                 )");
         }
         /// <summary>
@@ -106,14 +105,13 @@ namespace BridgeDetectSystem.service
                                         DROP TABLE dbo.SteeveForce; ");
             dbHelper.ExecuteNonQuery(
                 @"create table SteeveForce
-                ([GUId] [uniqueidentifier] NOT NULL,
-	[time] [datetime] NULL,
-	[operator] [nvarchar](50) NULL,
-	[position1] [real] NULL,
-	[position2] [real] NULL,
-	[position3] [real] NULL,
-	[position4] [real] NULL,
-	
+                ([guid] [uniqueidentifier] NOT NULL,
+	            [time] [datetime] NULL,
+	            [operator] [nvarchar](50) NULL,
+	            [position1] [real] NULL,
+	            [position2] [real] NULL,
+	            [position3] [real] NULL,
+	            [position4] [real] NULL,
                 )");
 
         }

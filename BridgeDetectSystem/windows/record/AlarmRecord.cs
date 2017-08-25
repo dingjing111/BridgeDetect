@@ -57,7 +57,7 @@ namespace BridgeDetectSystem
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            //string path = @"D:\excelFile\报警记录.xls";
+           
             ExportToExcel.ExportData(sql);
             
         }

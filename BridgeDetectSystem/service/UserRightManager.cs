@@ -13,7 +13,7 @@ namespace BridgeDetectSystem.service
 {
     public class UserRightManager
     {
-        static User user;
+       public static User user;
         DBHelper dbHelper;
 
         private UserRightManager(string userName, string password)
