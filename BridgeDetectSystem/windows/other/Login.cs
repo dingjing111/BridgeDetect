@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using BridgeDetectSystem.service;
+using BridgeDetectSystem.util;
 
 namespace BridgeDetectSystem
 {
@@ -76,7 +77,7 @@ namespace BridgeDetectSystem
 
             UserRightManager.Initial(userName, password);
             UserRightManager manager = UserRightManager.GetInstance();
-
+            
             try
             {
                 if (manager.Check())

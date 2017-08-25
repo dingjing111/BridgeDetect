@@ -22,7 +22,7 @@ namespace BridgeDetectSystem
                 Application.Run(new MainWin());
             }
 
-            // TestForm testform = new TestForm();
+            //  TestForm testform = new TestForm();
             // Application.Run(testform);
         }
     }

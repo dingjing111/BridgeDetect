@@ -165,7 +165,7 @@
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "GUId";
+            this.Column1.DataPropertyName = "guid";
             this.Column1.HeaderText = "序号";
             this.Column1.Name = "Column1";
             this.Column1.Visible = false;

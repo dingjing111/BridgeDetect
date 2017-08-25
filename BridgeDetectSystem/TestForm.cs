@@ -22,7 +22,7 @@ namespace BridgeDetectSystem
         AdamHelper adamHelper;
         ConfigManager configManager;
         WarningManager warningManager;
-
+        DBHelper dbhelper = DBHelper.GetInstance();
         public TestForm()
         {
             InitializeComponent();
@@ -130,5 +130,7 @@ namespace BridgeDetectSystem
             PouringState ps = new PouringState();
             ps.Show();
         }
+
+      
     }
 }

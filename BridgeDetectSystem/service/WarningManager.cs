@@ -1,5 +1,6 @@
 ﻿using BridgeDetectSystem.adam;
 using BridgeDetectSystem.entity;
+using BridgeDetectSystem.util;
 using BridgeDetectSystem.windows;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace BridgeDetectSystem.service
     {
 
         #region 字段
-
+        string name = UserRightManager.user.userName;//得到操作人的名字
         private BackgroundWorker bgWork;
         private ConfigManager config;
         private AdamHelper adamHelper;
@@ -24,7 +25,7 @@ namespace BridgeDetectSystem.service
         //同步信号，当报警发生时，暂停当前线程。需要手动重新启动线程，
         //在WarningDialog界面中传入信号到当前类
         private ManualResetEvent manualReset = new ManualResetEvent(true);
-
+        DBHelper dbhelper = DBHelper.GetInstance();
         /// <summary>
         /// 单例
         /// </summary>
@@ -109,7 +110,8 @@ namespace BridgeDetectSystem.service
 
                 if (warningList.Count > 0)
                 {
-                    
+                    InsertAlarmRecord(warningList);                      //调方法将记录存入报警记录表
+
                     bgWork.ReportProgress(0);
                 }
 
@@ -261,7 +263,15 @@ namespace BridgeDetectSystem.service
         #endregion
 
         #region 数据库操作，记录报警
-
+        private void InsertAlarmRecord(List<string> list)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                string name = UserRightManager.user.userName;//得到操作人的名字
+                string insertsql = string.Format("insert into AlarmRecord values(newid(),getdate(),'{0}','{1}')",list[i], name);
+                int r = dbhelper.ExecuteNonQuery(insertsql);
+             }
+         }
 
 
         #endregion

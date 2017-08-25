@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BridgeDetectSystem.entity
 {
-    class User
+  public  class User
     {
         public string phid { get; set; }
         public string userName { get; set; }
