@@ -18,12 +18,14 @@ namespace BridgeDetectSystem
             InitializeComponent();
         }
         string sql = "select * from SteeveDisplacement";
+        //RecreateRecordManager rrm = new RecreateRecordManager();
         private void steevedisplacement_Load(object sender, EventArgs e)
         {
             this.initial();
            
             try
             {
+               // rrm.RecreateSteeveDisplacement();
                 OperateSql.LoadData(sql,dgv);//加载数据
               
             }

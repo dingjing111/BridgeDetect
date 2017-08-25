@@ -58,15 +58,8 @@ namespace BridgeDetectSystem
 
         #endregion
 
-        private void btnResetSteeve_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnResetFrontPivot_Click(object sender, EventArgs e)
-        {
-
-        }
+      
+      
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -147,7 +140,14 @@ namespace BridgeDetectSystem
             txtFrontPivotDis1.Text = frontPivotDis[0].ToString();
             txtFrontPivotDis2.Text = frontPivotDis[1].ToString();
         }
-       
-       
+        /// <summary>
+        /// 行走后重置
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

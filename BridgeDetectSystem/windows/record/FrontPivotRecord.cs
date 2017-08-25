@@ -21,12 +21,14 @@ namespace BridgeDetectSystem
             this.panel2.Height = this.panel1.Height * 1/ 15;
         }
         string sql = "select * from FrontPivotDis";
+       // RecreateRecordManager rrm = new RecreateRecordManager();
         private void FrontPivotRecord_Load(object sender, EventArgs e)
         {
             this.initial();
            
             try
             {
+               // rrm.RecreateFrontPivotDis();
                 OperateSql.LoadData(sql, dgv);
 
 
