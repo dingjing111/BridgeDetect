@@ -6,14 +6,14 @@ using System.Text;
 
 namespace BridgeDetectSystem.service
 {
-    class RecreateRecordManager
+  public static class RecreateRecordManager
     {
-        private DBHelper dbHelper = DBHelper.GetInstance();
+        private static DBHelper dbHelper = DBHelper.GetInstance();
 
         /// <summary>
         ///1 重建用户表
         /// </summary>
-        public void RecreateUserManagerTable()
+        public static void RecreateUserManagerTable()
         {
             dbHelper.ExecuteNonQuery(@"IF OBJECT_ID('dbo.UserManager', 'U') IS NOT NULL 
                                         DROP TABLE dbo.UserManager; ");
@@ -32,7 +32,7 @@ namespace BridgeDetectSystem.service
         /// <summary>
         /// 2.重建报警记录表
         /// </summary>
-        public void RecreateAlarmRecord()
+        public static void RecreateAlarmRecord()
         {
             dbHelper.ExecuteNonQuery(@"IF OBJECT_ID('dbo.AlarmRecord', 'U') IS NOT NULL 
                                         DROP TABLE dbo.AlarmRecord; ");
@@ -47,7 +47,7 @@ namespace BridgeDetectSystem.service
         /// <summary>
         ///3 重建锚杆力的表
         /// </summary>
-        public void RecreateAnchorForce()
+        public static void RecreateAnchorForce()
         {
             dbHelper.ExecuteNonQuery(@"IF OBJECT_ID('dbo.AnchorForce', 'U') IS NOT NULL 
                                         DROP TABLE dbo.AnchorForce; ");
@@ -60,24 +60,13 @@ namespace BridgeDetectSystem.service
 	             [position2] [real] NULL,
 	             [position3] [real] NULL,
 	             [position4] [real] NULL,
-	             [position5] [real] NULL,
-	             [position6] [real] NULL,
-	             [position7] [real] NULL,
-	             [position8] [real] NULL,
-	             [position9] [real] NULL,
-	             [position10] [real] NULL,
-	             [position11] [real] NULL,
-	             [position12] [real] NULL,
-	             [position13] [real] NULL,
-	             [position14] [real] NULL,
-	             [position15] [real] NULL,
-	             [position16] [real] NULL,
+	            
                 )");
         }
         /// <summary>
         ///4 重建前支点位移表
         /// </summary>
-        public void RecreateFrontPivotDis()
+        public static void RecreateFrontPivotDis()
         {
             dbHelper.ExecuteNonQuery(@"IF OBJECT_ID('dbo.FrontPivotDis', 'U') IS NOT NULL 
                                         DROP TABLE dbo.FrontPivotDis; ");
@@ -93,62 +82,39 @@ namespace BridgeDetectSystem.service
         /// <summary>
         /// 5重建吊杆位移表
         /// </summary>
-        public void RecreateSteeveDisplacement()
+        public static void RecreateSteeveDisplacement()
         {
             dbHelper.ExecuteNonQuery(@"IF OBJECT_ID('dbo.SteeveDisplacement', 'U') IS NOT NULL 
                                         DROP TABLE dbo.SteeveDisplacement; ");
             dbHelper.ExecuteNonQuery(
                 @"create table SteeveDisplacement
                 ([GUId] [uniqueidentifier] NOT NULL,
-	            [time] [datetime] NULL,
-	            [operator] [nvarchar](50) NULL,
-	            [position1] [real] NULL,
-	            [position2] [real] NULL,
-	            [position3] [real] NULL,
-	            [position4] [real] NULL,
-	            [position5] [real] NULL,
-	            [position6] [real] NULL,
-	            [position7] [real] NULL,
-	            [position8] [real] NULL,
-	            [position9] [real] NULL,
-	            [position10] [real] NULL,
-	            [position11] [real] NULL,
-	            [position12] [real] NULL,
-	            [position13] [real] NULL,
-	            [position14] [real] NULL,
-	            [position15] [real] NULL,
-	            [position16] [real] NULL,
-                            )");
+	[time] [datetime] NULL,
+	[operator] [nvarchar](50) NULL,
+	[position1] [real] NULL,
+	[position2] [real] NULL,
+	[position3] [real] NULL,
+	[position4] [real] NULL,	
+                )");
         }
         /// <summary>
         /// 6.重建吊杆力表
         /// </summary>
-        public void RecreateSteeveForce()
+        public static void RecreateSteeveForce()
         {
             dbHelper.ExecuteNonQuery(@"IF OBJECT_ID('dbo.SteeveForce', 'U') IS NOT NULL 
                                         DROP TABLE dbo.SteeveForce; ");
             dbHelper.ExecuteNonQuery(
                 @"create table SteeveForce
                 ([GUId] [uniqueidentifier] NOT NULL,
-	            [time] [datetime] NULL,
-	            [operator] [nvarchar](50) NULL,
-	            [position1] [real] NULL,
-	            [position2] [real] NULL,
-	            [position3] [real] NULL,
-	            [position4] [real] NULL,
-	            [position5] [real] NULL,
-	            [position6] [real] NULL,
-	            [position7] [real] NULL,
-	            [position8] [real] NULL,
-	            [position9] [real] NULL,
-	            [position10] [real] NULL,
-	            [position11] [real] NULL,
-	            [position12] [real] NULL,
-	            [position13] [real] NULL,
-	            [position14] [real] NULL,
-	            [position15] [real] NULL,
-	            [position16] [real] NULL,
-                            )");
+	[time] [datetime] NULL,
+	[operator] [nvarchar](50) NULL,
+	[position1] [real] NULL,
+	[position2] [real] NULL,
+	[position3] [real] NULL,
+	[position4] [real] NULL,
+	
+                )");
 
         }
     }

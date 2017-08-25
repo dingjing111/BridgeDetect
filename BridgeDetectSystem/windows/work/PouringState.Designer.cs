@@ -41,9 +41,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.lblResetSteeve = new MetroFramework.Controls.MetroLabel();
-            this.lblFrontPivot = new MetroFramework.Controls.MetroLabel();
-            this.btnResetSteeve = new System.Windows.Forms.Button();
-            this.btnResetFrontPivot = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -183,6 +180,7 @@
             this.lblSteeveF1 = new MetroFramework.Controls.MetroLabel();
             this.txtSteeveF1 = new MetroFramework.Controls.MetroTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnReset = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -316,15 +314,13 @@
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 5;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.86989F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.50929F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.12639F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.47212F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.65056F));
-            this.tableLayoutPanel5.Controls.Add(this.lblResetSteeve, 1, 3);
-            this.tableLayoutPanel5.Controls.Add(this.lblFrontPivot, 1, 5);
-            this.tableLayoutPanel5.Controls.Add(this.btnResetSteeve, 4, 3);
-            this.tableLayoutPanel5.Controls.Add(this.btnResetFrontPivot, 4, 5);
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
+            this.tableLayoutPanel5.Controls.Add(this.lblResetSteeve, 1, 2);
+            this.tableLayoutPanel5.Controls.Add(this.btnReset, 2, 4);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 24);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -343,56 +339,15 @@
             // lblResetSteeve
             // 
             this.lblResetSteeve.AutoSize = true;
-            this.tableLayoutPanel5.SetColumnSpan(this.lblResetSteeve, 2);
+            this.tableLayoutPanel5.SetColumnSpan(this.lblResetSteeve, 3);
             this.lblResetSteeve.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblResetSteeve.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblResetSteeve.Location = new System.Drawing.Point(43, 134);
+            this.lblResetSteeve.Location = new System.Drawing.Point(19, 89);
             this.lblResetSteeve.Name = "lblResetSteeve";
-            this.lblResetSteeve.Size = new System.Drawing.Size(106, 45);
+            this.lblResetSteeve.Size = new System.Drawing.Size(228, 45);
             this.lblResetSteeve.TabIndex = 2;
-            this.lblResetSteeve.Text = "吊杆位移重置";
+            this.lblResetSteeve.Text = "吊杆与前支点位移重置";
             this.lblResetSteeve.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblFrontPivot
-            // 
-            this.lblFrontPivot.AutoSize = true;
-            this.tableLayoutPanel5.SetColumnSpan(this.lblFrontPivot, 2);
-            this.lblFrontPivot.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFrontPivot.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblFrontPivot.Location = new System.Drawing.Point(43, 224);
-            this.lblFrontPivot.Name = "lblFrontPivot";
-            this.lblFrontPivot.Size = new System.Drawing.Size(106, 45);
-            this.lblFrontPivot.TabIndex = 3;
-            this.lblFrontPivot.Text = "前支点重置";
-            this.lblFrontPivot.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnResetSteeve
-            // 
-            this.btnResetSteeve.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnResetSteeve.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnResetSteeve.ForeColor = System.Drawing.Color.White;
-            this.btnResetSteeve.Location = new System.Drawing.Point(202, 134);
-            this.btnResetSteeve.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.btnResetSteeve.Name = "btnResetSteeve";
-            this.btnResetSteeve.Size = new System.Drawing.Size(64, 45);
-            this.btnResetSteeve.TabIndex = 4;
-            this.btnResetSteeve.Text = "重置";
-            this.btnResetSteeve.UseVisualStyleBackColor = false;
-            this.btnResetSteeve.Click += new System.EventHandler(this.btnResetSteeve_Click);
-            // 
-            // btnResetFrontPivot
-            // 
-            this.btnResetFrontPivot.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnResetFrontPivot.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnResetFrontPivot.ForeColor = System.Drawing.Color.White;
-            this.btnResetFrontPivot.Location = new System.Drawing.Point(202, 224);
-            this.btnResetFrontPivot.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.btnResetFrontPivot.Name = "btnResetFrontPivot";
-            this.btnResetFrontPivot.Size = new System.Drawing.Size(64, 45);
-            this.btnResetFrontPivot.TabIndex = 5;
-            this.btnResetFrontPivot.Text = "重置";
-            this.btnResetFrontPivot.UseVisualStyleBackColor = false;
-            this.btnResetFrontPivot.Click += new System.EventHandler(this.btnResetFrontPivot_Click);
             // 
             // panel8
             // 
@@ -2161,6 +2116,19 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(115)))), ((int)(((byte)(177)))));
+            this.btnReset.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Location = new System.Drawing.Point(88, 182);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(90, 39);
+            this.btnReset.TabIndex = 3;
+            this.btnReset.Text = "重置";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // PouringState
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -2354,9 +2322,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private MetroFramework.Controls.MetroLabel lblResetSteeve;
-        private MetroFramework.Controls.MetroLabel lblFrontPivot;
-        private System.Windows.Forms.Button btnResetSteeve;
-        private System.Windows.Forms.Button btnResetFrontPivot;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
@@ -2367,5 +2332,6 @@
         private MetroFramework.Controls.MetroLabel lblFrontDIsDiffLimit;
         private MetroFramework.Controls.MetroTextBox txtFrontDIsDiffLimit;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnReset;
     }
 }

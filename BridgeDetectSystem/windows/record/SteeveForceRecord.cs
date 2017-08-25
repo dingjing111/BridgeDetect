@@ -17,12 +17,14 @@ namespace BridgeDetectSystem
             InitializeComponent();
         }
         string sql = "select * from SteeveForce";
+       // RecreateRecordManager rrm = new RecreateRecordManager();
         private void steeveforce_Load(object sender, EventArgs e)
         {
             this.initial();
           
             try
             {
+               // rrm.RecreateSteeveForce();
                 OperateSql.LoadData(sql, dgv);
 
 

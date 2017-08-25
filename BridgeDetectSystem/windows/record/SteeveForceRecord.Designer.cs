@@ -250,72 +250,84 @@
             this.Column8.DataPropertyName = "position5";
             this.Column8.HeaderText = "5(kN)";
             this.Column8.Name = "Column8";
+            this.Column8.Visible = false;
             // 
             // Column9
             // 
             this.Column9.DataPropertyName = "position6";
             this.Column9.HeaderText = "6(kN)";
             this.Column9.Name = "Column9";
+            this.Column9.Visible = false;
             // 
             // Column10
             // 
             this.Column10.DataPropertyName = "position7";
             this.Column10.HeaderText = "7(kN)";
             this.Column10.Name = "Column10";
+            this.Column10.Visible = false;
             // 
             // Column11
             // 
             this.Column11.DataPropertyName = "position8";
             this.Column11.HeaderText = "8(kN)";
             this.Column11.Name = "Column11";
+            this.Column11.Visible = false;
             // 
             // Column12
             // 
             this.Column12.DataPropertyName = "position9";
             this.Column12.HeaderText = "9(kN)";
             this.Column12.Name = "Column12";
+            this.Column12.Visible = false;
             // 
             // Column13
             // 
             this.Column13.DataPropertyName = "position10";
             this.Column13.HeaderText = "10(kN)";
             this.Column13.Name = "Column13";
+            this.Column13.Visible = false;
             // 
             // Column14
             // 
             this.Column14.DataPropertyName = "position11";
             this.Column14.HeaderText = "11(kN)";
             this.Column14.Name = "Column14";
+            this.Column14.Visible = false;
             // 
             // Column15
             // 
             this.Column15.DataPropertyName = "position12";
             this.Column15.HeaderText = "12(kN)";
             this.Column15.Name = "Column15";
+            this.Column15.Visible = false;
             // 
             // Column16
             // 
             this.Column16.DataPropertyName = "position13";
             this.Column16.HeaderText = "13(kN)";
             this.Column16.Name = "Column16";
+            this.Column16.Visible = false;
             // 
             // Column17
             // 
             this.Column17.DataPropertyName = "position14";
             this.Column17.HeaderText = "14(kN)";
             this.Column17.Name = "Column17";
+            this.Column17.Visible = false;
             // 
             // Column18
             // 
             this.Column18.DataPropertyName = "position15";
             this.Column18.HeaderText = "15(kN)";
             this.Column18.Name = "Column18";
+            this.Column18.Visible = false;
             // 
             // Column19
             // 
             this.Column19.DataPropertyName = "position16";
             this.Column19.HeaderText = "16(kN)";
             this.Column19.Name = "Column19";
+            this.Column19.Visible = false;
             // 
             // SteeveForceRecord
             // 

@@ -16,12 +16,14 @@ namespace BridgeDetectSystem
             InitializeComponent();
         }
         string sql = "select * from AnchorForce";
+       // RecreateRecordManager rrm = new RecreateRecordManager();
         private void AnchorForceWindow_Load(object sender, EventArgs e)
         {
             this.initial();
            
             try
             {
+               // rrm.RecreateAnchorForce();
                 OperateSql.LoadData(sql, dgv);
 
 
@@ -58,6 +60,7 @@ namespace BridgeDetectSystem
             {
                 MessageBox.Show(ex.Message);
             }
+            OperateSql.LoadData(sql, dgv);
 
 
         }
@@ -96,6 +99,11 @@ namespace BridgeDetectSystem
             
             ExportToExcel.ExportData(sql);
            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

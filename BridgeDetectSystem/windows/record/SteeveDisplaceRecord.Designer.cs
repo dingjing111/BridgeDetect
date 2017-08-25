@@ -250,72 +250,84 @@
             this.Column10.DataPropertyName = "position5";
             this.Column10.HeaderText = "5(cm)";
             this.Column10.Name = "Column10";
+            this.Column10.Visible = false;
             // 
             // Column11
             // 
             this.Column11.DataPropertyName = "position6";
             this.Column11.HeaderText = "6(cm)";
             this.Column11.Name = "Column11";
+            this.Column11.Visible = false;
             // 
             // Column12
             // 
             this.Column12.DataPropertyName = "position7";
             this.Column12.HeaderText = "7(cm)";
             this.Column12.Name = "Column12";
+            this.Column12.Visible = false;
             // 
             // Column2
             // 
             this.Column2.DataPropertyName = "position8";
             this.Column2.HeaderText = "8(cm)";
             this.Column2.Name = "Column2";
+            this.Column2.Visible = false;
             // 
             // Column13
             // 
             this.Column13.DataPropertyName = "position9";
             this.Column13.HeaderText = "9(cm)";
             this.Column13.Name = "Column13";
+            this.Column13.Visible = false;
             // 
             // Column14
             // 
             this.Column14.DataPropertyName = "position10";
             this.Column14.HeaderText = "10(cm)";
             this.Column14.Name = "Column14";
+            this.Column14.Visible = false;
             // 
             // Column15
             // 
             this.Column15.DataPropertyName = "position11";
             this.Column15.HeaderText = "11(cm)";
             this.Column15.Name = "Column15";
+            this.Column15.Visible = false;
             // 
             // Column16
             // 
             this.Column16.DataPropertyName = "position12";
             this.Column16.HeaderText = "12(cm)";
             this.Column16.Name = "Column16";
+            this.Column16.Visible = false;
             // 
             // Column17
             // 
             this.Column17.DataPropertyName = "position13";
             this.Column17.HeaderText = "13(cm)";
             this.Column17.Name = "Column17";
+            this.Column17.Visible = false;
             // 
             // Column18
             // 
             this.Column18.DataPropertyName = "position14";
             this.Column18.HeaderText = "14(cm)";
             this.Column18.Name = "Column18";
+            this.Column18.Visible = false;
             // 
             // Column19
             // 
             this.Column19.DataPropertyName = "position15";
             this.Column19.HeaderText = "15(cm)";
             this.Column19.Name = "Column19";
+            this.Column19.Visible = false;
             // 
             // Column8
             // 
             this.Column8.DataPropertyName = "position16";
             this.Column8.HeaderText = "16(cm)";
             this.Column8.Name = "Column8";
+            this.Column8.Visible = false;
             // 
             // SteeveDisplaceRecord
             // 

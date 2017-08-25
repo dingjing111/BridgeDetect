@@ -30,8 +30,7 @@ namespace BridgeDetectSystem
             this.panel6.Height = (this.panel1.Height - menuStrip1.Height) / 2;
             this.panel8.Width = this.panel7.Width / 2;
             #endregion
-
-            adamHelper = AdamHelper.GetInstance();
+            this.initialAdamHelper();
         }
 
         #region 菜单栏按钮功能方法
@@ -59,15 +58,8 @@ namespace BridgeDetectSystem
 
         #endregion
 
-        private void btnResetSteeve_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnResetFrontPivot_Click(object sender, EventArgs e)
-        {
-
-        }
+      
+      
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -75,16 +67,37 @@ namespace BridgeDetectSystem
             RefreshAnchorText();
             RefreshFrontPivotText();
         }
-     
         /// <summary>
-        /// 给吊杆力和吊杆位移文本框赋值
+        /// 连接的模块
         /// </summary>
+        private void initialAdamHelper()
+        {
+            List<AdamOperation> list = new List<AdamOperation>
+            {
+                new Adam6217Operation("192.168.1.3", 0)
+            };
+
+            try
+            {
+                AdamHelper.Initialize(list, 500);
+                adamHelper = AdamHelper.GetInstance();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.GetType());
+            }
+
+        }
+      
+       /// <summary>
+       /// 给吊杆力和吊杆位移文本框赋值
+       /// </summary>
         private void RefreshSteeveText()
         {
             Dictionary<int, Steeve> dicSteeve = adamHelper.steeveDic;//得到吊杆的字典集合，用方法得到力和位移
             double[] steeveForce = new double[dicSteeve.Count];//吊杆力数组，元素为double
             double[] steeveDis = new double[dicSteeve.Count];//吊杆位移数组，元素为double
-            for (int i = 0; i < 4; i++)
+           for (int i = 0; i < 4; i++)
             {
                 steeveForce[i] = dicSteeve[i].GetForce();//为吊杆力数组赋值值
             }
@@ -93,10 +106,10 @@ namespace BridgeDetectSystem
                 steeveDis[i] = dicSteeve[i].GetDisplace();//为吊杆力位移数组赋值
             }
 
-            SetTextValueManager.SetValueToText(steeveForce, ref txtSteeveF1, ref txtSteeveF2, 
-                ref txtSteeveF3, ref txtSteeveF4, ref txtMaxSteeveForce, ref txtMaxSteeveForceDiff);
-            SetTextValueManager.SetValueToText(steeveDis, ref txtSteeveDis1, ref txtSteeveDis2, 
-                ref txtSteeveDis3, ref txtSteeveDis4, ref txtMaxSteeveDis, ref txtMaxSteeveDisDiff);
+            SetTextValueManager.SetValueToText(steeveForce, ref txtSteeveF1, ref txtSteeveF2, ref txtSteeveF3, ref txtSteeveF4, ref txtMaxSteeveForce, ref txtMaxSteeveForceDiff);
+           SetTextValueManager.SetValueToText(steeveDis, ref txtSteeveDis1, ref txtSteeveDis2, ref txtSteeveDis3, ref txtSteeveDis4, ref txtMaxSteeveDis, ref txtMaxSteeveDisDiff);
+          
+          
         }
         /// <summary>
         /// 给锚杆力文本框赋值
@@ -109,8 +122,9 @@ namespace BridgeDetectSystem
             {
                 anchorForce[i] = dicAnchor[i].GetForce();
             }
-            SetTextValueManager.SetValueToText(anchorForce, ref txtAnchorF1, ref txtAnchorF2,
-                ref txtAnchorF3, ref txtAnchorF4, ref txtMaxAnchorForce, ref txtMaxAnchorForceDiff);
+           SetTextValueManager.SetValueToText(anchorForce, ref txtAnchorF1, ref txtAnchorF2, ref txtAnchorF3, ref txtAnchorF4, ref txtMaxAnchorForce, ref txtMaxAnchorForceDiff);
+         
+
         }
         /// <summary>
         /// 给前支点位移文本框赋值
@@ -126,7 +140,14 @@ namespace BridgeDetectSystem
             txtFrontPivotDis1.Text = frontPivotDis[0].ToString();
             txtFrontPivotDis2.Text = frontPivotDis[1].ToString();
         }
+        /// <summary>
+        /// 行走后重置
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnReset_Click(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
