@@ -160,7 +160,7 @@ namespace BridgeDetectSystem.service
         /// </summary>
         private void CheckAnchorForce()
         {
-            CheckForce(adamHelper.anchorDic, "锚杆",1);
+            CheckForce(adamHelper.anchorDic, "锚杆");
         }
 
         /// <summary>
@@ -214,57 +214,49 @@ namespace BridgeDetectSystem.service
         /// </summary>
         private void CheckSteeveForce()
         {
-            CheckForce(adamHelper.steeveDic, "吊杆",0);
+            CheckForce(adamHelper.steeveDic, "吊杆");
         }
-
-        private void CheckForce(object obj, string str,int index)
+        double forceLimit;
+        double forceDiff;
+        private void CheckForce(object obj, string str)
         {
+           
+
             List<double> forceList = new List<double>();
-            if (obj is Dictionary<int, Steeve>)
+            if (obj is Dictionary<int, Steeve>)           //吊杆力
             {
+                forceLimit = config.Get(ConfigManager.ConfigKeys.steeve_ForceLimit);
+                forceDiff= config.Get(ConfigManager.ConfigKeys.steeve_ForceDiffLimit);
                 var dic = obj as Dictionary<int, Steeve>;
                 foreach (var kv in dic)
                 {
                     forceList.Add(kv.Value.GetForce());
-                }
+                }             
             }
-            else if (obj is Dictionary<int, Anchor>)
-            {
+            else if (obj is Dictionary<int, Anchor>)      //锚杆力
+            {   
+                forceLimit= config.Get(ConfigManager.ConfigKeys.anchor_ForceLimit);
+                forceDiff= config.Get(ConfigManager.ConfigKeys.anchor_ForceDiffLimit);
                 var dic = obj as Dictionary<int, Anchor>;
                 foreach (var kv in dic)
                 {
-
                     forceList.Add(kv.Value.GetForce());
                 }
             }
-
-            double limit=0;
-            double diff=0;
-            if (index == 0)
-            {
-                limit = config.Get(ConfigManager.ConfigKeys.steeve_ForceLimit);
-                diff = config.Get(ConfigManager.ConfigKeys.steeve_ForceDiffLimit);
-            }
-            else
-            {
-                limit = config.Get(ConfigManager.ConfigKeys.anchor_ForceLimit);
-                diff = config.Get(ConfigManager.ConfigKeys.anchor_ForceDiffLimit);
-            }
-
+            
+           
             for (int i = 0; i < forceList.Count; i++)
             {
-                if (forceList[i] >= limit)
+                if (forceList[i] >=forceLimit)
                 {
                     warningList.Add("第" + i + "号" + str + "力过大,值为：" + forceList[i] + "(KN)");
                 }
-            }
-
-             ;
+            }         
             for (int i = 0; i < forceList.Count; i++)
             {
                 for (int j = i + 1; j < forceList.Count; j++)
                 {
-                    if (Math.Abs(forceList[i] - forceList[j]) >= diff)
+                    if (Math.Abs(forceList[i] - forceList[j]) >= forceDiff)
                     {
                         warningList.Add("第" + i + "、" + j + "号" + str + "之间力差值过大。值分别为："
                             + forceList[i] + "(KN)" + "||" + forceList[j] + "KN");
