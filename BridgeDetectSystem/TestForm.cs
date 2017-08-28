@@ -37,7 +37,7 @@ namespace BridgeDetectSystem
 
             try
             {
-                AdamHelper.Initialize(list, 500);
+                AdamHelper.Initialize(list);
                 adamHelper = AdamHelper.GetInstance();
             }
             catch (Exception ex)
