@@ -17,7 +17,7 @@ namespace BridgeDetectSystem.service
         string name;//得到操作人的名字
 
 
-        public DataStoreManager(int storeDataPeriod)
+        private DataStoreManager()
         {
             dbhelper = DBHelper.GetInstance();
             adamHelper = AdamHelper.GetInstance();
@@ -25,9 +25,29 @@ namespace BridgeDetectSystem.service
             storeTimer = new Timer(_ =>
             {
                 storeData();
-            }, null, 0, storeDataPeriod);
+            }, null, Timeout.Infinite, Timeout.Infinite);
         }
 
+        private static volatile DataStoreManager instance;
+        public static DataStoreManager Initialize()
+        {
+            if (instance != null)
+            {
+                throw new Exception("初始化数据保存类失败，实例已存在.");
+            }
+
+            instance = new DataStoreManager();
+            return instance;
+        }
+
+        public static DataStoreManager GetInstance()
+        {
+            if (instance == null)
+            {
+                throw new Exception("数据保存类实例不存在报错！");
+            }
+            return instance;
+        }
 
         /// <summary>
         /// 将吊杆数据，力和位移存入数据库
@@ -96,6 +116,22 @@ namespace BridgeDetectSystem.service
                 storeTimer.Change(Timeout.Infinite, Timeout.Infinite);
                 throw ex;
             }
+        }
+
+        /// <summary>
+        /// 开始数据保存线程
+        /// </summary>
+        /// <param name="period"></param>
+        public void StartTimer(int period)
+        {
+            storeTimer.Change(0, period);
+        }
+        /// <summary>
+        /// 停止数据接收线程
+        /// </summary>
+        public void StopTimer()
+        {
+            storeTimer.Change(Timeout.Infinite, Timeout.Infinite);
         }
     }
 }

@@ -70,7 +70,7 @@ namespace BridgeDetectSystem.adam
         }
 
 
-        public static AdamHelper Initialize(List<AdamOperation> list, int readTimerPeriod)
+        public static AdamHelper Initialize(List<AdamOperation> list)
         {
             if (instance != null)
             {

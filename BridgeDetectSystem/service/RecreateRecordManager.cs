@@ -115,5 +115,15 @@ namespace BridgeDetectSystem.service
                 )");
 
         }
+
+        public static void InitialDataBase()
+        {
+            RecreateUserManagerTable();
+            RecreateSteeveForce();
+            RecreateSteeveDisplacement();
+            RecreateAnchorForce();
+            RecreateFrontPivotDis();
+            RecreateAlarmRecord();
+        }
     }
 }
