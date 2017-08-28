@@ -57,10 +57,6 @@ namespace BridgeDetectSystem
         }
 
         #endregion
-
-      
-      
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             RefreshSteeveText();
@@ -100,17 +96,11 @@ namespace BridgeDetectSystem
            for (int i = 0; i < 4; i++)
             {
                 steeveForce[i] = dicSteeve[i].GetForce();//为吊杆力数组赋值值
-            }
-            for (int i = 0; i < 4; i++)
-            {
                 steeveDis[i] = dicSteeve[i].GetDisplace();//为吊杆力位移数组赋值
-            }
-
+            }          
             SetTextValueManager.SetValueToText(steeveForce, ref txtSteeveF1, ref txtSteeveF2, ref txtSteeveF3, ref txtSteeveF4, ref txtMaxSteeveForce, ref txtMaxSteeveForceDiff);
-           SetTextValueManager.SetValueToText(steeveDis, ref txtSteeveDis1, ref txtSteeveDis2, ref txtSteeveDis3, ref txtSteeveDis4, ref txtMaxSteeveDis, ref txtMaxSteeveDisDiff);
-          
-          
-        }
+            SetTextValueManager.SetValueToText(steeveDis, ref txtSteeveDis1, ref txtSteeveDis2, ref txtSteeveDis3, ref txtSteeveDis4, ref txtMaxSteeveDis, ref txtMaxSteeveDisDiff);
+         }
         /// <summary>
         /// 给锚杆力文本框赋值
         /// </summary>
@@ -149,5 +139,10 @@ namespace BridgeDetectSystem
         {
 
         }
+        
+        #region 将接收的数据存入数据库
+
+
+        #endregion
     }
 }
