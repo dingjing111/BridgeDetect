@@ -18,7 +18,7 @@ namespace BridgeDetectSystem.adam
         public Dictionary<int, Steeve> steeveDic { get; }
         public Dictionary<int, Anchor> anchorDic { get; }
         public Dictionary<int, FrontPivot> frontPivotDic { get; }
-        public Dictionary<int, RailWay> railWayDic { get; }
+       // public Dictionary<int, RailWay> railWayDic { get; }
 
         public double steeveDisStandard { get; set; }
         public double first_frontPivotDisStandard { get; set; }
@@ -35,7 +35,7 @@ namespace BridgeDetectSystem.adam
             this.steeveDic = new Dictionary<int, Steeve>();
             this.anchorDic = new Dictionary<int, Anchor>();
             this.frontPivotDic = new Dictionary<int, FrontPivot>();
-            this.railWayDic = new Dictionary<int, RailWay>();
+          //  this.railWayDic = new Dictionary<int, RailWay>();
 
             try
             {
@@ -76,7 +76,7 @@ namespace BridgeDetectSystem.adam
             {
                 throw new AdamHelperException("Trying to initialize AdamHelper while its instance already exists.");
             }
-            instance = new AdamHelper(list);
+            instance = new AdamHelper(list);//
             return instance;
         }
 
@@ -167,7 +167,7 @@ namespace BridgeDetectSystem.adam
                         disSensor.readValue = double.Parse(disData);
 
                         RailWay railway = new RailWay(count++, disSensor);
-                        railWayDic[railway.id] = railway;
+                        //railWayDic[railway.id] = railway;
                     }
                 }
             }
