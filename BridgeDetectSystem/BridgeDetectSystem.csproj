@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="adam\Adam6217Operation.cs" />
+    <Compile Include="adam\AdamHelper2.cs" />
     <Compile Include="adam\AdamOperation.cs" />
     <Compile Include="entity\Anchor.cs" />
     <Compile Include="service\ConfigManager.cs" />
@@ -267,6 +268,7 @@
       <DependentUpon>UserRightWin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
