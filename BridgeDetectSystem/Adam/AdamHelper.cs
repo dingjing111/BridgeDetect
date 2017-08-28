@@ -160,15 +160,15 @@ namespace BridgeDetectSystem.adam
                         frontPivotDic[pivot.id] = pivot;
                     }
                     count = 0;
-                    if (j == 6)
-                    {
-                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 30, 100);
-                        tempDic.TryGetValue(j, out disData);
-                        disSensor.readValue = double.Parse(disData);
+                    //if (j == 6)
+                    //{
+                    //    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 30, 100);
+                    //    tempDic.TryGetValue(j, out disData);
+                    //    disSensor.readValue = double.Parse(disData);
 
-                        RailWay railway = new RailWay(count++, disSensor);
-                        //railWayDic[railway.id] = railway;
-                    }
+                    //    RailWay railway = new RailWay(count++, disSensor);
+                    //    //railWayDic[railway.id] = railway;
+                    //}
                 }
             }
         }
