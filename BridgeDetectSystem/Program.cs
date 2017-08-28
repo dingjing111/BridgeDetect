@@ -21,15 +21,15 @@ namespace BridgeDetectSystem
 
             Initialize();
 
-            Login login = new Login();
-            if (login.ShowDialog() == DialogResult.OK)
-            {
-                login.Close();
-                Application.Run(new MainWin());
-            }
+            //Login login = new Login();
+            //if (login.ShowDialog() == DialogResult.OK)
+            //{
+            //    login.Close();
+            //    Application.Run(new MainWin());
+            //}
 
-            //  TestForm testform = new TestForm();
-            // Application.Run(testform);
+            TestForm testform = new TestForm();
+            Application.Run(testform);
         }
 
         private static void Initialize()
