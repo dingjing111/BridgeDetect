@@ -15,12 +15,12 @@ namespace BridgeDetectSystem
 {
     public partial class PouringState : MetroFramework.Forms.MetroForm
     {
+        AdamHelper adamHelper;
         public PouringState()
         {
             InitializeComponent();
         }
 
-        AdamHelper adamHelper;
         private void SteeveForceAndDisplacement16_Load(object sender, EventArgs e)
         {
             #region 界面 panel 相关

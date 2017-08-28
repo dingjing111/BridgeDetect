@@ -14,7 +14,7 @@ namespace BridgeDetectSystem.adam
         private Dictionary<int, Dictionary<int, string>> allDataDic;
 
 
-        public Timer readTimer { get; }
+        public Timer readTimer { get; set; }
         public Dictionary<int, Steeve> steeveDic { get; }
         public Dictionary<int, Anchor> anchorDic { get; }
         public Dictionary<int, FrontPivot> frontPivotDic { get; }
@@ -28,7 +28,7 @@ namespace BridgeDetectSystem.adam
         #region 单例
         private static volatile AdamHelper instance = null;
 
-        private AdamHelper(List<AdamOperation> list, int readTimerPeriod)
+        private AdamHelper(List<AdamOperation> list)
         {
             this.adamList = list;
             this.allDataDic = new Dictionary<int, Dictionary<int, string>>();
@@ -66,7 +66,7 @@ namespace BridgeDetectSystem.adam
                     readTimer.Change(Timeout.Infinite, Timeout.Infinite);
                     throw ex;
                 }
-            }, null, 0, readTimerPeriod);
+            }, null, Timeout.Infinite,Timeout.Infinite);
         }
 
 
@@ -76,7 +76,7 @@ namespace BridgeDetectSystem.adam
             {
                 throw new AdamHelperException("Trying to initialize AdamHelper while its instance already exists.");
             }
-            instance = new AdamHelper(list, readTimerPeriod);
+            instance = new AdamHelper(list);
             return instance;
         }
 
@@ -197,6 +197,22 @@ namespace BridgeDetectSystem.adam
 
             //first_frontPivotDisStandard = Math.Round(double.Parse(adamList[1].Read(4)));
             //second_frontPivotDisStandard = Math.Round(double.Parse(adamList[1].Read(5)));
+        }
+
+        /// <summary>
+        /// 取消后台接收线程
+        /// </summary>
+        public void InfiniteTimer()
+        {
+            readTimer.Change(Timeout.Infinite, Timeout.Infinite);
+        }
+        /// <summary>
+        /// 开始后台接收数据线程
+        /// </summary>
+        /// <param name="period"></param>
+        public void StartTimer(int period)
+        {
+            readTimer.Change(0, period);
         }
 
         #endregion

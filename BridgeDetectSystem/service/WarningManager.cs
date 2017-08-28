@@ -49,11 +49,20 @@ namespace BridgeDetectSystem.service
         /// </summary>
         public void BgStart()
         {
+            bgWork.WorkerSupportsCancellation = true;
             bgWork.WorkerReportsProgress = true;
             bgWork.DoWork += new DoWorkEventHandler(BgDoWork);
             bgWork.ProgressChanged += new ProgressChangedEventHandler(BgProgressChanged);
             bgWork.RunWorkerAsync();
         }
+        /// <summary>
+        /// 请求取消后台挂起的操作
+        /// </summary>
+        public void BgCancel()
+        {
+            bgWork.CancelAsync();
+        }
+
 
         /// <summary>
         /// 报警界面调用，继续当前报警线程
@@ -91,6 +100,12 @@ namespace BridgeDetectSystem.service
             //写判断逻辑,
             while (true)
             {
+                //如果申请取消
+                if (bgWork.CancellationPending)
+                {
+                    e.Cancel = true;
+                    return;
+                }
 
                 //如果ManualResetEvent的初始化为终止状态（true)，那么该方法将一直工作，
                 //直到收到Reset信号。然后，直到收到Set信号,就继续工作。
