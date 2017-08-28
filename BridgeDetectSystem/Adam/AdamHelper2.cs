@@ -10,23 +10,20 @@ namespace BridgeDetectSystem.adam
   public  class AdamHelper2
     {
         #region 字段
-        private List<AdamOperation> adamList;
+        private AdamOperation oper;
         public Timer readTimer { get; set; }
         //public Dictionary<int, RailWay> railWayDic;
         public string value;
         #endregion
         #region 单例
         private static volatile AdamHelper2 instance = null;
-        private AdamHelper2(List<AdamOperation> list)
+        private AdamHelper2(AdamOperation oper)
         {
-            this.adamList = list;
+            this.oper = oper;
             //this.railWayDic = new Dictionary<int, RailWay>();
             try
             {   //初始化每个研华模块
-                foreach (AdamOperation oper in list)
-                {
-                    oper.Init();
-                }                              
+                   oper.Init();
             }
             catch (AdamException ex)
             {
@@ -35,20 +32,19 @@ namespace BridgeDetectSystem.adam
             ReadRailWay();
 
          }
-        #endregion
+       
         /// <summary>
-        /// 模块帮手2初始化，调用构造函数
+        /// 模块帮手2初始化
         /// </summary>
-        /// <param name="list">模块集合</param>
-        /// <param name="readTimerPeriod"></param>
+        /// <param name="oper">模块</param>
         /// <returns></returns>
-        public static AdamHelper2 Initialize(List<AdamOperation> list, int readTimerPeriod)
+        public static AdamHelper2 Initialize(AdamOperation oper)
         {
             if (instance != null)
             {
-                throw new AdamHelperException("Trying to initialize AdamHelper while its instance already exists.");
+                throw new AdamHelperException("Trying to initialize AdamHelper2 while its instance already exists.");
             }
-            instance = new AdamHelper2(list);
+            instance = new AdamHelper2(oper);
             return instance;
         }
         /// <summary>
@@ -59,11 +55,12 @@ namespace BridgeDetectSystem.adam
         {
             if (instance == null)
             {
-                throw new AdamHelperException2("Trying to get AdamHelper instance before initialization.");
+                throw new AdamHelperException2("Trying to get AdamHelper2 instance before initialization.");
             }
             return instance;
         }
-
+        #endregion
+        #region 方法
         public void ReadRailWay()
         {
             //后台每隔一段时间读取一次数据
@@ -89,21 +86,32 @@ namespace BridgeDetectSystem.adam
         {
             lock (obj)
             {
-                foreach (AdamOperation oper in adamList)
-                {
-                    value = oper.Read(6);         //读第7个通道的值
-                }
-
-                ConvertToRealValue();
+               value = oper.Read(6);         //读第7个通道的值
+               ConvertToRealValue();
             }
         }
-
         private void ConvertToRealValue()
         {
             //转成实际值
         }
+        /// <summary>
+        /// 取消后台接收线程
+        /// </summary>
+        public void InfiniteTimer()
+        {
+            readTimer.Change(Timeout.Infinite, Timeout.Infinite);
+        }
+        /// <summary>
+        /// 开始后台接收数据线程
+        /// </summary>
+        /// <param name="period"></param>
+        public void StartTimer(int period)
+        {
+            readTimer.Change(0, period);
+        }
     }
-  public class AdamHelperException2 : AdamException
+    #endregion
+    public class AdamHelperException2 : AdamException
     {
         public AdamHelperException2(string message) : base(message) { }
         public AdamHelperException2(string message, Exception innerException) : base(message, innerException) { }

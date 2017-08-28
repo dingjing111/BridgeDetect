@@ -16,16 +16,15 @@ namespace BridgeDetectSystem
         {
             InitializeComponent();
         }
-        string sql = "select * from AlarmRecord";
+        DataTable dt;
+       
         private void warn_Load(object sender, EventArgs e)
         {
             this.initial();
-            
+            string sql = "select * from AlarmRecord";
             try
             {
-                OperateSql.LoadData(sql, dgv);
-
-
+             dt=OperateSql.LoadData(sql, dgv);
             }
             catch (Exception ex)
             {
@@ -57,8 +56,11 @@ namespace BridgeDetectSystem
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-           
-            ExportToExcel.ExportData(sql);
+            dt.Columns[0].ColumnName = "全局唯一标识符";
+            dt.Columns[1].ColumnName = "时间";
+            dt.Columns[2].ColumnName = "报警类型";
+            dt.Columns[3].ColumnName = "操作人";
+            ExportToExcel.ExportData(dt);
             
         }
     }

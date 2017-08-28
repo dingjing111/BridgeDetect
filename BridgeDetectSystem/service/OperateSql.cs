@@ -15,7 +15,7 @@ namespace BridgeDetectSystem.service
         /// </summary>
         /// <param name="sql">sql语句</param>
         /// <param name="dgv">控件datagridview</param>
-        public static void LoadData(string sql ,DataGridView dgv)
+        public static DataTable LoadData(string sql ,DataGridView dgv)
         {
             DBHelper dbhelper = DBHelper.GetInstance();
             DataTable dt = dbhelper.ExecuteSqlDataAdapter(sql, null, 0);
@@ -23,6 +23,7 @@ namespace BridgeDetectSystem.service
             OperateSql.RemoveNULL(dgv);
             dgv.AutoGenerateColumns = false;
             dgv.Invalidate();
+            return dt;
         }     
         /// <summary>
         /// 空列视为不可见

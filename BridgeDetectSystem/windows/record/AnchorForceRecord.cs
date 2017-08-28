@@ -16,14 +16,14 @@ namespace BridgeDetectSystem
             InitializeComponent();
         }
         string sql = "select * from AnchorForce";
-      
+        DataTable dt;
         private void AnchorForceWindow_Load(object sender, EventArgs e)
         {
             this.initial();
            
             try
             {               
-                OperateSql.LoadData(sql, dgv);
+              dt= OperateSql.LoadData(sql, dgv);
             }
             catch (Exception ex)
             {
@@ -47,54 +47,27 @@ namespace BridgeDetectSystem
             this.Close();
         }
        
-        private void btnInsert_Click(object sender, EventArgs e)
-        {
-            try
-            {
-             OperateSql.InsertData(); //插入数据 
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            OperateSql.LoadData(sql, dgv);
-
-
-        }
        
-        private void btnDel_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                OperateSql.DeleteData();//删除数据
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message); 
-            }
-        }
+       
+        
 
         private void dgv_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
             e.Row.HeaderCell.Value = string.Format("{0}", e.Row.Index + 1);
         }
 
-        private void btnRead_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                OperateSql.LoadData(sql,dgv);//加载数据
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+       
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            
-            ExportToExcel.ExportData(sql);
+            dt.Columns[0].ColumnName = "全局唯一标识符";
+            dt.Columns[1].ColumnName = "时间";
+            dt.Columns[2].ColumnName = "操作人";
+            dt.Columns[3].ColumnName = "位置1";
+            dt.Columns[4].ColumnName = "位置2";
+            dt.Columns[5].ColumnName = "位置3";
+            dt.Columns[6].ColumnName = "位置4";
+            ExportToExcel.ExportData(dt);
            
         }
 

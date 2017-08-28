@@ -33,16 +33,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnchorForceRecord));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnRead = new System.Windows.Forms.Button();
-            this.btbDel = new System.Windows.Forms.Button();
-            this.btnInsert = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +57,8 @@
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -83,9 +80,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnRead);
-            this.panel3.Controls.Add(this.btbDel);
-            this.panel3.Controls.Add(this.btnInsert);
             this.panel3.Controls.Add(this.btnClose);
             this.panel3.Controls.Add(this.btnExport);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -93,36 +87,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1108, 226);
             this.panel3.TabIndex = 1;
-            // 
-            // btnRead
-            // 
-            this.btnRead.Location = new System.Drawing.Point(134, 46);
-            this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(102, 46);
-            this.btnRead.TabIndex = 7;
-            this.btnRead.Text = "读取数据";
-            this.btnRead.UseVisualStyleBackColor = true;
-            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
-            // 
-            // btbDel
-            // 
-            this.btbDel.Location = new System.Drawing.Point(539, 37);
-            this.btbDel.Name = "btbDel";
-            this.btbDel.Size = new System.Drawing.Size(104, 54);
-            this.btbDel.TabIndex = 6;
-            this.btbDel.Text = "删除";
-            this.btbDel.UseVisualStyleBackColor = true;
-            this.btbDel.Click += new System.EventHandler(this.btnDel_Click);
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.Location = new System.Drawing.Point(291, 37);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(208, 69);
-            this.btnInsert.TabIndex = 5;
-            this.btnInsert.Text = "插入一万条数据（demo）";
-            this.btnInsert.UseVisualStyleBackColor = true;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnClose
             // 
@@ -211,26 +175,6 @@
             this.dgv.Size = new System.Drawing.Size(1108, 534);
             this.dgv.TabIndex = 1;
             this.dgv.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dgv_RowStateChanged);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1108, 66);
-            this.panel4.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1108, 66);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // Column1
             // 
@@ -359,6 +303,26 @@
             this.Column19.Name = "Column19";
             this.Column19.Visible = false;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1108, 66);
+            this.panel4.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1108, 66);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // AnchorForceRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -400,9 +364,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.Button btbDel;
-        private System.Windows.Forms.Button btnRead;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
