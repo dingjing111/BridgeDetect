@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BridgeDetectSystem.service
 {
@@ -274,7 +275,14 @@ namespace BridgeDetectSystem.service
             {
                 string name = UserRightManager.user.userName;//得到操作人的名字
                 string insertsql = string.Format("insert into AlarmRecord values(newid(),getdate(),'{0}','{1}')",list[i], name);
-                int r = dbhelper.ExecuteNonQuery(insertsql);
+                try
+                {
+                    int r = dbhelper.ExecuteNonQuery(insertsql);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("记录报警发生错误" + ex.Message);
+                }
              }
          }
 
