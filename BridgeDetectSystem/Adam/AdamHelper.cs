@@ -13,21 +13,24 @@ namespace BridgeDetectSystem.adam
         private List<AdamOperation> adamList;
         private Dictionary<int, Dictionary<int, string>> allDataDic;
 
-
+        public volatile bool hasData;
         public Timer readTimer { get; set; }
+        //吊杆力和位移
         public Dictionary<int, Steeve> steeveDic { get; }
+        //锚杆力
         public Dictionary<int, Anchor> anchorDic { get; }
+        //前支点位移
         public Dictionary<int, FrontPivot> frontPivotDic { get; }
-       // public Dictionary<int, RailWay> railWayDic { get; }
 
+        //吊杆基准点
         public double steeveDisStandard { get; set; }
+        //前支架基准点
         public double first_frontPivotDisStandard { get; set; }
         public double second_frontPivotDisStandard { get; set; }
         #endregion
 
         #region 单例
         private static volatile AdamHelper instance = null;
-
         private AdamHelper(List<AdamOperation> list)
         {
             this.adamList = list;
@@ -35,8 +38,7 @@ namespace BridgeDetectSystem.adam
             this.steeveDic = new Dictionary<int, Steeve>();
             this.anchorDic = new Dictionary<int, Anchor>();
             this.frontPivotDic = new Dictionary<int, FrontPivot>();
-          //  this.railWayDic = new Dictionary<int, RailWay>();
-
+            this.hasData = false;
             try
             {
                 //初始化每个研华模块
@@ -44,10 +46,6 @@ namespace BridgeDetectSystem.adam
                 {
                     oper.Init();
                 }
-
-                //读取初始的值一次，并记录在字段steeveDisStandard、frontPivotDisStandard中
-                //之后作为报警的基准
-                ReadStandardValue();
             }
             catch (AdamException ex)
             {
@@ -74,7 +72,7 @@ namespace BridgeDetectSystem.adam
         {
             if (instance != null)
             {
-                throw new AdamHelperException("Trying to initialize AdamHelper while its instance already exists.");
+                throw new AdamHelperException("AdamHelper数据接收模块重复初始化报错");
             }
             instance = new AdamHelper(list);//
             return instance;
@@ -84,7 +82,7 @@ namespace BridgeDetectSystem.adam
         {
             if (instance == null)
             {
-                throw new AdamHelperException("Trying to get AdamHelper instance before initialization.");
+                throw new AdamHelperException("AdamHelper数据接收模块未初始化，实例不存在报错！");
             }
             return instance;
         }
@@ -103,6 +101,7 @@ namespace BridgeDetectSystem.adam
                 }
 
                 ConvertToRealValue();
+                hasData = true;
             }
         }
 
@@ -159,7 +158,7 @@ namespace BridgeDetectSystem.adam
                         FrontPivot pivot = new FrontPivot(count++, disSensor);
                         frontPivotDic[pivot.id] = pivot;
                     }
-                    count = 0;
+                    //count = 0;
                     //if (j == 6)
                     //{
                     //    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 30, 100);
@@ -176,7 +175,7 @@ namespace BridgeDetectSystem.adam
         /// <summary>
         /// 读取初始数值作为基准，只读一次
         /// </summary>
-        private void ReadStandardValue()
+        public void ReadStandardValue()
         {
             List<double> disList = new List<double>();
             Sensor sensor = new Sensor(SensorType.displaceSensor, 4, 20, 70, 100);
@@ -193,18 +192,19 @@ namespace BridgeDetectSystem.adam
             {
                 sum += val;
             }
-            steeveDisStandard = Math.Round(sum / 4, 3);
+            steeveDisStandard = Math.Round(sum / disList.Count, 3);
 
-            //first_frontPivotDisStandard = Math.Round(double.Parse(adamList[1].Read(4)));
-            //second_frontPivotDisStandard = Math.Round(double.Parse(adamList[1].Read(5)));
+            first_frontPivotDisStandard = Math.Round(double.Parse(adamList[1].Read(4)));
+            second_frontPivotDisStandard = Math.Round(double.Parse(adamList[1].Read(5)));
         }
 
         /// <summary>
-        /// 取消后台接收线程
+        /// 取消后台数据接收线程
         /// </summary>
-        public void InfiniteTimer()
+        public void StopTimer()
         {
             readTimer.Change(Timeout.Infinite, Timeout.Infinite);
+            hasData = false;
         }
         /// <summary>
         /// 开始后台接收数据线程
@@ -212,6 +212,9 @@ namespace BridgeDetectSystem.adam
         /// <param name="period"></param>
         public void StartTimer(int period)
         {
+            //读取初始的值一次，并记录在字段steeveDisStandard、frontPivotDisStandard中
+            //之后作为报警的基准
+            ReadStandardValue();
             readTimer.Change(0, period);
         }
 

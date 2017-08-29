@@ -88,7 +88,7 @@ namespace BridgeDetectSystem.video
             else
             {
                 //保存SDK日志 To save the SDK log
-                CHCNetSDK.NET_DVR_SetLogToFile(3, "C:\\SdkLog\\", true);
+                CHCNetSDK.NET_DVR_SetLogToFile(3, "D:\\SdkLog\\", true);
                 for (int i = 0; i < 64; i++)
                 {
                     iIPDevID[i] = -1;

@@ -1,40 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using BridgeDetectSystem.video;
-using System.Threading;
+using BridgeDetectSystem.service;
+using BridgeDetectSystem.adam;
 
 namespace BridgeDetectSystem
 {
     public partial class VideoMonitorWin : MetroFramework.Forms.MetroForm
     {
         VideoPlayer player = null;
+        AdamHelper2 adamHelper2 = null;
+        WarningManager2 warningManager2 = null;
 
         public VideoMonitorWin()
         {
             InitializeComponent();
+            adamHelper2 = AdamHelper2.GetInstance();
+            warningManager2 = WarningManager2.GetInstance();
         }
 
         private void VideoMonitor_Load(object sender, EventArgs e)
         {
             this.initial();
-
-        }
-        
-        private void initial()
-        {
-            #region 窗体初始化
-
-            this.panel2.Height = this.panel1.Height / 2;
-            this.panel4.Width = this.panel2.Width / 2;
-            this.panel6.Width = this.panel3.Width / 2;
-
-            #endregion
 
             #region 初始化视频监控
 
@@ -54,7 +41,23 @@ namespace BridgeDetectSystem
                 MessageBox.Show("视频预览初始化出错! " + ex.Message);
                 return;
             }
+
+            #endregion
+
             ShowPreview();
+
+            adamHelper2.StartTimer(250);
+            warningManager2.BgStart();
+        }
+
+        private void initial()
+        {
+            #region 窗体初始化
+
+            this.panel2.Height = this.panel1.Height / 2;
+            this.panel4.Width = this.panel2.Width / 2;
+            this.panel6.Width = this.panel3.Width / 2;
+
             #endregion
         }
 
@@ -102,6 +105,13 @@ namespace BridgeDetectSystem
         private void VideoMonitorWin_FormClosing_1(object sender, FormClosingEventArgs e)
         {
             player.CleanUp();
+
+            if (warningManager2.isStart)
+            {
+                warningManager2.BgCancel();
+            }
+
+            adamHelper2.StopTimer();
         }
 
         private void RemoveAllPanelAndPictureBox()
@@ -130,11 +140,11 @@ namespace BridgeDetectSystem
             PictureBox picbox = (PictureBox)Controls["picBox1"];
             try
             {
-                player.Preview(picbox, index,0);
+                player.Preview(picbox, index, 0);
             }
             catch (VideoPlayerException ex)
             {
-                MessageBox.Show("第" + (index+1) + "路摄像头出现问题：" + ex.Message);
+                MessageBox.Show("第" + (index + 1) + "路摄像头出现问题：" + ex.Message);
             }
         }
 

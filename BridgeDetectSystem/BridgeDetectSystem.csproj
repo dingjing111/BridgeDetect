@@ -124,6 +124,7 @@
     <Compile Include="entity\WarningObject.cs" />
     <Compile Include="service\RecreateRecordManager.cs" />
     <Compile Include="service\SetTextValueManager.cs" />
+    <Compile Include="service\WarningManager2.cs" />
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +132,12 @@
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="util\AutoClosingMessageBox.cs" />
+    <Compile Include="windows\other\WarningDialog2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\other\WarningDialog2.Designer.cs">
+      <DependentUpon>WarningDialog2.cs</DependentUpon>
+    </Compile>
     <Compile Include="windows\other\WarningDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +229,9 @@
     </Compile>
     <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="windows\other\WarningDialog2.resx">
+      <DependentUpon>WarningDialog2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="windows\other\WarningDialog.resx">
       <DependentUpon>WarningDialog.cs</DependentUpon>

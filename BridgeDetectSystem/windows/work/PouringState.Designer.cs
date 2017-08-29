@@ -41,6 +41,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.lblResetSteeve = new MetroFramework.Controls.MetroLabel();
+            this.btnReset = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -180,7 +181,6 @@
             this.lblSteeveF1 = new MetroFramework.Controls.MetroLabel();
             this.txtSteeveF1 = new MetroFramework.Controls.MetroTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnReset = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -223,7 +223,7 @@
             this.btnFirstPage.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnFirstPage.ForeColor = System.Drawing.Color.White;
             this.btnFirstPage.Name = "btnFirstPage";
-            this.btnFirstPage.Size = new System.Drawing.Size(61, 44);
+            this.btnFirstPage.Size = new System.Drawing.Size(52, 44);
             this.btnFirstPage.Text = "首页";
             this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
             // 
@@ -232,7 +232,7 @@
             this.btnSetParameter.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnSetParameter.ForeColor = System.Drawing.Color.White;
             this.btnSetParameter.Name = "btnSetParameter";
-            this.btnSetParameter.Size = new System.Drawing.Size(101, 44);
+            this.btnSetParameter.Size = new System.Drawing.Size(84, 44);
             this.btnSetParameter.Text = "参数设置";
             this.btnSetParameter.Click += new System.EventHandler(this.btnSetParameter_Click);
             // 
@@ -241,7 +241,7 @@
             this.btnExit.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(61, 44);
+            this.btnExit.Size = new System.Drawing.Size(52, 44);
             this.btnExit.Text = "退出";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -285,10 +285,10 @@
             this.panel7.Controls.Add(this.panel9);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(3, 385);
+            this.panel7.Location = new System.Drawing.Point(3, 381);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(546, 381);
+            this.panel7.Size = new System.Drawing.Size(546, 385);
             this.panel7.TabIndex = 1;
             // 
             // panel9
@@ -297,7 +297,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(271, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(275, 381);
+            this.panel9.Size = new System.Drawing.Size(275, 385);
             this.panel9.TabIndex = 1;
             // 
             // groupBox2
@@ -306,7 +306,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(275, 381);
+            this.groupBox2.Size = new System.Drawing.Size(275, 385);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "重置按钮";
@@ -322,7 +322,7 @@
             this.tableLayoutPanel5.Controls.Add(this.lblResetSteeve, 1, 2);
             this.tableLayoutPanel5.Controls.Add(this.btnReset, 2, 4);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 24);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 20);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 8;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.3002F));
@@ -333,7 +333,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.86357F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.57721F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.57721F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(269, 354);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(269, 362);
             this.tableLayoutPanel5.TabIndex = 5;
             // 
             // lblResetSteeve
@@ -342,12 +342,25 @@
             this.tableLayoutPanel5.SetColumnSpan(this.lblResetSteeve, 3);
             this.lblResetSteeve.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblResetSteeve.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblResetSteeve.Location = new System.Drawing.Point(19, 89);
+            this.lblResetSteeve.Location = new System.Drawing.Point(19, 91);
             this.lblResetSteeve.Name = "lblResetSteeve";
-            this.lblResetSteeve.Size = new System.Drawing.Size(228, 45);
+            this.lblResetSteeve.Size = new System.Drawing.Size(228, 46);
             this.lblResetSteeve.TabIndex = 2;
             this.lblResetSteeve.Text = "吊杆与前支点位移重置";
             this.lblResetSteeve.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(115)))), ((int)(((byte)(177)))));
+            this.btnReset.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Location = new System.Drawing.Point(88, 186);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(90, 40);
+            this.btnReset.TabIndex = 3;
+            this.btnReset.Text = "重置";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // panel8
             // 
@@ -355,7 +368,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(271, 381);
+            this.panel8.Size = new System.Drawing.Size(271, 385);
             this.panel8.TabIndex = 0;
             // 
             // groupBox1
@@ -364,7 +377,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(271, 381);
+            this.groupBox1.Size = new System.Drawing.Size(271, 385);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "前支点位移(cm)";
@@ -385,7 +398,7 @@
             this.tableLayoutPanel4.Controls.Add(this.lblFrontDIsDiffLimit, 1, 5);
             this.tableLayoutPanel4.Controls.Add(this.txtFrontDIsDiffLimit, 3, 5);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 24);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 20);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 8;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.3002F));
@@ -396,7 +409,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.86357F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.57721F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.57721F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(265, 354);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(265, 362);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // lblFrontPivotDis1
@@ -404,9 +417,9 @@
             this.lblFrontPivotDis1.AutoSize = true;
             this.lblFrontPivotDis1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblFrontPivotDis1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblFrontPivotDis1.Location = new System.Drawing.Point(28, 47);
+            this.lblFrontPivotDis1.Location = new System.Drawing.Point(28, 48);
             this.lblFrontPivotDis1.Name = "lblFrontPivotDis1";
-            this.lblFrontPivotDis1.Size = new System.Drawing.Size(89, 42);
+            this.lblFrontPivotDis1.Size = new System.Drawing.Size(89, 43);
             this.lblFrontPivotDis1.TabIndex = 0;
             this.lblFrontPivotDis1.Text = "1";
             this.lblFrontPivotDis1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -416,10 +429,10 @@
             this.tableLayoutPanel4.SetColumnSpan(this.txtFrontPivotDis1, 2);
             this.txtFrontPivotDis1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFrontPivotDis1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtFrontPivotDis1.Location = new System.Drawing.Point(144, 47);
+            this.txtFrontPivotDis1.Location = new System.Drawing.Point(144, 48);
             this.txtFrontPivotDis1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.txtFrontPivotDis1.Name = "txtFrontPivotDis1";
-            this.txtFrontPivotDis1.Size = new System.Drawing.Size(85, 42);
+            this.txtFrontPivotDis1.Size = new System.Drawing.Size(85, 43);
             this.txtFrontPivotDis1.TabIndex = 1;
             // 
             // lblFrontPivotDis2
@@ -427,9 +440,9 @@
             this.lblFrontPivotDis2.AutoSize = true;
             this.lblFrontPivotDis2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblFrontPivotDis2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblFrontPivotDis2.Location = new System.Drawing.Point(28, 134);
+            this.lblFrontPivotDis2.Location = new System.Drawing.Point(28, 137);
             this.lblFrontPivotDis2.Name = "lblFrontPivotDis2";
-            this.lblFrontPivotDis2.Size = new System.Drawing.Size(89, 45);
+            this.lblFrontPivotDis2.Size = new System.Drawing.Size(89, 46);
             this.lblFrontPivotDis2.TabIndex = 2;
             this.lblFrontPivotDis2.Text = "2";
             this.lblFrontPivotDis2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -439,10 +452,10 @@
             this.tableLayoutPanel4.SetColumnSpan(this.txtFrontPivotDis2, 2);
             this.txtFrontPivotDis2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFrontPivotDis2.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtFrontPivotDis2.Location = new System.Drawing.Point(144, 134);
+            this.txtFrontPivotDis2.Location = new System.Drawing.Point(144, 137);
             this.txtFrontPivotDis2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.txtFrontPivotDis2.Name = "txtFrontPivotDis2";
-            this.txtFrontPivotDis2.Size = new System.Drawing.Size(85, 45);
+            this.txtFrontPivotDis2.Size = new System.Drawing.Size(85, 46);
             this.txtFrontPivotDis2.TabIndex = 3;
             // 
             // lblFrontDIsDiffLimit
@@ -450,10 +463,10 @@
             this.lblFrontDIsDiffLimit.AutoSize = true;
             this.lblFrontDIsDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblFrontDIsDiffLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblFrontDIsDiffLimit.Location = new System.Drawing.Point(28, 224);
+            this.lblFrontDIsDiffLimit.Location = new System.Drawing.Point(28, 229);
             this.lblFrontDIsDiffLimit.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.lblFrontDIsDiffLimit.Name = "lblFrontDIsDiffLimit";
-            this.lblFrontDIsDiffLimit.Size = new System.Drawing.Size(89, 42);
+            this.lblFrontDIsDiffLimit.Size = new System.Drawing.Size(89, 43);
             this.lblFrontDIsDiffLimit.TabIndex = 4;
             this.lblFrontDIsDiffLimit.Text = "位移上限";
             this.lblFrontDIsDiffLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -463,17 +476,17 @@
             this.tableLayoutPanel4.SetColumnSpan(this.txtFrontDIsDiffLimit, 2);
             this.txtFrontDIsDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFrontDIsDiffLimit.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtFrontDIsDiffLimit.Location = new System.Drawing.Point(144, 224);
+            this.txtFrontDIsDiffLimit.Location = new System.Drawing.Point(144, 229);
             this.txtFrontDIsDiffLimit.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.txtFrontDIsDiffLimit.Name = "txtFrontDIsDiffLimit";
-            this.txtFrontDIsDiffLimit.Size = new System.Drawing.Size(85, 45);
+            this.txtFrontDIsDiffLimit.Size = new System.Drawing.Size(85, 46);
             this.txtFrontDIsDiffLimit.TabIndex = 5;
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.tableLayoutPanel2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(3, 23);
+            this.panel6.Location = new System.Drawing.Point(3, 19);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(546, 362);
@@ -1032,10 +1045,10 @@
             // 
             this.panel5.Controls.Add(this.grpAnchorForce);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 385);
+            this.panel5.Location = new System.Drawing.Point(3, 381);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(550, 381);
+            this.panel5.Size = new System.Drawing.Size(550, 385);
             this.panel5.TabIndex = 1;
             // 
             // grpAnchorForce
@@ -1046,7 +1059,7 @@
             this.grpAnchorForce.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpAnchorForce.Name = "grpAnchorForce";
             this.grpAnchorForce.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpAnchorForce.Size = new System.Drawing.Size(550, 381);
+            this.grpAnchorForce.Size = new System.Drawing.Size(550, 385);
             this.grpAnchorForce.TabIndex = 0;
             this.grpAnchorForce.TabStop = false;
             this.grpAnchorForce.Text = "锚杆力(kN)";
@@ -1099,7 +1112,7 @@
             this.tableLayoutPanel3.Controls.Add(this.lblAnchorF1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.txtAnchorF1, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 23);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 10;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -1112,17 +1125,17 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(544, 356);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(544, 364);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // txtMaxAnchorForceDiff
             // 
             this.txtMaxAnchorForceDiff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMaxAnchorForceDiff.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtMaxAnchorForceDiff.Location = new System.Drawing.Point(380, 316);
+            this.txtMaxAnchorForceDiff.Location = new System.Drawing.Point(380, 325);
             this.txtMaxAnchorForceDiff.Margin = new System.Windows.Forms.Padding(1);
             this.txtMaxAnchorForceDiff.Name = "txtMaxAnchorForceDiff";
-            this.txtMaxAnchorForceDiff.Size = new System.Drawing.Size(163, 39);
+            this.txtMaxAnchorForceDiff.Size = new System.Drawing.Size(163, 38);
             this.txtMaxAnchorForceDiff.TabIndex = 39;
             // 
             // lblMaxAnchorForceDiff
@@ -1130,10 +1143,10 @@
             this.lblMaxAnchorForceDiff.AutoSize = true;
             this.lblMaxAnchorForceDiff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblMaxAnchorForceDiff.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblMaxAnchorForceDiff.Location = new System.Drawing.Point(271, 316);
+            this.lblMaxAnchorForceDiff.Location = new System.Drawing.Point(271, 325);
             this.lblMaxAnchorForceDiff.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.lblMaxAnchorForceDiff.Name = "lblMaxAnchorForceDiff";
-            this.lblMaxAnchorForceDiff.Size = new System.Drawing.Size(108, 39);
+            this.lblMaxAnchorForceDiff.Size = new System.Drawing.Size(108, 38);
             this.lblMaxAnchorForceDiff.TabIndex = 38;
             this.lblMaxAnchorForceDiff.Text = "力最大差值";
             this.lblMaxAnchorForceDiff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1142,10 +1155,10 @@
             // 
             this.txtAnchorForceDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorForceDiffLimit.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorForceDiffLimit.Location = new System.Drawing.Point(109, 316);
+            this.txtAnchorForceDiffLimit.Location = new System.Drawing.Point(109, 325);
             this.txtAnchorForceDiffLimit.Margin = new System.Windows.Forms.Padding(1);
             this.txtAnchorForceDiffLimit.Name = "txtAnchorForceDiffLimit";
-            this.txtAnchorForceDiffLimit.Size = new System.Drawing.Size(161, 39);
+            this.txtAnchorForceDiffLimit.Size = new System.Drawing.Size(161, 38);
             this.txtAnchorForceDiffLimit.TabIndex = 37;
             // 
             // lblAnchorForceDiffLimit
@@ -1153,10 +1166,10 @@
             this.lblAnchorForceDiffLimit.AutoSize = true;
             this.lblAnchorForceDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorForceDiffLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorForceDiffLimit.Location = new System.Drawing.Point(0, 316);
+            this.lblAnchorForceDiffLimit.Location = new System.Drawing.Point(0, 325);
             this.lblAnchorForceDiffLimit.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.lblAnchorForceDiffLimit.Name = "lblAnchorForceDiffLimit";
-            this.lblAnchorForceDiffLimit.Size = new System.Drawing.Size(108, 39);
+            this.lblAnchorForceDiffLimit.Size = new System.Drawing.Size(108, 38);
             this.lblAnchorForceDiffLimit.TabIndex = 36;
             this.lblAnchorForceDiffLimit.Text = "力差值上限";
             this.lblAnchorForceDiffLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1165,10 +1178,10 @@
             // 
             this.txtMaxAnchorForce.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMaxAnchorForce.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtMaxAnchorForce.Location = new System.Drawing.Point(380, 281);
+            this.txtMaxAnchorForce.Location = new System.Drawing.Point(380, 289);
             this.txtMaxAnchorForce.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtMaxAnchorForce.Name = "txtMaxAnchorForce";
-            this.txtMaxAnchorForce.Size = new System.Drawing.Size(163, 34);
+            this.txtMaxAnchorForce.Size = new System.Drawing.Size(163, 35);
             this.txtMaxAnchorForce.TabIndex = 35;
             // 
             // lblMaxAnchorForce
@@ -1176,10 +1189,10 @@
             this.lblMaxAnchorForce.AutoSize = true;
             this.lblMaxAnchorForce.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblMaxAnchorForce.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblMaxAnchorForce.Location = new System.Drawing.Point(271, 281);
+            this.lblMaxAnchorForce.Location = new System.Drawing.Point(271, 289);
             this.lblMaxAnchorForce.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblMaxAnchorForce.Name = "lblMaxAnchorForce";
-            this.lblMaxAnchorForce.Size = new System.Drawing.Size(108, 34);
+            this.lblMaxAnchorForce.Size = new System.Drawing.Size(108, 35);
             this.lblMaxAnchorForce.TabIndex = 34;
             this.lblMaxAnchorForce.Text = "最大力值";
             this.lblMaxAnchorForce.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1188,10 +1201,10 @@
             // 
             this.txtAnchorForceLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorForceLimit.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorForceLimit.Location = new System.Drawing.Point(109, 281);
+            this.txtAnchorForceLimit.Location = new System.Drawing.Point(109, 289);
             this.txtAnchorForceLimit.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorForceLimit.Name = "txtAnchorForceLimit";
-            this.txtAnchorForceLimit.Size = new System.Drawing.Size(161, 34);
+            this.txtAnchorForceLimit.Size = new System.Drawing.Size(161, 35);
             this.txtAnchorForceLimit.TabIndex = 33;
             // 
             // lblAnchorForceLimit
@@ -1199,10 +1212,10 @@
             this.lblAnchorForceLimit.AutoSize = true;
             this.lblAnchorForceLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorForceLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorForceLimit.Location = new System.Drawing.Point(0, 281);
+            this.lblAnchorForceLimit.Location = new System.Drawing.Point(0, 289);
             this.lblAnchorForceLimit.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorForceLimit.Name = "lblAnchorForceLimit";
-            this.lblAnchorForceLimit.Size = new System.Drawing.Size(108, 34);
+            this.lblAnchorForceLimit.Size = new System.Drawing.Size(108, 35);
             this.lblAnchorForceLimit.TabIndex = 32;
             this.lblAnchorForceLimit.Text = "力值上限";
             this.lblAnchorForceLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1212,10 +1225,10 @@
             this.txtAnchorF16.AccessibleDescription = "";
             this.txtAnchorF16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF16.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF16.Location = new System.Drawing.Point(380, 246);
+            this.txtAnchorF16.Location = new System.Drawing.Point(380, 253);
             this.txtAnchorF16.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF16.Name = "txtAnchorF16";
-            this.txtAnchorF16.Size = new System.Drawing.Size(163, 34);
+            this.txtAnchorF16.Size = new System.Drawing.Size(163, 35);
             this.txtAnchorF16.TabIndex = 31;
             // 
             // lblAnchorF16
@@ -1223,10 +1236,10 @@
             this.lblAnchorF16.AutoSize = true;
             this.lblAnchorF16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF16.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF16.Location = new System.Drawing.Point(271, 246);
+            this.lblAnchorF16.Location = new System.Drawing.Point(271, 253);
             this.lblAnchorF16.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF16.Name = "lblAnchorF16";
-            this.lblAnchorF16.Size = new System.Drawing.Size(108, 34);
+            this.lblAnchorF16.Size = new System.Drawing.Size(108, 35);
             this.lblAnchorF16.TabIndex = 30;
             this.lblAnchorF16.Text = "16";
             this.lblAnchorF16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1235,10 +1248,10 @@
             // 
             this.txtAnchorF8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF8.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF8.Location = new System.Drawing.Point(109, 246);
+            this.txtAnchorF8.Location = new System.Drawing.Point(109, 253);
             this.txtAnchorF8.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF8.Name = "txtAnchorF8";
-            this.txtAnchorF8.Size = new System.Drawing.Size(161, 34);
+            this.txtAnchorF8.Size = new System.Drawing.Size(161, 35);
             this.txtAnchorF8.TabIndex = 29;
             // 
             // lblAnchorF8
@@ -1246,10 +1259,10 @@
             this.lblAnchorF8.AutoSize = true;
             this.lblAnchorF8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF8.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF8.Location = new System.Drawing.Point(0, 246);
+            this.lblAnchorF8.Location = new System.Drawing.Point(0, 253);
             this.lblAnchorF8.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF8.Name = "lblAnchorF8";
-            this.lblAnchorF8.Size = new System.Drawing.Size(108, 34);
+            this.lblAnchorF8.Size = new System.Drawing.Size(108, 35);
             this.lblAnchorF8.TabIndex = 28;
             this.lblAnchorF8.Text = "8";
             this.lblAnchorF8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1258,10 +1271,10 @@
             // 
             this.txtAnchorF15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF15.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF15.Location = new System.Drawing.Point(380, 211);
+            this.txtAnchorF15.Location = new System.Drawing.Point(380, 217);
             this.txtAnchorF15.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF15.Name = "txtAnchorF15";
-            this.txtAnchorF15.Size = new System.Drawing.Size(163, 34);
+            this.txtAnchorF15.Size = new System.Drawing.Size(163, 35);
             this.txtAnchorF15.TabIndex = 27;
             // 
             // lblAnchorF15
@@ -1269,10 +1282,10 @@
             this.lblAnchorF15.AutoSize = true;
             this.lblAnchorF15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF15.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF15.Location = new System.Drawing.Point(271, 211);
+            this.lblAnchorF15.Location = new System.Drawing.Point(271, 217);
             this.lblAnchorF15.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF15.Name = "lblAnchorF15";
-            this.lblAnchorF15.Size = new System.Drawing.Size(108, 34);
+            this.lblAnchorF15.Size = new System.Drawing.Size(108, 35);
             this.lblAnchorF15.TabIndex = 26;
             this.lblAnchorF15.Text = "15";
             this.lblAnchorF15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1281,10 +1294,10 @@
             // 
             this.txtAnchorF7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF7.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF7.Location = new System.Drawing.Point(109, 211);
+            this.txtAnchorF7.Location = new System.Drawing.Point(109, 217);
             this.txtAnchorF7.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF7.Name = "txtAnchorF7";
-            this.txtAnchorF7.Size = new System.Drawing.Size(161, 34);
+            this.txtAnchorF7.Size = new System.Drawing.Size(161, 35);
             this.txtAnchorF7.TabIndex = 25;
             // 
             // lblAnchorF7
@@ -1292,10 +1305,10 @@
             this.lblAnchorF7.AutoSize = true;
             this.lblAnchorF7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF7.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF7.Location = new System.Drawing.Point(0, 211);
+            this.lblAnchorF7.Location = new System.Drawing.Point(0, 217);
             this.lblAnchorF7.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF7.Name = "lblAnchorF7";
-            this.lblAnchorF7.Size = new System.Drawing.Size(108, 34);
+            this.lblAnchorF7.Size = new System.Drawing.Size(108, 35);
             this.lblAnchorF7.TabIndex = 24;
             this.lblAnchorF7.Text = "7";
             this.lblAnchorF7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1304,10 +1317,10 @@
             // 
             this.txtAnchorF14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF14.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF14.Location = new System.Drawing.Point(380, 176);
+            this.txtAnchorF14.Location = new System.Drawing.Point(380, 181);
             this.txtAnchorF14.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF14.Name = "txtAnchorF14";
-            this.txtAnchorF14.Size = new System.Drawing.Size(163, 34);
+            this.txtAnchorF14.Size = new System.Drawing.Size(163, 35);
             this.txtAnchorF14.TabIndex = 23;
             // 
             // lblAnchorF14
@@ -1315,10 +1328,10 @@
             this.lblAnchorF14.AutoSize = true;
             this.lblAnchorF14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF14.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF14.Location = new System.Drawing.Point(271, 176);
+            this.lblAnchorF14.Location = new System.Drawing.Point(271, 181);
             this.lblAnchorF14.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF14.Name = "lblAnchorF14";
-            this.lblAnchorF14.Size = new System.Drawing.Size(108, 34);
+            this.lblAnchorF14.Size = new System.Drawing.Size(108, 35);
             this.lblAnchorF14.TabIndex = 22;
             this.lblAnchorF14.Text = "14";
             this.lblAnchorF14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1327,10 +1340,10 @@
             // 
             this.txtAnchorF6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF6.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF6.Location = new System.Drawing.Point(109, 176);
+            this.txtAnchorF6.Location = new System.Drawing.Point(109, 181);
             this.txtAnchorF6.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF6.Name = "txtAnchorF6";
-            this.txtAnchorF6.Size = new System.Drawing.Size(161, 34);
+            this.txtAnchorF6.Size = new System.Drawing.Size(161, 35);
             this.txtAnchorF6.TabIndex = 21;
             // 
             // lblAnchorF6
@@ -1338,10 +1351,10 @@
             this.lblAnchorF6.AutoSize = true;
             this.lblAnchorF6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF6.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF6.Location = new System.Drawing.Point(0, 176);
+            this.lblAnchorF6.Location = new System.Drawing.Point(0, 181);
             this.lblAnchorF6.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF6.Name = "lblAnchorF6";
-            this.lblAnchorF6.Size = new System.Drawing.Size(108, 34);
+            this.lblAnchorF6.Size = new System.Drawing.Size(108, 35);
             this.lblAnchorF6.TabIndex = 20;
             this.lblAnchorF6.Text = "6";
             this.lblAnchorF6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1350,10 +1363,10 @@
             // 
             this.txtAnchorF13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF13.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF13.Location = new System.Drawing.Point(380, 141);
+            this.txtAnchorF13.Location = new System.Drawing.Point(380, 145);
             this.txtAnchorF13.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF13.Name = "txtAnchorF13";
-            this.txtAnchorF13.Size = new System.Drawing.Size(163, 34);
+            this.txtAnchorF13.Size = new System.Drawing.Size(163, 35);
             this.txtAnchorF13.TabIndex = 19;
             // 
             // lblAnchorF13
@@ -1361,10 +1374,10 @@
             this.lblAnchorF13.AutoSize = true;
             this.lblAnchorF13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF13.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF13.Location = new System.Drawing.Point(271, 141);
+            this.lblAnchorF13.Location = new System.Drawing.Point(271, 145);
             this.lblAnchorF13.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF13.Name = "lblAnchorF13";
-            this.lblAnchorF13.Size = new System.Drawing.Size(108, 34);
+            this.lblAnchorF13.Size = new System.Drawing.Size(108, 35);
             this.lblAnchorF13.TabIndex = 18;
             this.lblAnchorF13.Text = "13";
             this.lblAnchorF13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1373,10 +1386,10 @@
             // 
             this.txtAnchorF5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF5.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF5.Location = new System.Drawing.Point(109, 141);
+            this.txtAnchorF5.Location = new System.Drawing.Point(109, 145);
             this.txtAnchorF5.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF5.Name = "txtAnchorF5";
-            this.txtAnchorF5.Size = new System.Drawing.Size(161, 34);
+            this.txtAnchorF5.Size = new System.Drawing.Size(161, 35);
             this.txtAnchorF5.TabIndex = 17;
             // 
             // lblAnchorF5
@@ -1384,10 +1397,10 @@
             this.lblAnchorF5.AutoSize = true;
             this.lblAnchorF5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF5.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF5.Location = new System.Drawing.Point(0, 141);
+            this.lblAnchorF5.Location = new System.Drawing.Point(0, 145);
             this.lblAnchorF5.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF5.Name = "lblAnchorF5";
-            this.lblAnchorF5.Size = new System.Drawing.Size(108, 34);
+            this.lblAnchorF5.Size = new System.Drawing.Size(108, 35);
             this.lblAnchorF5.TabIndex = 16;
             this.lblAnchorF5.Text = "5";
             this.lblAnchorF5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1396,10 +1409,10 @@
             // 
             this.txtAnchorF12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF12.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF12.Location = new System.Drawing.Point(380, 106);
+            this.txtAnchorF12.Location = new System.Drawing.Point(380, 109);
             this.txtAnchorF12.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF12.Name = "txtAnchorF12";
-            this.txtAnchorF12.Size = new System.Drawing.Size(163, 34);
+            this.txtAnchorF12.Size = new System.Drawing.Size(163, 35);
             this.txtAnchorF12.TabIndex = 15;
             // 
             // lblAnchorF12
@@ -1407,10 +1420,10 @@
             this.lblAnchorF12.AutoSize = true;
             this.lblAnchorF12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF12.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF12.Location = new System.Drawing.Point(271, 106);
+            this.lblAnchorF12.Location = new System.Drawing.Point(271, 109);
             this.lblAnchorF12.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF12.Name = "lblAnchorF12";
-            this.lblAnchorF12.Size = new System.Drawing.Size(108, 34);
+            this.lblAnchorF12.Size = new System.Drawing.Size(108, 35);
             this.lblAnchorF12.TabIndex = 14;
             this.lblAnchorF12.Text = "12";
             this.lblAnchorF12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1419,10 +1432,10 @@
             // 
             this.txtAnchorF4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF4.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF4.Location = new System.Drawing.Point(109, 106);
+            this.txtAnchorF4.Location = new System.Drawing.Point(109, 109);
             this.txtAnchorF4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF4.Name = "txtAnchorF4";
-            this.txtAnchorF4.Size = new System.Drawing.Size(161, 34);
+            this.txtAnchorF4.Size = new System.Drawing.Size(161, 35);
             this.txtAnchorF4.TabIndex = 13;
             // 
             // lblAnchorF4
@@ -1430,10 +1443,10 @@
             this.lblAnchorF4.AutoSize = true;
             this.lblAnchorF4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF4.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF4.Location = new System.Drawing.Point(0, 106);
+            this.lblAnchorF4.Location = new System.Drawing.Point(0, 109);
             this.lblAnchorF4.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF4.Name = "lblAnchorF4";
-            this.lblAnchorF4.Size = new System.Drawing.Size(108, 34);
+            this.lblAnchorF4.Size = new System.Drawing.Size(108, 35);
             this.lblAnchorF4.TabIndex = 12;
             this.lblAnchorF4.Text = "4";
             this.lblAnchorF4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1442,10 +1455,10 @@
             // 
             this.txtAnchorF11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF11.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF11.Location = new System.Drawing.Point(380, 71);
+            this.txtAnchorF11.Location = new System.Drawing.Point(380, 73);
             this.txtAnchorF11.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF11.Name = "txtAnchorF11";
-            this.txtAnchorF11.Size = new System.Drawing.Size(163, 34);
+            this.txtAnchorF11.Size = new System.Drawing.Size(163, 35);
             this.txtAnchorF11.TabIndex = 11;
             // 
             // lblAnchorF11
@@ -1453,10 +1466,10 @@
             this.lblAnchorF11.AutoSize = true;
             this.lblAnchorF11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF11.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF11.Location = new System.Drawing.Point(271, 71);
+            this.lblAnchorF11.Location = new System.Drawing.Point(271, 73);
             this.lblAnchorF11.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF11.Name = "lblAnchorF11";
-            this.lblAnchorF11.Size = new System.Drawing.Size(108, 34);
+            this.lblAnchorF11.Size = new System.Drawing.Size(108, 35);
             this.lblAnchorF11.TabIndex = 10;
             this.lblAnchorF11.Text = "11";
             this.lblAnchorF11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1465,10 +1478,10 @@
             // 
             this.txtAnchorF3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF3.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF3.Location = new System.Drawing.Point(109, 71);
+            this.txtAnchorF3.Location = new System.Drawing.Point(109, 73);
             this.txtAnchorF3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF3.Name = "txtAnchorF3";
-            this.txtAnchorF3.Size = new System.Drawing.Size(161, 34);
+            this.txtAnchorF3.Size = new System.Drawing.Size(161, 35);
             this.txtAnchorF3.TabIndex = 9;
             // 
             // lblAnchorF3
@@ -1476,10 +1489,10 @@
             this.lblAnchorF3.AutoSize = true;
             this.lblAnchorF3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF3.Location = new System.Drawing.Point(0, 71);
+            this.lblAnchorF3.Location = new System.Drawing.Point(0, 73);
             this.lblAnchorF3.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF3.Name = "lblAnchorF3";
-            this.lblAnchorF3.Size = new System.Drawing.Size(108, 34);
+            this.lblAnchorF3.Size = new System.Drawing.Size(108, 35);
             this.lblAnchorF3.TabIndex = 8;
             this.lblAnchorF3.Text = "3";
             this.lblAnchorF3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1488,10 +1501,10 @@
             // 
             this.txtAnchorF10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF10.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF10.Location = new System.Drawing.Point(380, 36);
+            this.txtAnchorF10.Location = new System.Drawing.Point(380, 37);
             this.txtAnchorF10.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF10.Name = "txtAnchorF10";
-            this.txtAnchorF10.Size = new System.Drawing.Size(163, 34);
+            this.txtAnchorF10.Size = new System.Drawing.Size(163, 35);
             this.txtAnchorF10.TabIndex = 7;
             // 
             // lblAnchorF10
@@ -1499,10 +1512,10 @@
             this.lblAnchorF10.AutoSize = true;
             this.lblAnchorF10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF10.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF10.Location = new System.Drawing.Point(271, 36);
+            this.lblAnchorF10.Location = new System.Drawing.Point(271, 37);
             this.lblAnchorF10.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF10.Name = "lblAnchorF10";
-            this.lblAnchorF10.Size = new System.Drawing.Size(108, 34);
+            this.lblAnchorF10.Size = new System.Drawing.Size(108, 35);
             this.lblAnchorF10.TabIndex = 6;
             this.lblAnchorF10.Text = "10";
             this.lblAnchorF10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1511,10 +1524,10 @@
             // 
             this.txtAnchorF2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF2.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF2.Location = new System.Drawing.Point(109, 36);
+            this.txtAnchorF2.Location = new System.Drawing.Point(109, 37);
             this.txtAnchorF2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF2.Name = "txtAnchorF2";
-            this.txtAnchorF2.Size = new System.Drawing.Size(161, 34);
+            this.txtAnchorF2.Size = new System.Drawing.Size(161, 35);
             this.txtAnchorF2.TabIndex = 5;
             // 
             // lblAnchorF2
@@ -1522,10 +1535,10 @@
             this.lblAnchorF2.AutoSize = true;
             this.lblAnchorF2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF2.Location = new System.Drawing.Point(0, 36);
+            this.lblAnchorF2.Location = new System.Drawing.Point(0, 37);
             this.lblAnchorF2.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF2.Name = "lblAnchorF2";
-            this.lblAnchorF2.Size = new System.Drawing.Size(108, 34);
+            this.lblAnchorF2.Size = new System.Drawing.Size(108, 35);
             this.lblAnchorF2.TabIndex = 4;
             this.lblAnchorF2.Text = "2";
             this.lblAnchorF2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1537,7 +1550,7 @@
             this.txtAnchorF9.Location = new System.Drawing.Point(380, 0);
             this.txtAnchorF9.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.txtAnchorF9.Name = "txtAnchorF9";
-            this.txtAnchorF9.Size = new System.Drawing.Size(163, 35);
+            this.txtAnchorF9.Size = new System.Drawing.Size(163, 36);
             this.txtAnchorF9.TabIndex = 3;
             // 
             // lblAnchorF9
@@ -1548,7 +1561,7 @@
             this.lblAnchorF9.Location = new System.Drawing.Point(271, 0);
             this.lblAnchorF9.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnchorF9.Name = "lblAnchorF9";
-            this.lblAnchorF9.Size = new System.Drawing.Size(108, 35);
+            this.lblAnchorF9.Size = new System.Drawing.Size(108, 36);
             this.lblAnchorF9.TabIndex = 2;
             this.lblAnchorF9.Text = "9";
             this.lblAnchorF9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1561,7 +1574,7 @@
             this.lblAnchorF1.Location = new System.Drawing.Point(0, 0);
             this.lblAnchorF1.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnchorF1.Name = "lblAnchorF1";
-            this.lblAnchorF1.Size = new System.Drawing.Size(108, 35);
+            this.lblAnchorF1.Size = new System.Drawing.Size(108, 36);
             this.lblAnchorF1.TabIndex = 0;
             this.lblAnchorF1.Text = "1";
             this.lblAnchorF1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1573,14 +1586,14 @@
             this.txtAnchorF1.Location = new System.Drawing.Point(109, 0);
             this.txtAnchorF1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.txtAnchorF1.Name = "txtAnchorF1";
-            this.txtAnchorF1.Size = new System.Drawing.Size(161, 35);
+            this.txtAnchorF1.Size = new System.Drawing.Size(161, 36);
             this.txtAnchorF1.TabIndex = 1;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.tableLayoutPanel1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(3, 23);
+            this.panel4.Location = new System.Drawing.Point(3, 19);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(550, 362);
@@ -2116,22 +2129,9 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnReset
-            // 
-            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(115)))), ((int)(((byte)(177)))));
-            this.btnReset.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(88, 182);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(90, 39);
-            this.btnReset.TabIndex = 3;
-            this.btnReset.Text = "重置";
-            this.btnReset.UseVisualStyleBackColor = false;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
             // PouringState
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 912);
             this.Controls.Add(this.panel1);
@@ -2148,6 +2148,7 @@
             this.Text = "浇筑状态数据显示";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PouringState_FormClosing);
             this.Load += new System.EventHandler(this.SteeveForceAndDisplacement16_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

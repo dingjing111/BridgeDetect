@@ -15,26 +15,32 @@ namespace BridgeDetectSystem.service
 {
     public class WarningManager
     {
-
         #region 字段
-        string name = UserRightManager.user.userName;//得到操作人的名字
+
+        public volatile bool isStart = false;
+
+
+        private string name; //得到操作人的名字
         private BackgroundWorker bgWork;
         private ConfigManager config;
         private AdamHelper adamHelper;
-        //private WarningObject warningObj;
+        private DBHelper dbhelper;
+
         private List<string> warningList;
         //同步信号，当报警发生时，暂停当前线程。需要手动重新启动线程，
         //在WarningDialog界面中传入信号到当前类
         private ManualResetEvent manualReset = new ManualResetEvent(true);
-        DBHelper dbhelper = DBHelper.GetInstance();
+
         /// <summary>
         /// 单例
         /// </summary>
         private WarningManager()
         {
+            name = UserRightManager.user.userName;
             bgWork = new BackgroundWorker();
             config = ConfigManager.GetInstance();
             adamHelper = AdamHelper.GetInstance();
+            dbhelper = DBHelper.GetInstance();
         }
         private static volatile WarningManager instance = new WarningManager();
         public static WarningManager GetInstance()
@@ -54,6 +60,7 @@ namespace BridgeDetectSystem.service
             bgWork.DoWork += new DoWorkEventHandler(BgDoWork);
             bgWork.ProgressChanged += new ProgressChangedEventHandler(BgProgressChanged);
             bgWork.RunWorkerAsync();
+            isStart = true;
         }
         /// <summary>
         /// 请求取消后台挂起的操作
@@ -61,6 +68,7 @@ namespace BridgeDetectSystem.service
         public void BgCancel()
         {
             bgWork.CancelAsync();
+            isStart = true;
         }
 
 
@@ -122,7 +130,7 @@ namespace BridgeDetectSystem.service
 
                 CheckFrontPivotDis();
 
-                CheckMainTruss();
+                //CheckMainTruss();
 
                 if (warningList.Count > 0)
                 {
@@ -139,13 +147,13 @@ namespace BridgeDetectSystem.service
 
         #region 报警的具体逻辑
 
-        /// <summary>
-        /// 主桁架报警
-        /// </summary>
-        private void CheckMainTruss()
-        {
+        ///// <summary>
+        ///// 主桁架报警
+        ///// </summary>
+        //private void CheckMainTruss()
+        //{
 
-        }
+        //}
 
         /// <summary>
         /// 前支点位移报警
