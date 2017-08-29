@@ -143,5 +143,10 @@ namespace BridgeDetectSystem
             AlarmRecord win = new AlarmRecord();
             win.Show();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

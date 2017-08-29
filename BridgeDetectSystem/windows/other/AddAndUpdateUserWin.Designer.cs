@@ -32,13 +32,13 @@
             this.grpAddNewUser = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblUserName = new MetroFramework.Controls.MetroLabel();
-            this.txtUserName = new MetroFramework.Controls.MetroTextBox();
-            this.txtPassword = new MetroFramework.Controls.MetroTextBox();
             this.lblPassword = new MetroFramework.Controls.MetroLabel();
             this.lblUserLevel = new MetroFramework.Controls.MetroLabel();
             this.cmbUserLevel = new System.Windows.Forms.ComboBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.grpAddNewUser.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -81,13 +81,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.373158F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.883716F));
             this.tableLayoutPanel1.Controls.Add(this.lblUserName, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtUserName, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtPassword, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblPassword, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblUserLevel, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.cmbUserLevel, 3, 7);
             this.tableLayoutPanel1.Controls.Add(this.btnConfirm, 5, 9);
             this.tableLayoutPanel1.Controls.Add(this.btnCancel, 7, 9);
+            this.tableLayoutPanel1.Controls.Add(this.txtUserName, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtPassword, 3, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 30);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -118,24 +118,6 @@
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "账户";
             this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtUserName.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtUserName.Location = new System.Drawing.Point(340, 60);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(236, 38);
-            this.txtUserName.TabIndex = 1;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtPassword.Location = new System.Drawing.Point(340, 161);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(236, 38);
-            this.txtPassword.TabIndex = 2;
             // 
             // lblPassword
             // 
@@ -202,6 +184,22 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // txtUserName
+            // 
+            this.txtUserName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtUserName.Location = new System.Drawing.Point(340, 60);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(236, 34);
+            this.txtUserName.TabIndex = 10;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPassword.Location = new System.Drawing.Point(340, 161);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(236, 34);
+            this.txtPassword.TabIndex = 11;
+            // 
             // AddAndUpdateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -234,12 +232,12 @@
         private System.Windows.Forms.GroupBox grpAddNewUser;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private MetroFramework.Controls.MetroLabel lblUserName;
-        private MetroFramework.Controls.MetroTextBox txtUserName;
-        private MetroFramework.Controls.MetroTextBox txtPassword;
         private MetroFramework.Controls.MetroLabel lblPassword;
         private MetroFramework.Controls.MetroLabel lblUserLevel;
         private System.Windows.Forms.ComboBox cmbUserLevel;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtPassword;
     }
 }
