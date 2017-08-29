@@ -91,7 +91,7 @@ namespace BridgeDetectSystem
 
         private void SteeveParaSet_Load(object sender, EventArgs e)
         {
-            this.initial();
+            initial();
 
         }
 

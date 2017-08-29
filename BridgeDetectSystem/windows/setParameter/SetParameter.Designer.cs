@@ -122,7 +122,7 @@
             this.tableLayoutPanel2.Controls.Add(this.txtAnchorForceDiffLimit, 3, 3);
             this.tableLayoutPanel2.Controls.Add(this.txtFrontPivotDisLimit, 3, 5);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 22);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 26);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 12;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
@@ -137,7 +137,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(552, 801);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(552, 797);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // lblAnchorForceLimit
@@ -217,7 +217,7 @@
             this.txtAnchorForceLimit.Location = new System.Drawing.Point(276, 67);
             this.txtAnchorForceLimit.Margin = new System.Windows.Forms.Padding(1);
             this.txtAnchorForceLimit.Name = "txtAnchorForceLimit";
-            this.txtAnchorForceLimit.Size = new System.Drawing.Size(218, 44);
+            this.txtAnchorForceLimit.Size = new System.Drawing.Size(218, 53);
             this.txtAnchorForceLimit.TabIndex = 9;
             this.txtAnchorForceLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -229,7 +229,7 @@
             this.txtAnchorForceDiffLimit.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtAnchorForceDiffLimit.Location = new System.Drawing.Point(278, 201);
             this.txtAnchorForceDiffLimit.Name = "txtAnchorForceDiffLimit";
-            this.txtAnchorForceDiffLimit.Size = new System.Drawing.Size(214, 44);
+            this.txtAnchorForceDiffLimit.Size = new System.Drawing.Size(214, 53);
             this.txtAnchorForceDiffLimit.TabIndex = 10;
             this.txtAnchorForceDiffLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -241,7 +241,7 @@
             this.txtFrontPivotDisLimit.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtFrontPivotDisLimit.Location = new System.Drawing.Point(278, 333);
             this.txtFrontPivotDisLimit.Name = "txtFrontPivotDisLimit";
-            this.txtFrontPivotDisLimit.Size = new System.Drawing.Size(214, 44);
+            this.txtFrontPivotDisLimit.Size = new System.Drawing.Size(214, 53);
             this.txtFrontPivotDisLimit.TabIndex = 11;
             this.txtFrontPivotDisLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -286,7 +286,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtSteeveForceUpLimit, 2, 9);
             this.tableLayoutPanel1.Controls.Add(this.txtSteeveForceDiffLimit, 2, 11);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 22);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 26);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 13;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692545F));
@@ -303,7 +303,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692544F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.689467F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(544, 801);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(544, 797);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // lblUpDis
@@ -393,7 +393,7 @@
             this.txtBasketAllowDisDiffLimit.Location = new System.Drawing.Point(272, 306);
             this.txtBasketAllowDisDiffLimit.Margin = new System.Windows.Forms.Padding(1);
             this.txtBasketAllowDisDiffLimit.Name = "txtBasketAllowDisDiffLimit";
-            this.txtBasketAllowDisDiffLimit.Size = new System.Drawing.Size(215, 44);
+            this.txtBasketAllowDisDiffLimit.Size = new System.Drawing.Size(215, 53);
             this.txtBasketAllowDisDiffLimit.TabIndex = 12;
             this.txtBasketAllowDisDiffLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -405,7 +405,7 @@
             this.txtBasketUpDisLimit.Location = new System.Drawing.Point(272, 62);
             this.txtBasketUpDisLimit.Margin = new System.Windows.Forms.Padding(1);
             this.txtBasketUpDisLimit.Name = "txtBasketUpDisLimit";
-            this.txtBasketUpDisLimit.Size = new System.Drawing.Size(215, 44);
+            this.txtBasketUpDisLimit.Size = new System.Drawing.Size(215, 53);
             this.txtBasketUpDisLimit.TabIndex = 13;
             this.txtBasketUpDisLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -417,7 +417,7 @@
             this.txtBasketDownDisLimit.Location = new System.Drawing.Point(272, 184);
             this.txtBasketDownDisLimit.Margin = new System.Windows.Forms.Padding(1);
             this.txtBasketDownDisLimit.Name = "txtBasketDownDisLimit";
-            this.txtBasketDownDisLimit.Size = new System.Drawing.Size(215, 44);
+            this.txtBasketDownDisLimit.Size = new System.Drawing.Size(215, 53);
             this.txtBasketDownDisLimit.TabIndex = 14;
             this.txtBasketDownDisLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -428,7 +428,7 @@
             this.txtSteeveDisDiffLimit.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtSteeveDisDiffLimit.Location = new System.Drawing.Point(274, 430);
             this.txtSteeveDisDiffLimit.Name = "txtSteeveDisDiffLimit";
-            this.txtSteeveDisDiffLimit.Size = new System.Drawing.Size(211, 44);
+            this.txtSteeveDisDiffLimit.Size = new System.Drawing.Size(211, 53);
             this.txtSteeveDisDiffLimit.TabIndex = 15;
             this.txtSteeveDisDiffLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -440,7 +440,7 @@
             this.txtSteeveForceUpLimit.Location = new System.Drawing.Point(272, 550);
             this.txtSteeveForceUpLimit.Margin = new System.Windows.Forms.Padding(1);
             this.txtSteeveForceUpLimit.Name = "txtSteeveForceUpLimit";
-            this.txtSteeveForceUpLimit.Size = new System.Drawing.Size(215, 44);
+            this.txtSteeveForceUpLimit.Size = new System.Drawing.Size(215, 53);
             this.txtSteeveForceUpLimit.TabIndex = 16;
             this.txtSteeveForceUpLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -452,13 +452,13 @@
             this.txtSteeveForceDiffLimit.Location = new System.Drawing.Point(272, 672);
             this.txtSteeveForceDiffLimit.Margin = new System.Windows.Forms.Padding(1);
             this.txtSteeveForceDiffLimit.Name = "txtSteeveForceDiffLimit";
-            this.txtSteeveForceDiffLimit.Size = new System.Drawing.Size(215, 44);
+            this.txtSteeveForceDiffLimit.Size = new System.Drawing.Size(215, 53);
             this.txtSteeveForceDiffLimit.TabIndex = 17;
             this.txtSteeveForceDiffLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // SetParameter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 922);
             this.Controls.Add(this.panel1);

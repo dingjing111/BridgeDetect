@@ -165,6 +165,11 @@ namespace BridgeDetectSystem
         {
 
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
     public class InputException : Exception
     {
