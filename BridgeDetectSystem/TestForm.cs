@@ -138,6 +138,10 @@ namespace BridgeDetectSystem
             ps.Show();
         }
 
-      
+        private void button8_Click(object sender, EventArgs e)
+        {
+            AlarmRecord win = new AlarmRecord();
+            win.Show();
+        }
     }
 }

@@ -17,16 +17,17 @@ namespace BridgeDetectSystem
         {
             InitializeComponent();
         }
-        string sql = "select * from SteeveDisplacement";
-        //RecreateRecordManager rrm = new RecreateRecordManager();
+        DataTable dt;
+        string sql;
+        
         private void steevedisplacement_Load(object sender, EventArgs e)
         {
             this.initial();
-           
+            sql = "select * from SteeveDisplacement";
             try
             {
-               // rrm.RecreateSteeveDisplacement();
-                OperateSql.LoadData(sql,dgv);//加载数据
+               
+             dt=OperateSql.LoadData(sql,dgv);//加载数据
               
             }
             catch (Exception ex)
@@ -58,8 +59,14 @@ namespace BridgeDetectSystem
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-          
-            ExportToExcel.ExportData(sql);
+            dt.Columns[0].ColumnName = "全局唯一标识符";
+            dt.Columns[1].ColumnName = "时间";
+            dt.Columns[2].ColumnName = "操作人";
+            dt.Columns[3].ColumnName = "位置1";
+            dt.Columns[4].ColumnName = "位置2";
+            dt.Columns[5].ColumnName = "位置3";
+            dt.Columns[6].ColumnName = "位置4";
+            ExportToExcel.ExportData(dt);
           
         }
     }
