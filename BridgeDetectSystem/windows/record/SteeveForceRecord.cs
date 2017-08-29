@@ -18,13 +18,14 @@ namespace BridgeDetectSystem
         }
         DataTable dt;
         string sql = "select * from SteeveForce";
-       
+
         private void steeveforce_Load(object sender, EventArgs e)
         {
             this.initial();
             try
             {
-                dt= OperateSql.LoadData(sql, dgv);
+                dt = OperateSql.LoadData(sql, dgv);
+                dt.TableName = "吊杆力记录表";
             }
             catch (Exception ex)
             {

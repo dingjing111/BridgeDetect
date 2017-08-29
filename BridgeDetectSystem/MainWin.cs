@@ -16,11 +16,15 @@ namespace BridgeDetectSystem
 {
     public partial class MainWin : MetroForm
     {
-        private UserRightManager rightManager = UserRightManager.GetInstance();
+        private UserRightManager rightManager ;
+        private string userName;
 
         public MainWin()
         {
             InitializeComponent();
+
+            rightManager = UserRightManager.GetInstance();
+            userName = UserRightManager.user.userName;
         }
 
         #region 查看记录按钮
@@ -28,24 +32,33 @@ namespace BridgeDetectSystem
         {
             SteeveForceRecord win = new SteeveForceRecord();
             win.Show();
+            log("查看了吊杆力的记录");
         }
 
         private void btnSteeveDis_Click(object sender, EventArgs e)
         {
             SteeveDisplaceRecord win = new SteeveDisplaceRecord();
             win.Show();
+            log("查看了吊杆位移的记录");
         }
 
         private void btnAnchorForce_Click(object sender, EventArgs e)
         {
             AnchorForceRecord win = new AnchorForceRecord();
             win.Show();
+            log("查看了锚杆力的记录");
         }
 
         private void btnFrontPivot_Click(object sender, EventArgs e)
         {
             FrontPivotRecord win = new FrontPivotRecord();
             win.Show();
+            log("查看了前支点位移的记录");
+        }
+
+        private void log(string message)
+        {
+            LoggerHelper.Log("主界面", userName + message);
         }
         #endregion
 
@@ -64,6 +77,7 @@ namespace BridgeDetectSystem
             {
                 UserRightWin win = new UserRightWin();
                 win.Show();
+                log("点击了系统设置按钮");
             }
         }
 
@@ -82,6 +96,7 @@ namespace BridgeDetectSystem
             {
                 AlarmRecord win = new AlarmRecord();
                 win.Show();
+                log("查看了报警记录");
             }
 
         }
@@ -101,6 +116,7 @@ namespace BridgeDetectSystem
             {
                 SetParameter win = new SetParameter();
                 win.Show();
+                log("点击了报警参数设置按钮");
             }
         }
 
@@ -123,6 +139,7 @@ namespace BridgeDetectSystem
             if (win != null)
             {
                 win.Show();
+                log("点击了浇注状态按钮");
             }
         }
 
@@ -145,6 +162,7 @@ namespace BridgeDetectSystem
             if (win != null)
             {
                 win.Show();
+                log("点击了行走状态按钮");
             }
         }
 
@@ -161,6 +179,7 @@ namespace BridgeDetectSystem
             {
                 e.Cancel = true;
             }
+            log("点击了关闭程序");
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -169,6 +188,7 @@ namespace BridgeDetectSystem
                                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
+                log("点击了关闭程序");
                 System.Environment.Exit(0);
             }
         }

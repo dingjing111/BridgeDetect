@@ -64,6 +64,7 @@ namespace BridgeDetectSystem
         #region 新增或修改确定，将数据送回数据库
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            LoggerHelper.Log("用户设置界面", "用户权限进行了更改");
             string msg;
             bool Exist = false;
             int r = -1;

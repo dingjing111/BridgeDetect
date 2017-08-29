@@ -18,21 +18,19 @@ namespace BridgeDetectSystem
         }
         private void initial()
         {
-            this.panel2.Height = this.panel1.Height * 1/ 15;
+            this.panel2.Height = this.panel1.Height * 1 / 15;
         }
         DataTable dt;
         string sql = "select * from FrontPivotDis";
-      
+
         private void FrontPivotRecord_Load(object sender, EventArgs e)
         {
             this.initial();
-           
+
             try
             {
-              
-            dt= OperateSql.LoadData(sql, dgv);
-
-
+                dt = OperateSql.LoadData(sql, dgv);
+                dt.TableName = "前支点数据记录表";
             }
             catch (Exception ex)
             {
@@ -57,7 +55,7 @@ namespace BridgeDetectSystem
             dt.Columns[3].ColumnName = "位置1";
             dt.Columns[4].ColumnName = "位置2";
             ExportToExcel.ExportData(dt);
-           
+
 
         }
 

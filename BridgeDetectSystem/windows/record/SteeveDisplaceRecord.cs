@@ -19,16 +19,15 @@ namespace BridgeDetectSystem
         }
         DataTable dt;
         string sql;
-        
+
         private void steevedisplacement_Load(object sender, EventArgs e)
         {
             this.initial();
             sql = "select * from SteeveDisplacement";
             try
             {
-               
-             dt=OperateSql.LoadData(sql,dgv);//加载数据
-              
+                dt = OperateSql.LoadData(sql, dgv);//加载数据
+                dt.TableName = "吊杆位移记录表";
             }
             catch (Exception ex)
             {
@@ -67,7 +66,7 @@ namespace BridgeDetectSystem
             dt.Columns[5].ColumnName = "位置3";
             dt.Columns[6].ColumnName = "位置4";
             ExportToExcel.ExportData(dt);
-          
+
         }
     }
 }

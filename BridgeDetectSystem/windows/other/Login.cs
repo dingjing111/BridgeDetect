@@ -15,7 +15,6 @@ namespace BridgeDetectSystem
 {
     public partial class Login : MetroFramework.Forms.MetroForm
     {
-
         #region 初始化窗体方法
 
         public Login()
@@ -83,6 +82,7 @@ namespace BridgeDetectSystem
                 if (manager.Check())
                 {
                     this.DialogResult = DialogResult.OK;
+                    LoggerHelper.Log("登入", userName + "成功登入");
                 }
                 else
                 {
