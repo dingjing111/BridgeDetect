@@ -62,6 +62,7 @@ namespace BridgeDetectSystem.adam
                 catch (Exception ex)
                 {
                     readTimer.Change(Timeout.Infinite, Timeout.Infinite);
+                    hasData = false;
                     throw ex;
                 }
             }, null, Timeout.Infinite,Timeout.Infinite);

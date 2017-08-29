@@ -13,6 +13,7 @@ namespace BridgeDetectSystem.adam
         private AdamOperation oper;
         private string value;
 
+        public volatile bool hasData;
         public double readData { get; }
         public Timer readTimer { get; set; }
         #endregion
@@ -21,15 +22,9 @@ namespace BridgeDetectSystem.adam
         private static volatile AdamHelper2 instance = null;
         private AdamHelper2(AdamOperation oper)
         {
+            hasData = false;
             this.oper = oper;
-            //try
-            //{   //初始化研华模块
-            //    oper.Init();
-            //}
-            //catch (AdamException ex)
-            //{
-            //    throw ex;
-            //}
+          
             readTimer = new Timer(_ =>
             {
                 ReadRailWay();
@@ -78,11 +73,14 @@ namespace BridgeDetectSystem.adam
                     value = oper.Read(6);         //读第7个通道的值
 
                     ConvertToRealValue();
+
+                    hasData = true;
                 }
             }
             catch (Exception ex)
             {
                 readTimer.Change(Timeout.Infinite, Timeout.Infinite);
+                hasData = false;
                 System.Windows.Forms.MessageBox.Show("adamHelper2中数据读取失败！请检查线路"+ex.Message);
             }
         }
@@ -100,6 +98,7 @@ namespace BridgeDetectSystem.adam
         public void StopTimer()
         {
             readTimer.Change(Timeout.Infinite, Timeout.Infinite);
+            hasData = false;
         }
 
         /// <summary>

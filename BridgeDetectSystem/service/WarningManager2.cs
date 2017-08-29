@@ -106,14 +106,16 @@ namespace BridgeDetectSystem.service
                 //直到收到Reset信号。然后，直到收到Set信号,就继续工作。
                 manualReset.WaitOne();
 
-                //warningObj = new WarningObject();
-                warningList = new List<string>();
-
-                CheckMainTruss();
-
-                if (warningList.Count > 0)
+                if (adamHelper2.hasData)
                 {
-                    bgWork.ReportProgress(0);
+                    warningList = new List<string>();
+
+                    CheckMainTruss();
+
+                    if (warningList.Count > 0)
+                    {
+                        bgWork.ReportProgress(0);
+                    }
                 }
 
                 Thread.Sleep(1000);

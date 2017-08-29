@@ -232,9 +232,12 @@ namespace BridgeDetectSystem.video
                     PlayCtrl.PlayM4_RenderPrivateData(CHCNetSDK.NET_DVR_GetRealPlayerIndex(m_lRealHandle[index]), (int)PlayCtrl.PLAYM4_PRIDATA_RENDER.PLAYM4_RENDER_ANA_INTEL_DATA, false);
                     PlayCtrl.PlayM4_RenderPrivateData(CHCNetSDK.NET_DVR_GetRealPlayerIndex(m_lRealHandle[index]), (int)PlayCtrl.PLAYM4_PRIDATA_RENDER.PLAYM4_RENDER_MD, false);
                     PlayCtrl.PlayM4_RenderPrivateData(CHCNetSDK.NET_DVR_GetRealPlayerIndex(m_lRealHandle[index]), (int)PlayCtrl.PLAYM4_PRIDATA_RENDER.PLAYM4_RENDER_FIRE_DETCET, false);
+                    PlayCtrl.PlayM4_RenderPrivateData(CHCNetSDK.NET_DVR_GetRealPlayerIndex(m_lRealHandle[index]), (int)PlayCtrl.PLAYM4_PRIDATA_RENDER.PLAYM4_RENDER_ADD_PIC, false);
                     PlayCtrl.PlayM4_RenderPrivateData(CHCNetSDK.NET_DVR_GetRealPlayerIndex(m_lRealHandle[index]), (int)PlayCtrl.PLAYM4_PRIDATA_RENDER.PLAYM4_RENDER_TEM, false);
+                    PlayCtrl.PlayM4_RenderPrivateData(CHCNetSDK.NET_DVR_GetRealPlayerIndex(m_lRealHandle[index]), (int)PlayCtrl.PLAYM4_PRIDATA_RENDER.PLAYM4_RENDER_ADD_POS, false);
+
                 }
-                
+
             }
         }
 

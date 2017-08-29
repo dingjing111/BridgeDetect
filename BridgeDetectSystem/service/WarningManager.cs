@@ -119,24 +119,27 @@ namespace BridgeDetectSystem.service
                 //直到收到Reset信号。然后，直到收到Set信号,就继续工作。
                 manualReset.WaitOne();
 
-                //warningObj = new WarningObject();
-                warningList = new List<string>();
-
-                CheckSteeveForce();
-
-                CheckSteeveDis();
-
-                CheckAnchorForce();
-
-                CheckFrontPivotDis();
-
-                //CheckMainTruss();
-
-                if (warningList.Count > 0)
+                if (adamHelper.hasData)
                 {
-                    InsertAlarmRecord(warningList);                      //调方法将记录存入报警记录表
+                    //warningObj = new WarningObject();
+                    warningList = new List<string>();
 
-                    bgWork.ReportProgress(0);
+                    CheckSteeveForce();
+
+                    CheckSteeveDis();
+
+                    CheckAnchorForce();
+
+                    CheckFrontPivotDis();
+
+                    //CheckMainTruss();
+
+                    if (warningList.Count > 0)
+                    {
+                        InsertAlarmRecord(warningList);                      //调方法将记录存入报警记录表
+
+                        bgWork.ReportProgress(0);
+                    }
                 }
 
                 Thread.Sleep(1000);
@@ -163,13 +166,13 @@ namespace BridgeDetectSystem.service
             var dic = adamHelper.frontPivotDic;
             List<double> disDiffList = new List<double>();
 
-            foreach(var kv in dic)
+            foreach (var kv in dic)
             {
                 disDiffList.Add(kv.Value.GetDisplace());
             }
             double first = Math.Abs(disDiffList[0] - adamHelper.first_frontPivotDisStandard);
             double second = Math.Abs(disDiffList[1] - adamHelper.second_frontPivotDisStandard);
-            if (first> 0)
+            if (first > 0)
             {
                 warningList.Add("1号前支点沉降超过设定值！！！");
             }
@@ -244,38 +247,38 @@ namespace BridgeDetectSystem.service
         double forceDiff;
         private void CheckForce(object obj, string str)
         {
-           
+
 
             List<double> forceList = new List<double>();
             if (obj is Dictionary<int, Steeve>)           //吊杆力
             {
                 forceLimit = config.Get(ConfigManager.ConfigKeys.steeve_ForceLimit);
-                forceDiff= config.Get(ConfigManager.ConfigKeys.steeve_ForceDiffLimit);
+                forceDiff = config.Get(ConfigManager.ConfigKeys.steeve_ForceDiffLimit);
                 var dic = obj as Dictionary<int, Steeve>;
                 foreach (var kv in dic)
                 {
                     forceList.Add(kv.Value.GetForce());
-                }             
+                }
             }
             else if (obj is Dictionary<int, Anchor>)      //锚杆力
-            {   
-                forceLimit= config.Get(ConfigManager.ConfigKeys.anchor_ForceLimit);
-                forceDiff= config.Get(ConfigManager.ConfigKeys.anchor_ForceDiffLimit);
+            {
+                forceLimit = config.Get(ConfigManager.ConfigKeys.anchor_ForceLimit);
+                forceDiff = config.Get(ConfigManager.ConfigKeys.anchor_ForceDiffLimit);
                 var dic = obj as Dictionary<int, Anchor>;
                 foreach (var kv in dic)
                 {
                     forceList.Add(kv.Value.GetForce());
                 }
             }
-            
-           
+
+
             for (int i = 0; i < forceList.Count; i++)
             {
-                if (forceList[i] >=forceLimit)
+                if (forceList[i] >= forceLimit)
                 {
                     warningList.Add("第" + i + "号" + str + "力过大,值为：" + forceList[i] + "(KN)");
                 }
-            }         
+            }
             for (int i = 0; i < forceList.Count; i++)
             {
                 for (int j = i + 1; j < forceList.Count; j++)
@@ -297,7 +300,7 @@ namespace BridgeDetectSystem.service
             for (int i = 0; i < list.Count; i++)
             {
                 string name = UserRightManager.user.userName;//得到操作人的名字
-                string insertsql = string.Format("insert into AlarmRecord values(newid(),getdate(),'{0}','{1}')",list[i], name);
+                string insertsql = string.Format("insert into AlarmRecord values(newid(),getdate(),'{0}','{1}')", list[i], name);
                 try
                 {
                     int r = dbhelper.ExecuteNonQuery(insertsql);
@@ -306,8 +309,8 @@ namespace BridgeDetectSystem.service
                 {
                     MessageBox.Show("记录报警发生错误" + ex.Message);
                 }
-             }
-         }
+            }
+        }
 
 
         #endregion
