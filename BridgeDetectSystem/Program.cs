@@ -19,7 +19,7 @@ namespace BridgeDetectSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Initialize();
+            Initialize(args);
 
             Login login = new Login();
             if (login.ShowDialog() == DialogResult.OK)
@@ -27,12 +27,9 @@ namespace BridgeDetectSystem
                 login.Close();
                 Application.Run(new MainWin());
             }
-
-            //  TestForm testform = new TestForm();
-            // Application.Run(testform);
         }
 
-        private static void Initialize()
+        private static void Initialize(string[] args)
         {
             //操作日志初始化
             log4net.Config.XmlConfigurator.Configure();
@@ -40,7 +37,7 @@ namespace BridgeDetectSystem
             //数据库初始化
             try
             {
-                bool recreate = false;
+                bool recreate = bool.Parse(args[0]);
                 if (recreate)
                 {
                     RecreateRecordManager.InitialDataBase();
@@ -65,7 +62,8 @@ namespace BridgeDetectSystem
             //浇筑状态接收线程初始化
             List<AdamOperation> list = new List<AdamOperation>
             {
-                new Adam6217Operation("192.168.1.3", 0)
+                new Adam6217Operation("192.168.1.3", 0),
+                new Adam6217Operation("192.168.1.4", 1)
             };
 
             try
@@ -75,12 +73,18 @@ namespace BridgeDetectSystem
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                //Environment.Exit(0);
             }
 
             //行走状态接收线程初始化
-
-
-
+            try
+            {
+                AdamHelper2.Initialize(new Adam6217Operation("192.168.1.4", 1));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             //数据保存类初始化
             try

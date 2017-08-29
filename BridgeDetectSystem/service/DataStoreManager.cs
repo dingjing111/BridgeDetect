@@ -11,7 +11,7 @@ namespace BridgeDetectSystem.service
 {
     public class DataStoreManager
     {
-        Timer storeTimer { get; set;}
+        Timer storeTimer { get; set; }
         DBHelper dbhelper;
         AdamHelper adamHelper;
         string name;//得到操作人的名字
@@ -24,7 +24,10 @@ namespace BridgeDetectSystem.service
             name = UserRightManager.user.userName;
             storeTimer = new Timer(_ =>
             {
-                storeData();
+                if (adamHelper.hasData)
+                {
+                    storeData();
+                }
             }, null, Timeout.Infinite, Timeout.Infinite);
         }
 
@@ -95,7 +98,7 @@ namespace BridgeDetectSystem.service
             {
                 int r = dbhelper.ExecuteNonQuery(sql);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception("将前支点位移存入数据库报错：" + ex.Message);
             }
@@ -122,9 +125,9 @@ namespace BridgeDetectSystem.service
         /// 开始数据保存线程
         /// </summary>
         /// <param name="period"></param>
-        public void StartTimer(int period)
+        public void StartTimer(int dueTime,int period)
         {
-            storeTimer.Change(0, period);
+            storeTimer.Change(dueTime, period);
         }
         /// <summary>
         /// 停止数据接收线程

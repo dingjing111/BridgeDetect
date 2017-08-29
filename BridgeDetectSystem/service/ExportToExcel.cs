@@ -16,13 +16,9 @@ namespace BridgeDetectSystem.service
     /// </summary>
     /// <param name="sql">sql语句，为查询表的语句</param>
     /// <param name="path">保存excel文件的路径</param>
-        public static void ExportData (String sql)
+        public static void ExportData (DataTable dt)
         {
             NPOIHelper npoi = new NPOIHelper();
-            DBHelper dbhelper = DBHelper.GetInstance();
-            DataTable dt = dbhelper.ExecuteSqlDataAdapter(sql, null, 0);
-        
-
             try
             {
                 npoi.ConvertTableToExcel(dt);

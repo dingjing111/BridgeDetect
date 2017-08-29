@@ -16,19 +16,14 @@ namespace BridgeDetectSystem
     public partial class PouringState : MetroFramework.Forms.MetroForm
     {
         AdamHelper adamHelper;
-        DataStoreManager storeManager;
+        DataStoreManager dataStoreManager;
 
         public PouringState()
         {
             InitializeComponent();
-            try
-            {
                 adamHelper = AdamHelper.GetInstance();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                dataStoreManager = DataStoreManager.GetInstance();
+        
         }
 
         private void SteeveForceAndDisplacement16_Load(object sender, EventArgs e)
@@ -39,6 +34,9 @@ namespace BridgeDetectSystem
             this.panel6.Height = (this.panel1.Height - menuStrip1.Height) / 2;
             this.panel8.Width = this.panel7.Width / 2;
 
+            //开始接收数据
+            adamHelper.StartTimer(250);
+            dataStoreManager.StartTimer(500, 1000);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -46,6 +44,18 @@ namespace BridgeDetectSystem
             RefreshSteeveText();
             RefreshAnchorText();
             RefreshFrontPivotText();
+        }
+
+        private void PouringState_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (dataStoreManager != null)
+            {
+                dataStoreManager.StopTimer();
+            }
+            if (adamHelper != null)
+            {
+                adamHelper.StopTimer();
+            }
         }
 
         #region 数据显示和重置按钮
@@ -104,13 +114,15 @@ namespace BridgeDetectSystem
         /// <param name="e"></param>
         private void btnReset_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                adamHelper.ReadStandardValue();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("重置发生错误：" + ex.Message);
+            }
         }
-        #endregion
-
-        #region 将接收的数据存入数据库
-
-
         #endregion
 
         #region 菜单栏按钮功能方法
@@ -137,5 +149,6 @@ namespace BridgeDetectSystem
         }
 
         #endregion
+
     }
 }

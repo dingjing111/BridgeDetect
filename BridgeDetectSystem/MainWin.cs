@@ -111,8 +111,19 @@ namespace BridgeDetectSystem
         /// <param name="e"></param>
         private void btnPouring_Click(object sender, EventArgs e)
         {
-            PouringState win = new PouringState();
-            win.Show();
+            PouringState win=null;
+            try
+            {
+                win = new PouringState();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            if (win != null)
+            {
+                win.Show();
+            }
         }
 
         /// <summary>
@@ -152,12 +163,12 @@ namespace BridgeDetectSystem
         }
 
         private void MainWin_Load(object sender, EventArgs e)
-        { 
-            
+        {
+
         }
 
-        
-       
-        
+
+
+
     }
 }

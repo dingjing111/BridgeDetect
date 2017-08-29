@@ -12,21 +12,21 @@ namespace BridgeDetectSystem
 {
     public partial class AlarmRecord : MetroFramework.Forms.MetroForm
     {
+        DataTable dt;
         public AlarmRecord()
         {
             InitializeComponent();
         }
-        string sql = "select * from AlarmRecord";
+
         private void warn_Load(object sender, EventArgs e)
         {
             this.initial();
-            
+
+            string sql = "select * from AlarmRecord";
             try
             {
-                OperateSql.LoadData(sql, dgv);
-
-
-            }
+                dt = OperateSql.LoadData(sql, dgv);
+            }  
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -38,7 +38,7 @@ namespace BridgeDetectSystem
         #region 初始化窗体
         private void initial()
         {
-           // this.Width = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width;//窗体与屏幕一样大
+            // this.Width = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width;//窗体与屏幕一样大
             //this.Height = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Height;
             this.panel2.Height = this.panel1.Height * 8 / 10;
             this.panel4.Height = this.panel1.Height / 15;
@@ -57,9 +57,10 @@ namespace BridgeDetectSystem
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-           
-            ExportToExcel.ExportData(sql);
-            
+            dt.Columns[0].ColumnName = "时间";
+            dt.Columns[1].ColumnName = "类型";
+            dt.Columns[2].ColumnName = "操作人";
+            ExportToExcel.ExportData(dt);
         }
     }
 }
