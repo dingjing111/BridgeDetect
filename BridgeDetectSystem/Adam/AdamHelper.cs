@@ -72,7 +72,7 @@ namespace BridgeDetectSystem.adam
         {
             if (instance != null)
             {
-                throw new AdamHelperException("Trying to initialize AdamHelper while its instance already exists.");
+                throw new AdamHelperException("AdamHelper数据接收模块重复初始化报错");
             }
             instance = new AdamHelper(list);//
             return instance;
@@ -82,7 +82,7 @@ namespace BridgeDetectSystem.adam
         {
             if (instance == null)
             {
-                throw new AdamHelperException("Trying to get AdamHelper instance before initialization.");
+                throw new AdamHelperException("AdamHelper数据接收模块未初始化，实例不存在报错！");
             }
             return instance;
         }

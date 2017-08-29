@@ -111,7 +111,7 @@ namespace BridgeDetectSystem
         /// <param name="e"></param>
         private void btnPouring_Click(object sender, EventArgs e)
         {
-            PouringState win=null;
+            PouringState win = null;
             try
             {
                 win = new PouringState();
@@ -133,8 +133,19 @@ namespace BridgeDetectSystem
         /// <param name="e"></param>
         private void btnWalking_Click(object sender, EventArgs e)
         {
-            VideoMonitorWin win = new VideoMonitorWin();
-            win.Show();
+            VideoMonitorWin win=null;
+            try
+            {
+                win = new VideoMonitorWin();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            if (win != null)
+            {
+                win.Show();
+            }
         }
 
         /// <summary>

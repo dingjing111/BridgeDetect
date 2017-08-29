@@ -17,13 +17,14 @@ namespace BridgeDetectSystem
     {
         AdamHelper adamHelper;
         DataStoreManager dataStoreManager;
+        WarningManager warningManager;
 
         public PouringState()
         {
             InitializeComponent();
-                adamHelper = AdamHelper.GetInstance();
-                dataStoreManager = DataStoreManager.GetInstance();
-        
+            adamHelper = AdamHelper.GetInstance();
+            dataStoreManager = DataStoreManager.GetInstance();
+            warningManager = WarningManager.GetInstance();
         }
 
         private void SteeveForceAndDisplacement16_Load(object sender, EventArgs e)
@@ -37,6 +38,7 @@ namespace BridgeDetectSystem
             //开始接收数据
             adamHelper.StartTimer(250);
             dataStoreManager.StartTimer(500, 1000);
+            warningManager.BgStart();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -55,6 +57,10 @@ namespace BridgeDetectSystem
             if (adamHelper != null)
             {
                 adamHelper.StopTimer();
+            }
+            if (warningManager != null && warningManager.isStart)
+            {
+                warningManager.BgCancel();
             }
         }
 

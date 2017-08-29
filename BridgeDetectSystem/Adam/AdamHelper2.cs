@@ -47,7 +47,7 @@ namespace BridgeDetectSystem.adam
         {
             if (instance != null)
             {
-                throw new AdamHelperException("Trying to initialize AdamHelper2 while its instance already exists.");
+                throw new AdamHelperException("AdamHelper2数据接收模块重复初始化报错！");
             }
             instance = new AdamHelper2(oper);
             return instance;
@@ -61,7 +61,7 @@ namespace BridgeDetectSystem.adam
         {
             if (instance == null)
             {
-                throw new AdamHelperException("Trying to get AdamHelper2 instance before initialization.");
+                throw new AdamHelperException("AdamHelper2数据接收模块未初始化，实例不存在报错！");
             }
             return instance;
         }
@@ -69,7 +69,7 @@ namespace BridgeDetectSystem.adam
 
         #region 方法
         private static readonly object obj = new object(); //锁对象
-        public void ReadRailWay()
+        private void ReadRailWay()
         {
             try
             {
@@ -83,7 +83,7 @@ namespace BridgeDetectSystem.adam
             catch (Exception ex)
             {
                 readTimer.Change(Timeout.Infinite, Timeout.Infinite);
-                throw ex;
+                System.Windows.Forms.MessageBox.Show("adamHelper2中数据读取失败！请检查线路"+ex.Message);
             }
         }
 
@@ -97,7 +97,7 @@ namespace BridgeDetectSystem.adam
         /// <summary>
         /// 取消后台接收线程
         /// </summary>
-        public void InfiniteTimer()
+        public void StopTimer()
         {
             readTimer.Change(Timeout.Infinite, Timeout.Infinite);
         }

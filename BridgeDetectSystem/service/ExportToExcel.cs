@@ -30,7 +30,7 @@ namespace BridgeDetectSystem.service
                 {
                     FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.Create);
                     npoi.WriteToFile(fs);
-                    MessageBox.Show("表" + dt.TableName + "生成成功");
+                    AutoClosingMessageBox.Show("表" + dt.TableName + "生成成功",1500);
                 }
             }
             catch (Exception ex)
