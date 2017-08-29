@@ -31,13 +31,22 @@ namespace BridgeDetectSystem
 
         private static void Initialize(string[] args)
         {
+            bool recreate = false;
+            bool loadFromDB = true;
+
+            if (args.Length > 0)
+            {
+                recreate = bool.Parse(args[0]);
+                loadFromDB = bool.Parse(args[1]);
+            }
+
             //操作日志初始化
             log4net.Config.XmlConfigurator.Configure();
+
 
             //数据库初始化
             try
             {
-                bool recreate = bool.Parse(args[0]);
                 if (recreate)
                 {
                     RecreateRecordManager.InitialDataBase();
@@ -47,11 +56,12 @@ namespace BridgeDetectSystem
             {
                 MessageBox.Show("初始化数据库表报错:" + ex.Message);
             }
+
             //配置初始化
             try
             {
                 DBHelper dbhelper = DBHelper.GetInstance();
-                ConfigManager.Initialize(dbhelper, false);
+                ConfigManager.Initialize(dbhelper, loadFromDB);
             }
             catch (Exception ex)
             {
