@@ -1,0 +1,46 @@
+{
+    "git.path": "D:/Git/bin/git.exe",
+    "go.gopath": "D:/workspace",
+    "go.goroot": "D:/Go/Go1.12.14",
+    "go.testEnvVars": {
+        "QUICKPAY_ENV": "testing",
+        "HOST": "danger",
+        "SYS_NAME": "redbud",
+        "SYS_ENV": "regression",
+        "SYS_NODE": "danger"
+    },
+    "go.testTimeout": "360s",
+    "go.testFlags": [
+        "-v",
+        "-cover"
+        // "-config=D:/workspace/src/github.com/CardInfoLink/magisync/config/redbud/config/staging/mgo2mgo_cardpay2trans.js"
+    ],
+    "files.autoSave": "onFocusChange",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "window.zoomLevel": 0,
+    "git.autofetch": true,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "java.home": "C:/Program Files/Java/jdk1.8.0_201",
+    "java.configuration.maven.userSettings": "D:/Users/apache-maven-3.6.2/conf/settings.xml",
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/target": true,
+        "**/logs": true
+    },
+    "maven.executable.path": "D:\\Users\\apache-maven-3.6.2",
+    "[java]": {
+        
+    },
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false
+}
