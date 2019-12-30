@@ -3,11 +3,7 @@
     "go.gopath": "D:/workspace",
     "go.goroot": "D:/Go/Go1.12.14",
     "go.testEnvVars": {
-        "QUICKPAY_ENV": "testing",
-        "HOST": "danger",
-        "SYS_NAME": "redbud",
-        "SYS_ENV": "regression",
-        "SYS_NODE": "danger"
+
     },
     "go.testTimeout": "360s",
     "go.testFlags": [
